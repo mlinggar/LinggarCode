@@ -1,0 +1,350 @@
+make,model,year,fuel_type,range,city_mpge,hwy_mpge,co2_emissions,charge_time_240v
+Tesla,Model 3 Long Range,2020,Electricity,330.0,136.0,123.0,0.0,10.0
+Tesla,Model 3 Long Range AWD,2020,Electricity,322.0,124.0,116.0,0.0,10.0
+Tesla,Model 3 Long Range Performance AWD (18in),2020,Electricity,322.0,124.0,116.0,0.0,10.0
+Tesla,Model 3 Long Range Performance AWD (19in),2020,Electricity,304.0,119.0,112.0,0.0,10.0
+Tesla,Model 3 Long Range Performance AWD (20in),2020,Electricity,299.0,118.0,107.0,0.0,10.0
+Tesla,Model 3 Mid Range,2020,Electricity,264.0,128.0,117.0,0.0,10.0
+Tesla,Model 3 Standard Range,2020,Electricity,220.0,138.0,124.0,0.0,8.5
+Tesla,Model 3 Standard Range Plus,2020,Electricity,250.0,148.0,132.0,0.0,8.5
+Tesla,Model S Long Range,2020,Electricity,373.0,115.0,107.0,0.0,12.0
+Tesla,Model S Long Range Plus,2020,Electricity,402.0,121.0,112.0,0.0,15.3
+Tesla,Model S Performance (19in Wheels),2020,Electricity,348.0,104.0,104.0,0.0,12.0
+Tesla,Model S Performance (21in Wheels),2020,Electricity,326.0,98.0,96.0,0.0,12.0
+Tesla,Model S Standard Range,2020,Electricity,287.0,113.0,105.0,0.0,9.2
+Tesla,Model X Long Range,2020,Electricity,328.0,99.0,93.0,0.0,12.0
+Tesla,Model X Long Range Plus,2020,Electricity,351.0,108.0,101.0,0.0,12.0
+Tesla,Model X Performance (20in Wheels),2020,Electricity,305.0,90.0,89.0,0.0,12.0
+Tesla,Model X Performance (22in Wheels),2020,Electricity,272.0,80.0,77.0,0.0,12.0
+Tesla,Model X Standard Range,2020,Electricity,258.0,105.0,98.0,0.0,9.2
+Tesla,Model Y Long Range AWD,2020,Electricity,316.0,127.0,114.0,0.0,10.0
+Tesla,Model Y Performance AWD,2020,Electricity,315.0,129.0,112.0,0.0,10.0
+Tesla,Model Y Performance AWD (21in Wheels),2020,Electricity,291.0,116.0,106.0,0.0,10.0
+Ford,Escape FWD PHEV,2020,Regular Gas and Electricity,530.0,43.0,38.0,77.0,3.3
+Ford,Fusion Energi Plug-in Hybrid,2020,Regular Gas and Electricity,610.0,43.0,40.0,99.0,2.6
+Ford,Fusion Special Service PHEV,2020,Regular Gas and Electricity,610.0,43.0,40.0,101.0,2.6
+BMW,i3,2020,Electricity,153.0,124.0,102.0,0.0,7.0
+BMW,i3s,2020,Electricity,153.0,124.0,102.0,0.0,7.0
+Nissan,Leaf (40 kW-hr battery pack),2020,Electricity,149.0,123.0,99.0,0.0,8.0
+Nissan,Leaf (62 kW-hr battery pack),2020,Electricity,226.0,118.0,97.0,0.0,11.0
+Nissan,Leaf SV/SL (62 kW-hr battery pack),2020,Electricity,215.0,114.0,94.0,0.0,11.0
+Hyundai,Ioniq Electric,2020,Electricity,170.0,145.0,121.0,0.0,5.8
+Hyundai,Ioniq Plug-in Hybrid,2020,Regular Gas and Electricity,630.0,53.0,52.0,74.0,2.3
+Hyundai,Kona Electric,2020,Electricity,258.0,132.0,108.0,0.0,9.0
+Kia,Niro Electric,2020,Electricity,239.0,123.0,102.0,0.0,9.5
+Kia,Niro Plug-in Hybrid,2020,Regular Gas and Electricity,560.0,48.0,44.0,90.0,2.25
+Kia,Optima Plug-in Hybrid,2020,Regular Gas and Electricity,630.0,39.0,44.0,97.0,2.7
+Kia,Soul Electric,2020,Electricity,243.0,127.0,101.0,0.0,9.5
+Tesla,Model 3 Long Range AWD,2021,Electricity,353.0,141.0,127.0,0.0,11.2
+Tesla,Model 3 Performance AWD,2021,Electricity,315.0,118.0,107.0,0.0,11.6
+Tesla,Model 3 Standard Range Plus RWD,2021,Electricity,263.0,150.0,133.0,0.0,7.8
+Tesla,Model S Long Range,2021,Electricity,405.0,124.0,115.0,0.0,15.0
+Tesla,Model S Performance (19in Wheels),2021,Electricity,387.0,114.0,106.0,0.0,14.7
+Tesla,Model S Performance (21in Wheels),2021,Electricity,334.0,98.0,93.0,0.0,14.7
+Tesla,Model S Plaid (21inch wheels),2021,Electricity,348.0,102.0,99.0,0.0,15.0
+Tesla,Model X Long Range Plus,2021,Electricity,371.0,109.0,101.0,0.0,15.0
+Tesla,Model X Performance (20in Wheels),2021,Electricity,341.0,100.0,95.0,0.0,15.0
+Tesla,Model X Performance (22in Wheels),2021,Electricity,300.0,89.0,83.0,0.0,15.0
+Tesla,Model Y Long Range AWD,2021,Electricity,326.0,131.0,117.0,0.0,10.0
+Tesla,Model Y Performance AWD,2021,Electricity,303.0,115.0,106.0,0.0,11.8
+Tesla,Model Y Standard Range RWD,2021,Electricity,244.0,140.0,119.0,0.0,8.0
+Ford,Escape FWD PHEV,2021,Regular Gas and Electricity,520.0,43.0,38.0,77.0,3.3
+Ford,Mustang Mach-E AWD,2021,Electricity,211.0,100.0,86.0,0.0,8.5
+Ford,Mustang Mach-E AWD Extended,2021,Electricity,270.0,96.0,84.0,0.0,10.7
+Ford,Mustang Mach-E GT,2021,Electricity,270.0,90.0,77.0,0.0,10.3
+Ford,Mustang Mach-E GT Performance,2021,Electricity,260.0,88.0,75.0,0.0,10.1
+Ford,Mustang Mach-E RWD,2021,Electricity,230.0,105.0,93.0,0.0,8.8
+Ford,Mustang Mach-E RWD California Route 1,2021,Electricity,305.0,108.0,94.0,0.0,11.4
+Ford,Mustang Mach-E RWD Extended,2021,Electricity,300.0,104.0,90.0,0.0,10.9
+BMW,i3,2021,Electricity,153.0,124.0,102.0,0.0,7.0
+BMW,i3s,2021,Electricity,153.0,124.0,102.0,0.0,7.0
+Nissan,Leaf (40 kW-hr battery pack),2021,Electricity,149.0,123.0,99.0,0.0,8.0
+Nissan,Leaf (62 kW-hr battery pack),2021,Electricity,226.0,118.0,97.0,0.0,11.0
+Nissan,Leaf SV/SL (62 kW-hr battery pack),2021,Electricity,215.0,114.0,94.0,0.0,11.0
+Hyundai,Ioniq Electric,2021,Electricity,170.0,145.0,121.0,0.0,5.8
+Hyundai,Ioniq Plug-in Hybrid,2021,Regular Gas and Electricity,620.0,52.0,51.0,74.0,2.25
+Hyundai,Kona Electric,2021,Electricity,258.0,132.0,108.0,0.0,9.0
+Kia,Niro Electric,2021,Electricity,239.0,123.0,102.0,0.0,9.5
+Kia,Niro Plug-in Hybrid,2021,Regular Gas and Electricity,560.0,48.0,44.0,90.0,2.25
+Tesla,Model 3 Long Range AWD,2022,Electricity,358.0,134.0,126.0,0.0,11.5
+Tesla,Model 3 Performance AWD,2022,Electricity,315.0,118.0,107.0,0.0,10.0
+Tesla,Model 3 RWD,2022,Electricity,272.0,138.0,126.0,0.0,10.4
+Tesla,Model S,2022,Electricity,405.0,124.0,115.0,0.0,15.0
+Tesla,Model S Plaid (19 inch wheels),2022,Electricity,396.0,119.0,112.0,0.0,15.0
+Tesla,Model S Plaid (21 inch wheels),2022,Electricity,348.0,102.0,99.0,0.0,15.0
+Tesla,Model X,2022,Electricity,348.0,107.0,97.0,0.0,14.0
+Tesla,Model X Plaid (20 inch wheels),2022,Electricity,333.0,103.0,93.0,0.0,14.0
+Tesla,Model X Plaid (22 inch wheels),2022,Electricity,311.0,94.0,88.0,0.0,14.0
+Tesla,Model Y AWD,2022,Electricity,279.0,129.0,116.0,0.0,9.4
+Tesla,Model Y Long Range AWD,2022,Electricity,330.0,127.0,117.0,0.0,11.5
+Tesla,Model Y Performance AWD,2022,Electricity,303.0,115.0,106.0,0.0,11.8
+Tesla,Model Y RWD,2022,Electricity,244.0,140.0,119.0,0.0,8.0
+Ford,Escape FWD PHEV,2022,Regular Gas and Electricity,520.0,43.0,38.0,77.0,3.3
+Ford,F-150 Lightning 4WD,2022,Electricity,230.0,76.0,61.0,0.0,11.9
+Ford,F-150 Lightning 4WD Extended Range,2022,Electricity,320.0,78.0,63.0,0.0,10.1
+Ford,F-150 Lightning Platinum 4WD,2022,Electricity,300.0,73.0,60.0,0.0,9.3
+Ford,Mustang Mach-E AWD,2022,Electricity,224.0,99.0,86.0,0.0,8.0
+Ford,Mustang Mach-E AWD Extended,2022,Electricity,277.0,97.0,84.0,0.0,10.7
+Ford,Mustang Mach-E CAL RT 1 ER AWD,2022,Electricity,312.0,105.0,91.0,0.0,11.4
+Ford,Mustang Mach-E CAL RT 1 ER RWD,2022,Electricity,314.0,108.0,94.0,0.0,10.1
+Ford,Mustang Mach-E GT,2022,Electricity,270.0,90.0,77.0,0.0,10.3
+Ford,Mustang Mach-E GT Performance,2022,Electricity,260.0,88.0,75.0,0.0,10.1
+Ford,Mustang Mach-E RWD,2022,Electricity,247.0,110.0,96.0,0.0,8.1
+Ford,Mustang Mach-E RWD Extended,2022,Electricity,303.0,104.0,90.0,0.0,10.9
+BMW,i4 eDrive40 Gran Coupe (18 inch wheels),2022,Electricity,301.0,109.0,108.0,0.0,10.0
+BMW,i4 eDrive40 Gran Coupe (19 inch wheels),2022,Electricity,282.0,100.0,98.0,0.0,10.0
+BMW,i4 M50 Gran Coupe (19 inch wheels),2022,Electricity,270.0,94.0,98.0,0.0,10.0
+BMW,i4 M50 Gran Coupe (20 inch wheels),2022,Electricity,227.0,79.0,80.0,0.0,10.0
+BMW,iX xDrive50 (20 inch wheels),2022,Electricity,324.0,86.0,87.0,0.0,12.0
+BMW,iX xDrive50 (21 inch wheels),2022,Electricity,305.0,82.0,84.0,0.0,12.0
+BMW,iX xDrive50 (22 inch wheels),2022,Electricity,315.0,86.0,85.0,0.0,12.0
+Nissan,Leaf (40 kW-hr battery pack),2022,Electricity,149.0,123.0,99.0,0.0,8.0
+Nissan,Leaf (62 kW-hr battery pack),2022,Electricity,226.0,118.0,97.0,0.0,11.0
+Nissan,Leaf SV/SL (62 kW-hr battery pack),2022,Electricity,215.0,114.0,94.0,0.0,11.0
+Rivian,R1S,2022,Electricity,316.0,73.0,65.0,0.0,13.0
+Rivian,R1T,2022,Electricity,314.0,74.0,66.0,0.0,13.0
+Lucid,Air Dream P AWD w/19 inch wheels,2022,Electricity,471.0,117.0,114.0,0.0,13.0
+Lucid,Air Dream P AWD w/21 inch wheels,2022,Electricity,451.0,110.0,111.0,0.0,13.0
+Lucid,Air Dream R AWD w/19 inch wheels,2022,Electricity,520.0,126.0,125.0,0.0,13.0
+Lucid,Air Dream R AWD w/21 inch wheels,2022,Electricity,481.0,115.0,117.0,0.0,13.0
+Lucid,Air G Touring AWD w/19 inch wheels,2022,Electricity,516.0,130.0,132.0,0.0,13.0
+Lucid,Air G Touring AWD w/21 inch wheels,2022,Electricity,469.0,121.0,122.0,0.0,13.0
+Hyundai,Ioniq 5 AWD (Long Range),2022,Electricity,256.0,110.0,87.0,0.0,8.5
+Hyundai,Ioniq 5 RWD (Long Range),2022,Electricity,303.0,132.0,98.0,0.0,8.5
+Hyundai,Ioniq 5 RWD (Standard Range),2022,Electricity,220.0,127.0,94.0,0.0,6.3
+Hyundai,Ioniq Plug-in Hybrid,2022,Regular Gas and Electricity,620.0,52.0,51.0,74.0,2.25
+Hyundai,Kona Electric,2022,Electricity,258.0,132.0,108.0,0.0,9.5
+Hyundai,Santa Fe Plug-in Hybrid,2022,Regular Gas and Electricity,440.0,33.0,32.0,111.0,3.4
+Hyundai,Tucson Plug-in Hybrid,2022,Regular Gas and Electricity,420.0,35.0,35.0,100.0,1.7
+Kia,EV6 AWD (Long Range),2022,Electricity,274.0,116.0,94.0,0.0,8.4
+Kia,EV6 RWD (Long Range),2022,Electricity,310.0,134.0,101.0,0.0,8.7
+Kia,EV6 RWD (Standard Range),2022,Electricity,232.0,136.0,100.0,0.0,6.3
+Kia,Niro Electric,2022,Electricity,239.0,123.0,102.0,0.0,9.5
+Kia,Niro Plug-in Hybrid,2022,Regular Gas and Electricity,560.0,48.0,44.0,90.0,2.25
+Kia,Sorento Plug-in Hybrid,2022,Regular Gas and Electricity,460.0,35.0,33.0,105.0,3.4
+Tesla,Model 3 Long Range AWD,2023,Electricity,358.0,134.0,126.0,0.0,11.5
+Tesla,Model 3 Performance AWD,2023,Electricity,315.0,118.0,107.0,0.0,10.0
+Tesla,Model 3 RWD,2023,Electricity,272.0,138.0,126.0,0.0,10.4
+Tesla,Model S,2023,Electricity,405.0,124.0,115.0,0.0,15.0
+Tesla,Model X,2023,Electricity,348.0,107.0,97.0,0.0,14.0
+Tesla,Model X Plaid (20 inch wheels),2023,Electricity,333.0,103.0,93.0,0.0,14.0
+Tesla,Model X Plaid (22 inch wheels),2023,Electricity,311.0,94.0,88.0,0.0,14.0
+Tesla,Model Y AWD,2023,Electricity,279.0,129.0,116.0,0.0,9.4
+Tesla,Model Y Long Range AWD,2023,Electricity,330.0,127.0,117.0,0.0,11.5
+Tesla,Model Y Performance AWD,2023,Electricity,303.0,115.0,106.0,0.0,11.8
+Ford,Escape FWD PHEV,2023,Regular Gas and Electricity,520.0,42.0,37.0,52.0,3.4
+Ford,F-150 Lightning 4WD,2023,Electricity,240.0,76.0,61.0,0.0,11.9
+Ford,F-150 Lightning 4WD Extended Range,2023,Electricity,320.0,78.0,63.0,0.0,10.1
+Ford,F-150 Lightning Platinum 4WD,2023,Electricity,300.0,73.0,60.0,0.0,9.3
+Ford,Mustang Mach-E AWD,2023,Electricity,224.0,99.0,86.0,0.0,8.0
+Ford,Mustang Mach-E AWD Extended,2023,Electricity,290.0,97.0,85.0,0.0,10.0
+Ford,MUSTANG MACH-E CAL RT 1 ER AWD,2023,Electricity,312.0,105.0,91.0,0.0,10.1
+Ford,Mustang Mach-E GT,2023,Electricity,270.0,90.0,77.0,0.0,10.3
+Ford,Mustang Mach-E GT Performance,2023,Electricity,260.0,90.0,77.0,0.0,10.1
+Ford,Mustang Mach-E RWD,2023,Electricity,247.0,110.0,96.0,0.0,8.1
+Ford,Mustang Mach-E RWD Extended,2023,Electricity,310.0,105.0,92.0,0.0,10.2
+Ford,Mustang Mach-E RWD LFP,2023,Electricity,250.0,107.0,95.0,0.0,7.4
+BMW,i4 eDrive35 Gran Coupe (18 inch Wheels),2023,Electricity,256.0,115.0,111.0,0.0,8.0
+BMW,i4 eDrive35 Gran Coupe (19 inch Wheels),2023,Electricity,235.0,107.0,102.0,0.0,8.0
+BMW,i4 eDrive40 Gran Coupe (18 inch wheels),2023,Electricity,301.0,109.0,108.0,0.0,10.0
+BMW,i4 eDrive40 Gran Coupe (19 inch Wheels),2023,Electricity,282.0,100.0,98.0,0.0,10.0
+BMW,i4 M50 Gran Coupe (19 inch wheels),2023,Electricity,271.0,94.0,98.0,0.0,10.0
+BMW,i4 M50 Gran Coupe (20 inch wheels),2023,Electricity,227.0,79.0,80.0,0.0,10.0
+BMW,i7 xDrive60 Sedan (19 inch wheels),2023,Electricity,318.0,87.0,92.0,0.0,12.0
+BMW,i7 xDrive60 Sedan (20 inch wheels),2023,Electricity,296.0,81.0,85.0,0.0,12.0
+BMW,i7 xDrive60 Sedan (21 inch wheels),2023,Electricity,308.0,85.0,89.0,0.0,12.0
+BMW,iX M60 (21 inch wheels),2023,Electricity,288.0,76.0,80.0,0.0,12.0
+BMW,iX M60 (22 inch wheels),2023,Electricity,274.0,77.0,80.0,0.0,12.0
+BMW,iX xDrive50 (20 inch wheels),2023,Electricity,324.0,86.0,87.0,0.0,12.0
+BMW,iX xDrive50 (21 inch wheels),2023,Electricity,305.0,82.0,84.0,0.0,12.0
+BMW,iX xDrive50 (22 inch wheels),2023,Electricity,315.0,86.0,85.0,0.0,12.0
+Nissan,ARIYA ENG Plus/EVO Plus e-4ORCE 87kWh,2023,Electricity,272.0,97.0,86.0,0.0,13.0
+Nissan,ARIYA ENGAGE e-4ORCE 63kWh,2023,Electricity,205.0,101.0,89.0,0.0,10.0
+Nissan,ARIYA ENGAGE FWD 63kWh,2023,Electricity,216.0,109.0,94.0,0.0,10.0
+Nissan,ARIYA EVO Plus/EMP Plus/PRM FWD 87kWh,2023,Electricity,289.0,105.0,91.0,0.0,14.0
+Nissan,ARIYA PLAT Plus e-4ORCE 87kWh 19,2023,Electricity,267.0,93.0,87.0,0.0,14.0
+Nissan,ARIYA PLAT Plus e-4ORCE 87kWh 20,2023,Electricity,257.0,89.0,84.0,0.0,14.0
+Nissan,ARIYA VENTURE Plus FWD 87kWh,2023,Electricity,304.0,111.0,95.0,0.0,14.0
+Nissan,LEAF,2023,Electricity,149.0,123.0,99.0,0.0,8.0
+Nissan,LEAF SV,2023,Electricity,212.0,121.0,98.0,0.0,11.0
+Rivian,R1S (20 inch wheels),2023,Electricity,289.0,69.0,60.0,0.0,13.0
+Rivian,R1S (21 inch wheels),2023,Electricity,321.0,75.0,66.0,0.0,13.0
+Rivian,R1S (22 inch wheels),2023,Electricity,303.0,73.0,63.0,0.0,13.0
+Rivian,R1S 20 inch All-Terrain,2023,Electricity,274.0,65.0,60.0,0.0,13.0
+Rivian,R1S 20 inch All-Terrain Dual Large,2023,Electricity,307.0,72.0,64.0,0.0,13.0
+Rivian,R1S 20 inch All-Terrain Performance Dual Large,2023,Electricity,307.0,72.0,64.0,0.0,13.0
+Rivian,R1S 21 inch Dual Large,2023,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1S 21 inch Performance Dual Large,2023,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1S 22 inch Dual Large,2023,Electricity,341.0,80.0,71.0,0.0,13.0
+Rivian,R1S 22 inch Performance Dual Large,2023,Electricity,341.0,80.0,71.0,0.0,13.0
+Rivian,R1T (20 inch wheels),2023,Electricity,289.0,69.0,60.0,0.0,13.0
+Rivian,R1T (21 inch wheels),2023,Electricity,328.0,76.0,69.0,0.0,13.0
+Rivian,R1T (22 inch wheels),2023,Electricity,303.0,73.0,63.0,0.0,13.0
+Rivian,R1T 21 inch Dual Large,2023,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1T 21 inch Performance Dual Large,2023,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1T 22 inch Dual Large,2023,Electricity,341.0,80.0,71.0,0.0,13.0
+Rivian,R1T 22 inch Performance Dual Large,2023,Electricity,341.0,80.0,71.0,0.0,13.0
+Lucid,Air G Touring XR AWD with 19 inch wheels,2023,Electricity,516.0,130.0,132.0,0.0,13.0
+Lucid,Air G Touring XR AWD with 20 inch wheels,2023,Electricity,469.0,121.0,122.0,0.0,13.0
+Lucid,Air G Touring XR AWD with 21 inch wheels,2023,Electricity,469.0,121.0,122.0,0.0,13.0
+Lucid,Air GT P AWD with 21 inch wheels,2023,Electricity,446.0,110.0,111.0,0.0,13.0
+Lucid,Air Pure AWD with 19 inch wheels,2023,Electricity,410.0,141.0,140.0,0.0,10.0
+Lucid,Air Pure AWD with 20 inch wheels,2023,Electricity,384.0,121.0,120.0,0.0,10.0
+Lucid,Air Touring AWD with 19 inch wheels,2023,Electricity,425.0,141.0,140.0,0.0,10.0
+Lucid,Air Touring AWD with 20 inch wheels,2023,Electricity,384.0,121.0,120.0,0.0,10.0
+Lucid,Air Touring AWD with 21 inch wheels,2023,Electricity,384.0,121.0,120.0,0.0,10.0
+Hyundai,Ioniq 6 Long range AWD (18 inch Wheels),2023,Electricity,316.0,130.0,111.0,0.0,7.5
+Hyundai,Ioniq 6 Long range AWD (20 inch Wheels),2023,Electricity,270.0,111.0,94.0,0.0,7.5
+Hyundai,Ioniq 6 Long range RWD (18 inch Wheels),2023,Electricity,361.0,153.0,127.0,0.0,7.5
+Hyundai,Ioniq 6 Long range RWD (20 inch Wheels),2023,Electricity,305.0,129.0,105.0,0.0,7.5
+Hyundai,Ioniq 6 Standard Range RWD,2023,Electricity,240.0,151.0,120.0,0.0,6.1
+Hyundai,Kona Electric,2023,Electricity,258.0,134.0,106.0,0.0,9.5
+Hyundai,Santa Fe Plug-in Hybrid,2023,Regular Gas and Electricity,440.0,33.0,32.0,111.0,3.4
+Hyundai,Tucson Plug-in Hybrid,2023,Regular Gas and Electricity,420.0,35.0,35.0,100.0,1.7
+Kia,EV6 AWD GT,2023,Electricity,206.0,85.0,74.0,0.0,8.9
+Kia,EV6 Long Range AWD (19 inch tires),2023,Electricity,282.0,120.0,98.0,0.0,8.4
+Kia,EV6 Long Range AWD (20 inch tires),2023,Electricity,252.0,106.0,86.0,0.0,8.4
+Kia,EV6 Long Range RWD,2023,Electricity,310.0,134.0,101.0,0.0,8.7
+Kia,EV6 Standard Range RWD,2023,Electricity,232.0,136.0,100.0,0.0,6.3
+Kia,Niro Electric,2023,Electricity,253.0,126.0,101.0,0.0,7.5
+Kia,Niro Plug-in Hybrid,2023,Regular Gas and Electricity,510.0,49.0,47.0,71.0,2.8
+Kia,Sorento Plug-in Hybrid,2023,Regular Gas and Electricity,460.0,35.0,33.0,105.0,3.4
+Kia,Sportage Plug-in Hybrid,2023,Regular Gas and Electricity,430.0,36.0,35.0,96.0,2.0
+Tesla,Model 3 Long Range AWD,2024,Electricity,342.0,137.0,124.0,0.0,9.4
+Tesla,Model 3 Long Range AWD-E,2024,Electricity,341.0,133.0,122.0,0.0,10.0
+Tesla,Model 3 Long Range RWD,2024,Electricity,363.0,145.0,128.0,0.0,10.5
+Tesla,Model 3 Performance AWD,2024,Electricity,303.0,117.0,107.0,0.0,10.0
+Tesla,Model 3 RWD,2024,Electricity,272.0,140.0,125.0,0.0,10.5
+Tesla,Model S,2024,Electricity,402.0,127.0,116.0,0.0,15.0
+Tesla,Model S Plaid (19in wheels),2024,Electricity,359.0,111.0,103.0,0.0,15.0
+Tesla,Model S Plaid (21in wheels),2024,Electricity,320.0,100.0,91.0,0.0,15.0
+Tesla,Model X,2024,Electricity,335.0,104.0,96.0,0.0,14.0
+Tesla,Model X Plaid (20in wheels),2024,Electricity,326.0,102.0,92.0,0.0,14.0
+Tesla,Model X Plaid (22in wheels),2024,Electricity,300.0,94.0,86.0,0.0,14.0
+Tesla,Model Y Long Range AWD,2024,Electricity,310.0,122.0,112.0,0.0,9.0
+Tesla,Model Y Long Range AWD-I,2024,Electricity,308.0,123.0,112.0,0.0,9.0
+Tesla,Model Y Long Range RWD,2024,Electricity,320.0,128.0,112.0,0.0,11.0
+Tesla,Model Y Performance AWD,2024,Electricity,279.0,111.0,98.0,0.0,9.8
+Tesla,Model Y RWD,2024,Electricity,260.0,128.0,112.0,0.0,9.0
+Ford,F-150 Lightning 4WD,2024,Electricity,240.0,76.0,61.0,0.0,11.9
+Ford,F-150 Lightning 4WD Extended Range,2024,Electricity,320.0,78.0,63.0,0.0,14.6
+Ford,F-150 Lightning Platinum 4WD,2024,Electricity,300.0,73.0,60.0,0.0,14.6
+Ford,F-150 Lightning PRO 4WD Extended Range,2024,Electricity,320.0,78.0,63.0,0.0,10.1
+Ford,Mustang Mach-E AWD,2024,Electricity,230.0,95.0,88.0,0.0,7.5
+Ford,Mustang Mach-E AWD Extended,2024,Electricity,300.0,103.0,94.0,0.0,10.0
+Ford,Mustang Mach-E GT,2024,Electricity,280.0,95.0,85.0,0.0,9.9
+Ford,Mustang Mach-E Rally,2024,Electricity,265.0,90.0,81.0,0.0,10.2
+Ford,Mustang Mach-E RWD,2024,Electricity,250.0,106.0,98.0,0.0,7.1
+Ford,Mustang Mach-E RWD Extended,2024,Electricity,320.0,111.0,100.0,0.0,10.1
+BMW,i4 eDrive35 Gran Coupe (18 inch Wheels),2024,Electricity,276.0,122.0,119.0,0.0,7.0
+BMW,i4 eDrive35 Gran Coupe (19 inch Wheels),2024,Electricity,252.0,111.0,107.0,0.0,7.0
+BMW,i4 eDrive40 Gran Coupe (18 inch Wheels),2024,Electricity,301.0,109.0,108.0,0.0,8.0
+BMW,i4 eDrive40 Gran Coupe (19 inch Wheels),2024,Electricity,283.0,100.0,99.0,0.0,8.0
+BMW,i4 M50 Gran Coupe (19 inch wheels),2024,Electricity,269.0,94.0,98.0,0.0,8.0
+BMW,i4 M50 Gran Coupe (20 inch wheels),2024,Electricity,227.0,79.0,80.0,0.0,8.0
+BMW,i4 xDrive40 Gran Coupe (18 inch Wheels),2024,Electricity,307.0,107.0,111.0,0.0,8.0
+BMW,i4 xDrive40 Gran Coupe (19 inch Wheels),2024,Electricity,279.0,98.0,100.0,0.0,8.0
+BMW,i5 eDrive40 Sedan (19 inch Wheels),2024,Electricity,295.0,104.0,105.0,0.0,8.0
+BMW,i5 eDrive40 Sedan (20 inch Wheels),2024,Electricity,278.0,99.0,98.0,0.0,8.0
+BMW,i5 eDrive40 Sedan (21 inch Wheels),2024,Electricity,270.0,97.0,94.0,0.0,8.0
+BMW,i5 M60 xDrive Sedan (19 inch Wheels),2024,Electricity,256.0,90.0,93.0,0.0,8.0
+BMW,i5 M60 xDrive Sedan (20 inch Wheels),2024,Electricity,248.0,89.0,90.0,0.0,8.0
+BMW,i5 M60 xDrive Sedan (21 inch Wheels),2024,Electricity,240.0,85.0,86.0,0.0,8.0
+BMW,i7 eDrive50 Sedan (19 inch Wheels),2024,Electricity,321.0,87.0,95.0,0.0,11.0
+BMW,i7 eDrive50 Sedan (20 inch Wheels),2024,Electricity,301.0,83.0,90.0,0.0,11.0
+BMW,i7 eDrive50 Sedan (21 inch Wheels),2024,Electricity,311.0,86.0,92.0,0.0,11.0
+BMW,i7 M70 xDrive Sedan (20 inch Wheels),2024,Electricity,274.0,74.0,80.0,0.0,11.0
+BMW,i7 M70 xDrive Sedan (21 inch Wheels),2024,Electricity,291.0,79.0,85.0,0.0,11.0
+BMW,i7 xDrive60 Sedan (19 inch wheels),2024,Electricity,317.0,87.0,93.0,0.0,11.0
+BMW,i7 xDrive60 Sedan (20 inch wheels),2024,Electricity,298.0,82.0,87.0,0.0,11.0
+BMW,i7 xDrive60 Sedan (21 inch wheels),2024,Electricity,307.0,86.0,91.0,0.0,11.0
+BMW,iX M60 (21 inch Wheels),2024,Electricity,296.0,78.0,82.0,0.0,11.0
+BMW,iX M60 (22 inch Wheels),2024,Electricity,296.0,78.0,82.0,0.0,11.0
+BMW,iX xDrive40 (20 inch Wheels),2024,Electricity,217.0,87.0,85.0,0.0,8.0
+BMW,iX xDrive40 (21 inch Wheels),2024,Electricity,217.0,87.0,85.0,0.0,8.0
+BMW,iX xDrive40 (22 inch Wheels),2024,Electricity,217.0,87.0,85.0,0.0,8.0
+BMW,iX xDrive50 (20 inch wheels),2024,Electricity,307.0,83.0,82.0,0.0,11.0
+BMW,iX xDrive50 (21 inch wheels),2024,Electricity,307.0,83.0,82.0,0.0,11.0
+BMW,iX xDrive50 (22 inch wheels),2024,Electricity,307.0,83.0,82.0,0.0,11.0
+Nissan,ARIYA ENGAGE e-4ORCE 63kWh,2024,Electricity,205.0,101.0,89.0,0.0,10.0
+Nissan,ARIYA ENGAGE FWD 63kWh,2024,Electricity,216.0,109.0,94.0,0.0,10.0
+Rivian,R1S All-Terrain Dual Large (20in),2024,Electricity,307.0,72.0,64.0,0.0,13.0
+Rivian,R1S All-Terrain Dual Max (20in),2024,Electricity,355.0,78.0,67.0,0.0,14.5
+Rivian,R1S All-Terrain Dual Standard Plus (20in),2024,Electricity,277.0,68.0,62.0,0.0,12.5
+Rivian,R1S All-Terrain Performance Dual Large (20in),2024,Electricity,307.0,72.0,64.0,0.0,13.0
+Rivian,R1S All-Terrain Performance Dual Max (20in),2024,Electricity,355.0,78.0,67.0,0.0,14.5
+Rivian,R1S All-Terrain Quad Large (20 inch),2024,Electricity,274.0,65.0,60.0,0.0,13.0
+Rivian,R1S AT Performance Dual Standard Plus (20in),2024,Electricity,277.0,68.0,62.0,0.0,12.5
+Rivian,R1S Dual Large (21in),2024,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1S Dual Large (22in),2024,Electricity,341.0,80.0,71.0,0.0,13.0
+Rivian,R1S Dual Max (21in),2024,Electricity,400.0,89.0,76.0,0.0,14.5
+Rivian,R1S Dual Max (22in),2024,Electricity,380.0,84.0,72.0,0.0,14.5
+Rivian,R1S Dual Standard (21in),2024,Electricity,270.0,78.0,71.0,0.0,11.5
+Rivian,R1S Dual Standard (22in),2024,Electricity,255.0,74.0,66.0,0.0,11.5
+Rivian,R1S Dual Standard Plus (21in),2024,Electricity,315.0,80.0,74.0,0.0,12.5
+Rivian,R1S Dual Standard Plus (22in),2024,Electricity,300.0,76.0,68.0,0.0,12.5
+Rivian,R1S Performance Dual Large (21in),2024,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1S Performance Dual Large (22in),2024,Electricity,341.0,80.0,71.0,0.0,13.0
+Rivian,R1S Performance Dual Max (21in),2024,Electricity,400.0,89.0,76.0,0.0,14.5
+Rivian,R1S Performance Dual Max (22in),2024,Electricity,380.0,84.0,72.0,0.0,14.5
+Rivian,R1S Performance Dual Standard (22in),2024,Electricity,300.0,76.0,68.0,0.0,12.5
+Rivian,R1S Performance Dual Standard Plus (21in),2024,Electricity,315.0,80.0,74.0,0.0,12.5
+Rivian,R1S Quad Large (20in),2024,Electricity,289.0,69.0,60.0,0.0,13.0
+Rivian,R1S Quad Large (21in),2024,Electricity,321.0,75.0,66.0,0.0,13.0
+Rivian,R1S Quad Large (22in),2024,Electricity,303.0,73.0,63.0,0.0,13.0
+Rivian,R1T All-Terrain Dual Large (20in),2024,Electricity,307.0,72.0,64.0,0.0,13.0
+Rivian,R1T All-Terrain Dual Max (20in),2024,Electricity,355.0,78.0,67.0,0.0,14.5
+Rivian,R1T All-Terrain Dual Standard Plus (20in),2024,Electricity,277.0,68.0,62.0,0.0,12.5
+Rivian,R1T All-Terrain Performance Dual Large (20in),2024,Electricity,307.0,72.0,64.0,0.0,13.0
+Rivian,R1T All-Terrain Performance Dual Max (20in),2024,Electricity,355.0,78.0,67.0,0.0,14.5
+Rivian,R1T All-Terrain Quad Large (20in),2024,Electricity,274.0,65.0,60.0,0.0,13.0
+Rivian,R1T AT Performance Dual Standard Plus (20in),2024,Electricity,277.0,68.0,62.0,0.0,12.5
+Rivian,R1T Dual Large (21in),2024,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1T Dual Large (22in),2024,Electricity,341.0,80.0,71.0,0.0,13.0
+Rivian,R1T Dual Max (21in),2024,Electricity,410.0,91.0,77.0,0.0,14.5
+Rivian,R1T Dual Max (22in),2024,Electricity,380.0,84.0,72.0,0.0,14.5
+Rivian,R1T Dual Standard (21in),2024,Electricity,270.0,78.0,71.0,0.0,11.5
+Rivian,R1T Dual Standard (22in),2024,Electricity,255.0,74.0,66.0,0.0,11.5
+Rivian,R1T Dual Standard Plus (21in),2024,Electricity,315.0,80.0,74.0,0.0,12.5
+Rivian,R1T Dual Standard Plus (22in),2024,Electricity,300.0,76.0,68.0,0.0,12.5
+Rivian,R1T Performance Dual Large (21in),2024,Electricity,352.0,82.0,74.0,0.0,13.0
+Rivian,R1T Performance Dual Large (22in),2024,Electricity,341.0,80.0,71.0,0.0,13.0
+Rivian,R1T Performance Dual Max (21in),2024,Electricity,410.0,91.0,77.0,0.0,14.5
+Rivian,R1T Performance Dual Max (22in),2024,Electricity,380.0,84.0,72.0,0.0,14.5
+Rivian,R1T Performance Dual Standard Plus (21in),2024,Electricity,315.0,80.0,74.0,0.0,12.5
+Rivian,R1T Performance Dual Standard Plus (22in),2024,Electricity,300.0,76.0,68.0,0.0,12.5
+Rivian,R1T Quad Large (20in),2024,Electricity,289.0,69.0,60.0,0.0,13.0
+Rivian,R1T Quad Large (21in),2024,Electricity,328.0,76.0,69.0,0.0,13.0
+Rivian,R1T Quad Large (22in),2024,Electricity,303.0,73.0,63.0,0.0,13.0
+Lucid,Air G Touring XR AWD with 20 inch wheels,2024,Electricity,485.0,123.0,119.0,0.0,13.0
+Lucid,Air G Touring XR AWD with 21 inch wheels,2024,Electricity,450.0,115.0,111.0,0.0,13.0
+Lucid,Air G Touring XR AWD with19 inch wheels,2024,Electricity,516.0,130.0,128.0,0.0,13.0
+Lucid,Air Pure RWD with 19 inch wheels,2024,Electricity,419.0,140.0,134.0,0.0,10.0
+Lucid,Air Pure RWD with 20 inch wheels,2024,Electricity,394.0,134.0,126.0,0.0,10.0
+Lucid,Air Sapphire AWD,2024,Electricity,427.0,108.0,101.0,0.0,13.0
+Lucid,Air Touring AWD with 19 inch wheels,2024,Electricity,411.0,135.0,131.0,0.0,10.0
+Lucid,Air Touring AWD with 20 inch wheels,2024,Electricity,382.0,125.0,120.0,0.0,10.0
+Lucid,Air Touring AWD with 21inch wheels,2024,Electricity,365.0,121.0,114.0,0.0,10.0
+Hyundai,Ioniq 5 Long range AWD,2024,Electricity,260.0,110.0,88.0,0.0,8.5
+Hyundai,Ioniq 5 Long range RWD,2024,Electricity,303.0,132.0,98.0,0.0,8.5
+Hyundai,Ioniq 5 Standard range RWD,2024,Electricity,220.0,127.0,94.0,0.0,6.3
+Hyundai,Ioniq 6 Long range AWD (18 inch Wheels),2024,Electricity,316.0,130.0,111.0,0.0,7.5
+Hyundai,Ioniq 6 Long range AWD (20 inch Wheels),2024,Electricity,270.0,111.0,94.0,0.0,7.5
+Hyundai,Ioniq 6 Long range RWD (18 inch Wheels),2024,Electricity,361.0,153.0,127.0,0.0,7.5
+Hyundai,Ioniq 6 Long range RWD (20 inch Wheels),2024,Electricity,305.0,129.0,105.0,0.0,7.5
+Hyundai,Ioniq 6 Standard Range RWD,2024,Electricity,240.0,151.0,120.0,0.0,6.1
+Hyundai,Kona Electric Long Range,2024,Electricity,261.0,129.0,103.0,0.0,6.7
+Hyundai,Kona Electric Standard Range,2024,Electricity,200.0,131.0,105.0,0.0,5.1
+Hyundai,Tucson Plug-in Hybrid,2024,Regular Gas and Electricity,420.0,35.0,35.0,100.0,1.7
+Kia,EV6 AWD GT,2024,Electricity,218.0,88.0,77.0,0.0,7.7
+Kia,EV6 Long Range AWD (19 inch Wheels),2024,Electricity,282.0,120.0,98.0,0.0,8.4
+Kia,EV6 Long Range AWD (20 inch Wheels),2024,Electricity,252.0,106.0,86.0,0.0,8.4
+Kia,EV6 Long Range RWD,2024,Electricity,310.0,134.0,101.0,0.0,8.7
+Kia,EV6 Standard Range RWD,2024,Electricity,232.0,136.0,100.0,0.0,6.3
+Kia,EV9 Long Range AWD,2024,Electricity,280.0,91.0,75.0,0.0,14.5
+Kia,EV9 Long Range AWD GT-Line,2024,Electricity,270.0,88.0,72.0,0.0,15.2
+Kia,EV9 Long Range RWD,2024,Electricity,304.0,100.0,78.0,0.0,9.9
+Kia,EV9 Standard Range RWD,2024,Electricity,230.0,99.0,77.0,0.0,7.6
+Kia,Niro Electric,2024,Electricity,253.0,126.0,101.0,0.0,7.5
+Kia,Sorento Plug-in Hybrid,2024,Regular Gas and Electricity,460.0,35.0,33.0,105.0,3.4
+Kia,Sportage Plug-in Hybrid,2024,Regular Gas and Electricity,430.0,36.0,35.0,96.0,2.0

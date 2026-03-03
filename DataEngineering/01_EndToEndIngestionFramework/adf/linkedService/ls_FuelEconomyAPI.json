@@ -1,0 +1,12 @@
+{
+	"name": "ls_FuelEconomyAPI",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://www.fueleconomy.gov/ws/rest/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

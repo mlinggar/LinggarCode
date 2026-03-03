@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://financialmodelingprep.com/api/v3/",
+			"url": "https://financialmodelingprep.com/stable/stock-list?apikey=Lf5CK4saFrg7ZC1CX3Q7Mheg8pDAjzrr",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}

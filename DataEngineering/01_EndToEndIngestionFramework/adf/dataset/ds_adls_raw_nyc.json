@@ -1,0 +1,20 @@
+{
+	"name": "ds_adls_raw_nyc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_linggar_project",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "nyc_trips_latest.json",
+				"folderPath": "nyc_ridehailing",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": {}
+	}
+}

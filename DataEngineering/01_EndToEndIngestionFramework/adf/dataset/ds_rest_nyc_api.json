@@ -1,0 +1,15 @@
+{
+	"name": "ds_rest_nyc_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_rest_ridehailing_api",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "/resource/4p5c-cbgn.json?$limit=5000"
+		},
+		"schema": []
+	}
+}

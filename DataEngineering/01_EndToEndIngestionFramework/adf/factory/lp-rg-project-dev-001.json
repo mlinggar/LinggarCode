@@ -1,9 +1,0 @@
-{
-	"name": "lp-rg-project-dev-001",
-	"location": "swedencentral",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "e0d35423-e8db-4bc6-8f93-4d2c1e65e835",
-		"tenantId": "ffdedc28-6176-4a7d-9446-a03aee141989"
-	}
-}

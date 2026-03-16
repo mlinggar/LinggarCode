@@ -1,0 +1,9 @@
+{
+	"name": "adf-linggar-project-dev-001",
+	"location": "swedencentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6db51235-e6b6-45ca-ba35-acf66348a3dd",
+		"tenantId": "ffdedc28-6176-4a7d-9446-a03aee141989"
+	}
+}

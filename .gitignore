@@ -1,0 +1,23 @@
+# MacOS system files
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# IDEs
+.vscode/
+.idea/
+
+# Azure/Databricks
+.databricks/

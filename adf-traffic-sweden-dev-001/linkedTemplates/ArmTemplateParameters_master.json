@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-traffic-sweden-dev-001"
+		},
+		"ls_azure_function_ingestor_functionKey": {
+			"value": ""
+		},
+		"ls_azure_function_ingestor_properties_typeProperties_functionAppUrl": {
+			"value": "https://func-traffic-sweden-dev-001.azurewebsites.net"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

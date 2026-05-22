@@ -14,6 +14,18 @@
 		"ls_azure_function_ingestor_properties_typeProperties_functionAppUrl": {
 			"type": "string",
 			"defaultValue": "https://func-traffic-sweden-dev-001.azurewebsites.net"
+		},
+		"trg_hourly_trafikverket_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"type": "string",
+			"defaultValue": "trafikverket"
+		},
+		"trg_hourly_weather_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"type": "string",
+			"defaultValue": "openweathermap"
+		},
+		"trg_weekly_openstreetmap_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"type": "string",
+			"defaultValue": "openstreetmap"
 		}
 	},
 	"variables": {
@@ -98,7 +110,9 @@
 							"referenceName": "pl_ingest_nordic_traffic_data",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"ingestor_type": "[parameters('trg_hourly_trafikverket_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type')]"
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -128,7 +142,9 @@
 							"referenceName": "pl_ingest_nordic_traffic_data",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"ingestor_type": "[parameters('trg_hourly_weather_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type')]"
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -158,7 +174,9 @@
 							"referenceName": "pl_ingest_nordic_traffic_data",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"ingestor_type": "[parameters('trg_weekly_openstreetmap_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type')]"
+						}
 					}
 				],
 				"type": "ScheduleTrigger",

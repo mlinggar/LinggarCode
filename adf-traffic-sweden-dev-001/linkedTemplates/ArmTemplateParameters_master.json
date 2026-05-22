@@ -11,6 +11,15 @@
 		"ls_azure_function_ingestor_properties_typeProperties_functionAppUrl": {
 			"value": "https://func-traffic-sweden-dev-001.azurewebsites.net"
 		},
+		"trg_hourly_trafikverket_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"value": "trafikverket"
+		},
+		"trg_hourly_weather_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"value": "openweathermap"
+		},
+		"trg_weekly_openstreetmap_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"value": "openstreetmap"
+		},
 		"containerUri": {
 			"value": ""
 		},

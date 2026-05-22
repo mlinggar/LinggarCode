@@ -15,6 +15,18 @@
 			"type": "string",
 			"defaultValue": "https://func-traffic-sweden-dev-001.azurewebsites.net"
 		},
+		"trg_hourly_trafikverket_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"type": "string",
+			"defaultValue": "trafikverket"
+		},
+		"trg_hourly_weather_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"type": "string",
+			"defaultValue": "openweathermap"
+		},
+		"trg_weekly_openstreetmap_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+			"type": "string",
+			"defaultValue": "openstreetmap"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,6 +59,15 @@
 					},
 					"ls_azure_function_ingestor_properties_typeProperties_functionAppUrl": {
 						"value": "[parameters('ls_azure_function_ingestor_properties_typeProperties_functionAppUrl')]"
+					},
+					"trg_hourly_trafikverket_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+						"value": "[parameters('trg_hourly_trafikverket_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type')]"
+					},
+					"trg_hourly_weather_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+						"value": "[parameters('trg_hourly_weather_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type')]"
+					},
+					"trg_weekly_openstreetmap_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type": {
+						"value": "[parameters('trg_weekly_openstreetmap_properties_pl_ingest_nordic_traffic_data_parameters_ingestor_type')]"
 					}
 				}
 			},

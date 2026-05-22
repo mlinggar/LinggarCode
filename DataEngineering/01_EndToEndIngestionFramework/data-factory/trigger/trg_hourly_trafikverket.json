@@ -2,7 +2,7 @@
 	"name": "trg_hourly_trafikverket",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {

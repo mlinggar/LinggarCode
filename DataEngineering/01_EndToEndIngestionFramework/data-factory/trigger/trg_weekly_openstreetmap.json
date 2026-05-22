@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "pl_ingest_nordic_traffic_data",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"ingestor_type": "openstreetmap"
 				}
 			}
 		],

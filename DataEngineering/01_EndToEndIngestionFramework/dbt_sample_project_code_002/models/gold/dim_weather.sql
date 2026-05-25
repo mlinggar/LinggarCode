@@ -3,13 +3,14 @@
 WITH ranked_weather AS (
     SELECT 
         city_id,
-        city_name,
+        UPPER(TRIM(COALESCE(city_name, 'UNKNOWN'))) AS city_name,
         temperature AS temp_celsius,
         weather_main AS weather_condition,
         weather_description,
         wind_speed,
-        ROW_NUMBER() OVER (PARTITION BY city_id ORDER BY measure_timestamp DESC) as rn
-    FROM DEV_SILVER.OPENWEATHER.SILVER_OPENWEATHER
+        -- FIXED: Partitioned by city_name instead of third-party city_id to align with backend changes
+        ROW_NUMBER() OVER (PARTITION BY UPPER(TRIM(COALESCE(city_name, 'UNKNOWN'))) ORDER BY measure_timestamp DESC) as rn
+    FROM {{ source('openweather', 'silver_openweather') }}
 )
 
 SELECT 

@@ -1,197 +1,200 @@
 node_id,asset_label,latitude,longitude
-Virtual_Node_001,75 O Avfart Hammarby sj√∂stad - avfart Sickla (Hammarbytunneln) - Virtual Sensor,59.30922641901558,18.113791135774047
-Virtual_Node_002,E20 O Trafikplats V√§rtan (mot Liding√∂) - Virtual Sensor,59.40141428902559,18.148022051990516
-Virtual_Node_003,E4/E20 S Karlberg (163) ‚Äì Pampas (162) - Virtual Sensor,59.366419030689826,18.146017284853023
-Virtual_Node_004,E45 J√§rntorget - Centrum - Virtual Sensor,59.34508535747153,18.124575109171523
-Virtual_Node_005,E4 N S√∂rentorp (170) - Kista (171) - Virtual Sensor,59.274262982470795,18.097006329230858
-Virtual_Node_006,Nord-Sydaxeln S Infart S√∂derledstunneln - Avfart Folkungatan - Virtual Sensor,59.2742591232538,17.98542799299901
-Virtual_Node_007,75 V Utfart √Örstatunneln - Nyboda (√Örstal√§nken) - Virtual Sensor,59.258593377946916,18.00092574281892
-Virtual_Node_008,E4/E20 S Salem (145) - Hallinge - Virtual Sensor,59.387888183323994,18.148310837705417
-Virtual_Node_009,E4 N Norrtull (164) - Haga S√∂dra (165) - Virtual Sensor,59.345478401878914,18.089885811931918
-Virtual_Node_010,P√•fart fr√•n Sicklarondellen - Virtual Sensor,59.36259161244737,17.970439410323326
-Virtual_Node_011,E18 V Kista (Uppsalav√§gen S till Kymlingel√§nken) - Virtual Sensor,59.252593519087334,17.988894308573208
-Virtual_Node_012,Albanotunneln - Virtual Sensor,59.40448557634592,18.10130035382161
-Virtual_Node_013,√Öbro - Kalleb√§ck - Virtual Sensor,59.38249082252807,17.969612316769243
-Virtual_Node_014,E4 S Trafikplats Gl√§djen - Virtual Sensor,59.28327425770853,18.0007616102835
-Virtual_Node_015,75 O Infart S√∂dra l√§nken - avfart Huddingev√§gen (Hammarbytunneln) - Virtual Sensor,59.27839199475314,18.078346757873316
-Virtual_Node_016,Nord-Sydaxeln N Johanneshovsbron - Virtual Sensor,59.278644721576555,18.10697903953854
-Virtual_Node_017,E4/E20 N Lilla Essingen (159) - Fredh√§ll (160) - Virtual Sensor,59.297978758873526,18.09899225190052
-Virtual_Node_018,75 V Avfart Hammarby sj√∂stad - avfart Nyn√§sv√§gen (√Örstatunneln) - Virtual Sensor,59.33326102906116,18.013453861892113
-Virtual_Node_019,Pampas (162) - Fredh√§ll (160) - Virtual Sensor,59.318411202982745,18.11103584426951
-Virtual_Node_020,E4 N Viby - Virtual Sensor,59.29589666243169,18.01604981749936
-Virtual_Node_021,Komettunneln - Virtual Sensor,59.34719646315558,18.033679939631853
-Virtual_Node_022,Koppartunneln - Virtual Sensor,59.27161901770433,18.117898281023606
-Virtual_Node_023,E4 N Stora V√§sby - Virtual Sensor,59.29604314376564,18.098526579809445
-Virtual_Node_024,E18 O √Ñrvinge (159) - Kista (160) - Virtual Sensor,59.307917894926995,18.138444682098836
-Virtual_Node_025,73 N Skr√§ddartunneln - Virtual Sensor,59.32227119747473,18.10012257846007
-Virtual_Node_026,Nord-Sydaxeln N P√•fart G√∂tgatan - Ufart S√∂derledstunneln - Virtual Sensor,59.374928153822886,18.082261720667095
-Virtual_Node_027,Karolinertunneln - Virtual Sensor,59.28124780514534,17.987334953565618
-Virtual_Node_028,E4/E20 N Trafikplats Karlberg Norra - Virtual Sensor,59.33157751014618,18.042143160611886
-Virtual_Node_029,E4/E20 N Saltskog (143) - Moraberg (144) - Virtual Sensor,59.34408633101793,18.021640473536344
-Virtual_Node_030,Nyboda (S√∂dert√§ljev√§gen till √Örstal√§nken) - Virtual Sensor,59.256732066035205,18.017397928675816
-Virtual_Node_031,E4/E20 N Karlberg (163) ‚Äì Norrtull (164) - Virtual Sensor,59.346507176304236,18.16320211095049
-Virtual_Node_032,E18 O Barkarbybron - Hjulsta (156) - Virtual Sensor,59.27658385978997,18.047219544933352
-Virtual_Node_033,Stj√§rntunneln - Virtual Sensor,59.25970825487765,18.147009311035422
-Virtual_Node_034,Nord-Sydaxeln S Blekholmstunneln - Virtual Sensor,59.40112168596054,18.09482772519945
-Virtual_Node_035,Kalleb√§ck - √Örbo - Virtual Sensor,59.403801125291935,18.12756226070833
-Virtual_Node_036,75 V Avfart Huddingev√§gen - utfart S√∂dra l√§nken (√Örstatunneln) - Virtual Sensor,59.37864357569864,18.06912741862104
-Virtual_Node_037,Frescatimotet - Ekhagenrondellen - Virtual Sensor,59.29803820306774,18.083980776925273
-Virtual_Node_038,E20 V Avfart Roslagsv√§gen till avfart Roslagstull (Norrtullstunneln) - Virtual Sensor,59.264927538241025,18.067103538763774
-Virtual_Node_039,E4/E20 N Hallinge - Salem (145) - Virtual Sensor,59.358777284241945,18.00764859755961
-Virtual_Node_040,E4/E20 N Bornsj√∂n - Sj√∂n Aspen - Virtual Sensor,59.31972439899834,18.113090423052302
-Virtual_Node_041,Kosmostunneln - Virtual Sensor,59.268826117575166,18.024754472488173
-Virtual_Node_042,E4/E20 S Sj√∂n Aspen - Bornsj√∂n - Virtual Sensor,59.32852830561781,17.973463193286292
-Virtual_Node_043,E4 N Rotebro Norra - Virtual Sensor,59.254802163378436,18.097694459181433
-Virtual_Node_044,Ekhagenrondellen - Frescatimotet - Virtual Sensor,59.39479126433261,18.00402213588141
-Virtual_Node_045,Bagartunneln - Virtual Sensor,59.29070479705601,18.156691716870583
-Virtual_Node_046,E18 O √Ñrvinge (159) - Rinkeby (158) - Virtual Sensor,59.35530356549664,18.159385715400518
-Virtual_Node_047,Yxtunneln - Virtual Sensor,59.299173772174306,18.15157287804409
-Virtual_Node_048,Rinkeby (Kymlingel√§nken till Ulvsundav√§gen) - Virtual Sensor,59.33251088338845,18.04263174005109
-Virtual_Node_049,Ekhagenrondellen ‚Äì Bergshamra - Virtual Sensor,59.33677364469493,17.971691323305773
-Virtual_Node_050,E4/E20 N Fittja (147) - V√•rby (148) - Virtual Sensor,59.278876712884085,18.154263712517544
-Virtual_Node_051,E4/E20 S Gr√∂ndal (157) - Nybohov (156) - Virtual Sensor,59.404433540442334,18.054236829663463
-Virtual_Node_052,E4 N Norrsunda - Virtual Sensor,59.373321251737785,18.161930963808732
-Virtual_Node_053,Bj√∂rktunneln - Virtual Sensor,59.39961983065027,18.16132399541785
-Virtual_Node_054,E4 N J√§rva krog (169) - S√∂rentorp (170) - Virtual Sensor,59.392472376068426,18.13920189109347
-Virtual_Node_055,75 V Avfart Nyn√§sv√§gen - avfart Huddingev√§gen (√Örstatunneln) - Virtual Sensor,59.34496399660978,18.027489778413916
-Virtual_Node_056,E4 N Kista (171) - Tureberg (172) - Virtual Sensor,59.396799877603705,18.045619545720385
-Virtual_Node_057,E4 S Kista (171) - S√∂rentorp (170) - Virtual Sensor,59.26345880032831,18.13882733430337
-Virtual_Node_058,Silvertunneln 03-01 - Virtual Sensor,59.280657257987066,18.031984401031256
-Virtual_Node_059,E18 V Tensta (157) - Hjulsta (156) - Virtual Sensor,59.25653636622569,18.00249854933722
-Virtual_Node_060,Nord-Sydaxeln S Gullmarsplan - Sofielundsplan - Virtual Sensor,59.30135285292213,18.07996025249167
-Virtual_Node_061,E4/E20 N Sj√∂n Aspen - Hallunda S (146) - Virtual Sensor,59.31148836635032,18.155830954832155
-Virtual_Node_062,E4/E20 N V√§stberga (154) - Nyboda (155) - Virtual Sensor,59.292715845083826,18.107805959334996
-Virtual_Node_063,E4/E20 S Trafikplats Karlberg (163) - Virtual Sensor,59.381898001464315,18.082612234017873
-Virtual_Node_064,E18 V Kista (160) - √Ñrvinge (159) - Virtual Sensor,59.30638053227098,17.988035298754152
-Virtual_Node_065,Trafikplats Bergshamra (Norrt√§ljev√§gen till Bergshamrav√§gen) - Virtual Sensor,59.294249521549986,18.091601445339833
-Virtual_Node_066,E4/E20 N Nyboda (S√∂dert√§ljev√§gen till Essingeleden) - Virtual Sensor,59.33613137330532,18.166610770020853
-Virtual_Node_067,Nord-Sydaxeln S Tegelbacken - Infart S√∂derledstunneln - Virtual Sensor,59.27184787599597,17.996616803047306
-Virtual_Node_068,Talltunneln - Virtual Sensor,59.37765151692065,18.072265930472746
-Virtual_Node_069,273 N Arlanda - Virtual Sensor,59.26122810298877,18.14407461438559
-Virtual_Node_070,E4/E20 N V√§stertorp (153) - V√§stberga (154) - Virtual Sensor,59.407201909856084,18.11675372355084
-Virtual_Node_071,222 V Nacka - infart Sicklatunneln - Virtual Sensor,59.37285916308747,18.108003148199053
-Virtual_Node_072,E20 O P√•fart Roslagsv√§gen - Hjorthagsavfarten (Rymdtunneln) - Virtual Sensor,59.281094509045474,18.109096816797422
-Virtual_Node_073,Nyboda (Essingeleden till √Örstal√§nken) - Virtual Sensor,59.25018353873978,18.04049823024395
-Virtual_Node_074,E4 S Tureberg (172) - Kista (171) - Virtual Sensor,59.37977382855278,18.0273183688529
-Virtual_Node_075,E4 S Upplands V√§sby - Virtual Sensor,59.36239717501562,18.130472231095702
-Virtual_Node_076,E20 V P√•fart Roslagsv√§gen till avfart Uppsalav√§gen (Norrtullstunneln) - Virtual Sensor,59.36594114688656,18.130622678935836
-Virtual_Node_077,Vattugatan - Centralbron S - Virtual Sensor,59.37270325546975,18.14201446371602
-Virtual_Node_078,265 V Arningev√§gen - Bergtorpsv√§gen (L√∂ttingetunneln mot E4) - Virtual Sensor,59.26114714427746,18.151248110511293
-Virtual_Node_079,226 N Silvertunneln 07-04 - Virtual Sensor,59.306654516567086,18.070868479772187
-Virtual_Node_080,E18 V Rinkeby (158) - Tensta (157) - Virtual Sensor,59.26783904952402,18.06890325893744
-Virtual_Node_081,Soltunneln - Virtual Sensor,59.387396548140096,18.128259035793356
-Virtual_Node_082,Murartunneln - Virtual Sensor,59.34902770029241,18.098592786155553
-Virtual_Node_083,E18 O Tensta (157) - Rinkeby (158) - Virtual Sensor,59.30224368397643,18.10899337545154
-Virtual_Node_084,226 S Guldtunneln 04-07 - Virtual Sensor,59.25946933604577,18.12775853388722
-Virtual_Node_085,73 N Sandsborgsplan - Sofielundsplan - Virtual Sensor,59.29905717147451,18.146601068363513
-Virtual_Node_086,E4/E20 S Sj√∂n Tullan - Moraberg (144) - Virtual Sensor,59.301329331524286,18.03619903137031
-Virtual_Node_087,E22 Trafikplats Lund S(sydv√§st) - Trafikplats Kronetorp N(nord√∂st) - Virtual Sensor,59.36603698853409,18.04371659052799
-Virtual_Node_088,E4 S Haga Norra (167) - Haga S√∂dra (165) - Virtual Sensor,59.35130919541684,17.987396387968175
-Virtual_Node_089,E4/E20 S V√•rby (148)-Fittja (147) - Virtual Sensor,59.391254038812214,18.084256028199235
-Virtual_Node_090,E4/E20 S Fittja (147) ‚Äì Hallunda N (146a) - Virtual Sensor,59.32485438802591,17.97578845475935
-Virtual_Node_091,Trafikplats Bergshamra (Bergshamrav√§gen till Norrt√§ljev√§gen) - Virtual Sensor,59.268435079350134,18.061719603626493
-Virtual_Node_092,E4 N Rotebro Trafikplats - Virtual Sensor,59.36341916595568,18.077128926941516
-Virtual_Node_093,Guldtunneln 01-03 - Virtual Sensor,59.371025607778705,18.02590825042566
-Virtual_Node_094,279 N Rinkeby (Ulvsundav√§gen till Kymlingel√§nken) - Virtual Sensor,59.33910435161112,18.086766652113802
-Virtual_Node_095,E4 N Trafikplats M√§rsta - Virtual Sensor,59.37265474879273,17.97470004998781
-Virtual_Node_096,E20 Trafikplats Saltskog (Str√§ngn√§sv√§gen till S√∂dert√§ljev√§gen) - Virtual Sensor,59.328307295418306,17.97606963774984
-Virtual_Node_097,E18 V Kista (Uppsalav√§gen N till Kymlingel√§nken) - Virtual Sensor,59.33293725270112,18.13312011213193
-Virtual_Node_098,Nyboda (√Örstal√§nken till S√∂dert√§ljev√§gen) - Virtual Sensor,59.317706562937374,18.040638128282254
-Virtual_Node_099,E4 N Haga S√∂dra (165) - Linv√§vartorpet (166) - Virtual Sensor,59.25336706027906,17.994012102530377
-Virtual_Node_100,265 O Bergtorpsv√§gen-Arningev√§gen (L√∂ttingetunneln mot E18) - Virtual Sensor,59.26656262831893,18.07304865201096
-Virtual_Node_101,E4/E20 S Hallunda S (146b) ‚Äì Sj√∂n Aspen - Virtual Sensor,59.25432866970988,18.122598710619723
-Virtual_Node_102,Avfart Hammarby sj√∂stad - Hammarbyrondellen - Virtual Sensor,59.35112566580221,18.011764205499368
-Virtual_Node_103,E4/E20 S Nyboda (Essingeleden till S√∂dert√§ljev√§gen) - Virtual Sensor,59.299596956972216,18.0931780951638
-Virtual_Node_104,E4/E20 N Hallunda N (146a) - Fittja (147) - Virtual Sensor,59.330671310586354,17.985669492998753
-Virtual_Node_105,Hjulsta (156) mot Enk√∂ping - Virtual Sensor,59.394510635828176,17.97893634423372
-Virtual_Node_106,E20 V Ropsten till V√§rtan - Virtual Sensor,59.289186756663824,18.07487092631363
-Virtual_Node_107,Avfart till Sicklarondellen - Virtual Sensor,59.3149612676857,18.07672702432202
-Virtual_Node_108,Sotartunneln - Virtual Sensor,59.37018818216689,18.09608598029964
-Virtual_Node_109,Galaxtunneln - Virtual Sensor,59.28590770647866,18.11381826674453
-Virtual_Node_110,E4 S Haga S√∂dra (165) ‚Äì Infart Karolinertunneln - Virtual Sensor,59.26161678557261,18.163770415892508
-Virtual_Node_111,E4/E20 S Moraberg (144) - Saltskog (143) - Virtual Sensor,59.295660232466204,18.07186006966024
-Virtual_Node_112,E18 O Kista (Kymlingel√§nken till Uppsalav√§gen S) - Virtual Sensor,59.27509540596064,18.03319129458825
-Virtual_Node_113,Nord-Sydaxeln S Barnhusbron - Blekholmstunneln - Virtual Sensor,59.398051624374816,18.127637238953742
-Virtual_Node_114,E4/E20 Trafikplats Pampas (162) - Virtual Sensor,59.37859926073031,18.022766450252416
-Virtual_Node_115,Nord-Sydaxeln N Sofielundsplan - Gullmarsplan - Virtual Sensor,59.35064460104167,18.056394284141128
-Virtual_Node_116,75 O Nyboda - Infart S√∂dra l√§nken (√Örstal√§nken) - Virtual Sensor,59.38873369443004,17.984291276268454
-Virtual_Node_117,E4/E20 N Nybohov (156) - Gr√∂ndal (157) - Virtual Sensor,59.37788753230386,17.97367014868309
-Virtual_Node_118,279 N Rinkeby (Ulvsundav√§gen till Hjulstav√§gen) - Virtual Sensor,59.27915120942177,18.161129682935584
-Virtual_Node_119,E20 O P√•fart Roslagstull till p√•fart Roslagsv√§gen (G√§rdestunneln) - Virtual Sensor,59.3921094397584,18.13579602410244
-Virtual_Node_120,Centralbron - Infart Klaratunneln - Virtual Sensor,59.335594758706506,18.10779484121874
-Virtual_Node_121,E4 S S√∂rentorp (170) - J√§rva krog (169) - Virtual Sensor,59.37849042482625,18.050390588882856
-Virtual_Node_122,"E6, Norr B√§ckebolsmotet - Tingstadstunneln - Virtual Sensor",59.392674607987765,18.003258864014168
-Virtual_Node_123,E4 S Stora V√§sby - Virtual Sensor,59.3001805559955,17.999887408534217
-Virtual_Node_124,Skeppartunneln mot Sofielundsplan - Virtual Sensor,59.26690830792443,18.01864857963292
-Virtual_Node_125,75 O Avfart Sickla - V√§rmd√∂leden (Nackatunneln) - Virtual Sensor,59.28576962600671,18.078445332941225
-Virtual_Node_126,Nord-Sydaxeln S Avfart Folkungatan - Avfart Skanstull - Virtual Sensor,59.317637246180205,18.11151918454001
-Virtual_Node_127,E4 S J√§rva krog (169) - Haga Norra (167) - Virtual Sensor,59.3801823625476,18.100639475343545
-Virtual_Node_128,E4/E20 N Sj√∂n Tullan - Hallinge - Virtual Sensor,59.38701689332102,18.02458677938919
-Virtual_Node_129,E20 V V√§rtan - Hjorthagsp√•farten - Virtual Sensor,59.25041234088499,18.15957305613264
-Virtual_Node_130,E4/E20 N Fredh√§ll (160) - Tomteboda (162) - Virtual Sensor,59.331019568412415,18.116179383339155
-Virtual_Node_131,E18 O Hjulsta (156) - Tensta (157) - Virtual Sensor,59.31608576050381,18.07947081050228
-Virtual_Node_132,Kista (Kymlingel√§nken till Uppsalav√§gen N) - Virtual Sensor,59.28483724967532,18.09094414924687
-Virtual_Node_133,E4/E20 S Nyboda (155) - V√§stberga (154) - Virtual Sensor,59.268478458773394,18.05252001248556
-Virtual_Node_134,Nord-Sydaxeln S Johanneshovsbron - Virtual Sensor,59.303318427424585,18.018146197900233
-Virtual_Node_135,E4 S Norrsunda - Virtual Sensor,59.40016555262601,18.039794535730252
-Virtual_Node_136,E20 O Avfart Roslagsv√§gen till p√•fart Roslagstull (G√§rdestunneln) - Virtual Sensor,59.30101246912332,18.120169222092873
-Virtual_Node_137,E4/E20 S Fredh√§ll (160) - Gr√∂ndal (157) - Virtual Sensor,59.33230649947894,17.971478697725953
-Virtual_Node_138,Bergshamra ‚Äì Ekhagenrondellen - Virtual Sensor,59.36178303342323,17.991814528101383
-Virtual_Node_139,Bronstunneln - Virtual Sensor,59.30748073638069,17.97780052840435
-Virtual_Node_140,E20 O Hjorthagsavfarten till V√§rtan - Virtual Sensor,59.40478513323536,17.976745760463793
-Virtual_Node_141,Planettunneln - Virtual Sensor,59.40329156719074,18.139692116802202
-Virtual_Node_142,E4/E20 N Salem (145) - Bornsj√∂n - Virtual Sensor,59.28958516733206,18.109331571876005
-Virtual_Node_143,Avfart √Örstal√§nken - √Öbyrondellen - Virtual Sensor,59.328859760942784,18.063434765817465
-Virtual_Node_144,Trafikplats Bergshamra (Bergshamrav√§gen till Norrt√§ljev√§gen) - Virtual Sensor,59.297440529570686,17.9881668321302
-Virtual_Node_145,E4 N Haga S√∂dra (165) - Haga Norra (167) - Virtual Sensor,59.2948744791004,18.066923175023366
-Virtual_Node_146,E4 N Trafikplats Bredden - Virtual Sensor,59.25520191157673,18.063294354156113
-Virtual_Node_147,E18 O Tpl Hjulsta (156) mot Kista - Virtual Sensor,59.34683029343679,18.003240373982003
-Virtual_Node_148,273 S Arlanda - Virtual Sensor,59.32972864371662,18.055370329847594
-Virtual_Node_149,Roslagstunneln - Virtual Sensor,59.257536600200005,18.048300946879476
-Virtual_Node_150,E4 N Trafikplats Gl√§djen - Virtual Sensor,59.29388343427786,18.091770019610443
-Virtual_Node_151,E4/E20 S Bornsj√∂n ‚Äì Salem (145) - Virtual Sensor,59.39462254175467,18.09561873017353
-Virtual_Node_152,279 N Rissne - Rinkeby - Virtual Sensor,59.28762990250672,17.97766080195441
-Virtual_Node_153,E4/E20 S Hallunda N (146a) ‚Äì Hallunda S (146b) - Virtual Sensor,59.272483179534596,18.043522522925294
-Virtual_Node_154,T√•ngtunneln - Virtual Sensor,59.32761244164441,18.093771983142847
-Virtual_Node_155,E4 S Viby - Virtual Sensor,59.4070040726577,18.06922725171602
-Virtual_Node_156,E22 Trafikplats Kronetorp N(sydv√§st) -Trafikplats Lund S(sydv√§st) - Virtual Sensor,59.28802884344184,18.139897968237666
-Virtual_Node_157,E4 S Rotebro Trafikplats - Virtual Sensor,59.35684168758495,18.100338726323788
-Virtual_Node_158,E4/E20 S Hallinge - Sj√∂n Tullan - Virtual Sensor,59.3711591384526,18.001186885416285
-Virtual_Node_159,E4/E20 N Hallunda S (146b) - Hallunda N (146a) - Virtual Sensor,59.28732200703879,17.982713749480087
-Virtual_Node_160,E20 O G√§rdestunneln (avfart E4 till p√•fart Uppsalav√§gen) - Virtual Sensor,59.3658146157779,18.097083855641262
-Virtual_Node_161,Nyboda (√Örstal√§nken till Essingeleden) - Virtual Sensor,59.308145301235086,17.973902262108325
-Virtual_Node_162,E4 N Upplands V√§sby - Virtual Sensor,59.35046893289498,18.085755116254692
-Virtual_Node_163,E4 S Rotebro Norra - Virtual Sensor,59.350664753721745,18.15664604828499
-Virtual_Node_164,265 V Tunberget-H√§ggvik - Virtual Sensor,59.335023949451966,18.083694835575177
-Virtual_Node_165,E4/E20 N Trafikplats Karlberg S√∂dra - Virtual Sensor,59.26374636320871,18.046233985241305
-Virtual_Node_166,S√•gtunneln - Virtual Sensor,59.38294839929428,18.097257643688472
-Virtual_Node_167,M√•ntunneln - Virtual Sensor,59.30062481039548,18.0602505780983
-Virtual_Node_168,75 O Avfart Huddingev√§gen - avfart Gullmarsplan (Hammarbytunneln) - Virtual Sensor,59.27914296166398,18.07772335786319
-Virtual_Node_169,E18 V Rinkeby (Kymlingel√§nken till Hjulstav√§gen) - Virtual Sensor,59.25582402264877,18.156892961755304
-Virtual_Node_170,E4 S Trafikplats M√§rsta - Virtual Sensor,59.34384287091012,18.045820527560156
-Virtual_Node_171,E4/E20 N Tomteboda (162) - Karlberg (163) - Virtual Sensor,59.35771029789477,18.160838112764782
-Virtual_Node_172,Nord-Sydaxeln N Utfart S√∂derledstunneln - Tegelbacken - Virtual Sensor,59.25195405262846,18.149670128391215
-Virtual_Node_173,Vattugatan - Centralbron N - Virtual Sensor,59.33123488932789,18.007758226957858
-Virtual_Node_174,M√•lartunneln - Virtual Sensor,59.285539324031674,17.982472260175033
-Virtual_Node_175,Nord-Sydaxeln N Infart S√∂derledstunneln - P√•fart G√∂tgatan - Virtual Sensor,59.35252764646552,17.988755600275486
-Virtual_Node_176,Trafikplats Bergshamra (Roslagsv√§gen till Norrt√§ljev√§gen) - Virtual Sensor,59.277198628640804,17.97224436513031
-Virtual_Node_177,E4 S Eugeniatunneln ‚Äì Karlberg (163) - Virtual Sensor,59.3598500380964,17.987488592151184
-Virtual_Node_178,E4/E20 S V√§stberga (154) - V√§stertorp (153) - Virtual Sensor,59.31117765540809,18.10520135468327
-Virtual_Node_179,E20 O P√•fart Uppsalav√§gen till avfart Roslagsv√§gen (G√§rdestunneln) - Virtual Sensor,59.39917679819788,17.982837729692047
-Virtual_Node_180,Trafikplats Bergshamra (Norrt√§ljev√§gen till Roslagsv√§gen) - Virtual Sensor,59.27130335106336,18.032395126058752
-Virtual_Node_181,Trafikplats Bergshamra (Bergshamrav√§gen till Roslagsv√§gen) - Virtual Sensor,59.30387061616805,18.13757506219389
-Virtual_Node_182,E4/E20 N Gr√∂ndal (157) - Lilla Essingen - Virtual Sensor,59.267455763398495,17.973254387147165
-Virtual_Node_183,E4/E20 S Nybohov (156) - Nyboda (155) - Virtual Sensor,59.397250978924575,18.131493696517786
-Virtual_Node_184,E18 O Rinkeby (158) - √Ñrvinge (159) - Virtual Sensor,59.38967429654096,18.02497095495468
-Virtual_Node_185,E18 O Rinkeby (Hjulstav√§gen till Kymlingel√§nken) - Virtual Sensor,59.290570660434426,17.99223296552433
-Virtual_Node_186,Nord-Sydaxeln N Tegelbacken - Klarabergsviadukten - Virtual Sensor,59.354897447365474,18.10794743307283
-Virtual_Node_187,E4/E20 N Nyboda (155) - Nybohov (156) - Virtual Sensor,59.380055552032196,18.094388569355978
-Virtual_Node_188,E4 N Haga Norra (167) - J√§rva krog (169) - Virtual Sensor,59.338132129855914,18.14409440270541
-Virtual_Node_189,75 O Avfart Gullmarsplan - avfart Nyn√§sv√§gen (Hammarbytunneln) - Virtual Sensor,59.33404409253696,18.11561420876078
-Virtual_Node_190,E4/E20 N Moraberg (144) - Sj√∂n Tullan - Virtual Sensor,59.28799636654408,18.12929618607697
-Virtual_Node_191,E45 Centrum - J√§rntorget - Virtual Sensor,59.26419644284895,18.02500691451426
-Virtual_Node_192,75 O √Öbyrondellen - infart Hammarbytunneln - Virtual Sensor,59.39285452127253,18.004087908755945
-Virtual_Node_193,E20 V Avfart Roslagstull till p√•fart Roslagsv√§gen (Norrtullstunneln) - Virtual Sensor,59.39336688914614,18.11872295032817
-Virtual_Node_194,E4 N Trafikplats Kista - Virtual Sensor,59.35059623316373,18.129966947853454
-Virtual_Node_195,Skeppartunneln mot v√§g 73 - Virtual Sensor,59.303544766567796,18.166701028400134
-Virtual_Node_196,Stallm√§startunneln - Virtual Sensor,59.30517353193803,18.051123535382285
+Virtual_Node_001,222 V Nacka - infart Sicklatunneln - Virtual Sensor,59.314244814261684,18.11338008733722
+Virtual_Node_002,226 N Silvertunneln 07-04 - Virtual Sensor,59.38338571676919,18.091325063384687
+Virtual_Node_003,226 S Guldtunneln 04-07 - Virtual Sensor,59.357139273017374,18.002062394399207
+Virtual_Node_004,265 O Bergtorpsvägen-Arningevägen (Löttingetunneln mot E18) - Virtual Sensor,59.34113901810365,18.014460594255137
+Virtual_Node_005,265 V Arningevägen - Bergtorpsvägen (Löttingetunneln mot E4) - Virtual Sensor,59.288022236853095,18.132368670164333
+Virtual_Node_006,265 V Tunberget-Häggvik - Virtual Sensor,59.28801934244035,18.085628649545534
+Virtual_Node_007,273 N Arlanda - Virtual Sensor,59.276270033460186,17.99007152825866
+Virtual_Node_008,273 S Arlanda - Virtual Sensor,59.373241137493,18.004835446858564
+Virtual_Node_009,279 N Rinkeby (Ulvsundavägen till Hjulstavägen) - Virtual Sensor,59.34143380140919,18.09476028305729
+Virtual_Node_010,279 N Rinkeby (Ulvsundavägen till Kymlingelänken) - Virtual Sensor,59.35426870933553,17.989409853415395
+Virtual_Node_011,279 N Rissne - Rinkeby - Virtual Sensor,59.2717701393155,18.0143292882268
+Virtual_Node_012,73 N Sandsborgsplan - Sofielundsplan - Virtual Sensor,59.38568918225944,18.076397406298653
+Virtual_Node_013,73 N Skräddartunneln - Virtual Sensor,59.36919311689606,18.09930323163083
+Virtual_Node_014,75 O Avfart Gullmarsplan - avfart Nynäsvägen (Hammarbytunneln) - Virtual Sensor,59.294780693281396,18.092913801520417
+Virtual_Node_015,75 O Avfart Hammarby sjöstad - avfart Sickla (Hammarbytunneln) - Virtual Sensor,59.29111899606485,18.02448308951369
+Virtual_Node_016,75 O Avfart Huddingevägen - avfart Gullmarsplan (Hammarbytunneln) - Virtual Sensor,59.29130854118242,18.102548675415605
+Virtual_Node_017,75 O Avfart Nynäsvägen - avfart Hammarby sjöstad (Hammarbytunneln) - Virtual Sensor,59.305809069155146,18.026559853999487
+Virtual_Node_018,75 O Avfart Sickla - Värmdöleden (Nackatunneln) - Virtual Sensor,59.33227077179587,18.040663951705483
+Virtual_Node_019,75 O Infart Södra länken - avfart Huddingevägen (Hammarbytunneln) - Virtual Sensor,59.32113340223706,18.108038624818885
+Virtual_Node_020,75 O Nyboda - Infart Södra länken (Årstalänken) - Virtual Sensor,59.30424749682377,18.092541263847554
+Virtual_Node_021,75 O Åbyrondellen - infart Hammarbytunneln - Virtual Sensor,59.34272234736669,18.124475745679067
+Virtual_Node_022,75 V Avfart Hammarby sjöstad - avfart Nynäsvägen (Årstatunneln) - Virtual Sensor,59.28603926327825,18.093818062768054
+Virtual_Node_023,75 V Avfart Huddingevägen - utfart Södra länken (Årstatunneln) - Virtual Sensor,59.30435735782423,18.079529376533674
+Virtual_Node_024,75 V Avfart Nynäsvägen - avfart Huddingevägen (Årstatunneln) - Virtual Sensor,59.313263421195245,18.003587962852496
+Virtual_Node_025,75 V Utfart Årstatunneln - Nyboda (Årstalänken) - Virtual Sensor,59.324028398106044,18.04743452848951
+Virtual_Node_026,75 V Värmdöleden - avfart Hammarby sjöstad (Sicklatunneln) - Virtual Sensor,59.36352111536716,18.031032378829075
+Virtual_Node_027,Albanotunneln - Virtual Sensor,59.293260853859,18.027638342940655
+Virtual_Node_028,Avfart Hammarby sjöstad - Hammarbyrondellen - Virtual Sensor,59.33100813260964,18.14428168876039
+Virtual_Node_029,Avfart till Sicklarondellen - Virtual Sensor,59.34038974826345,18.051495635946683
+Virtual_Node_030,Avfart Årstalänken - Åbyrondellen - Virtual Sensor,59.2748740495264,18.131327448828337
+Virtual_Node_031,Bagartunneln - Virtual Sensor,59.34220538222817,18.089582180159564
+Virtual_Node_032,Bergshamra – Ekhagenrondellen - Virtual Sensor,59.289762894842475,18.115769808566665
+Virtual_Node_033,Björktunneln - Virtual Sensor,59.27710619115824,18.06902193489683
+Virtual_Node_034,Bronstunneln - Virtual Sensor,59.383166264470404,18.080904621540217
+Virtual_Node_035,Centralbron - Infart Klaratunneln - Virtual Sensor,59.38517584396895,18.06740283101102
+Virtual_Node_036,E18 O Barkarbybron - Hjulsta (156) - Virtual Sensor,59.36630768177398,18.019838878047686
+Virtual_Node_037,E18 O Hjulsta (156) - Tensta (157) - Virtual Sensor,59.305853652300804,18.10419233844184
+Virtual_Node_038,E18 O Kista (Kymlingelänken till Uppsalavägen S) - Virtual Sensor,59.28102065368077,18.033523577990536
+Virtual_Node_039,E18 O Rinkeby (158) - Ärvinge (159) - Virtual Sensor,59.351407963181465,17.992490554629033
+Virtual_Node_040,E18 O Rinkeby (Hjulstavägen till Kymlingelänken) - Virtual Sensor,59.32211829924876,18.09187556734515
+Virtual_Node_041,E18 O Tensta (157) - Rinkeby (158) - Virtual Sensor,59.28394458818138,18.01693770870513
+Virtual_Node_042,E18 O Tpl Hjulsta (156) mot Kista - Virtual Sensor,59.32872122921336,18.139073373496466
+Virtual_Node_043,E18 O Ärvinge (159) - Kista (160) - Virtual Sensor,59.27342662253383,18.141228572320415
+Virtual_Node_044,E18 O Ärvinge (159) - Rinkeby (158) - Virtual Sensor,59.378418448249455,18.13497830243527
+Virtual_Node_045,E18 V Kista (160) - Ärvinge (159) - Virtual Sensor,59.300353597792004,18.04782539204087
+Virtual_Node_046,E18 V Kista (Uppsalavägen N till Kymlingelänken) - Virtual Sensor,59.34880267412248,17.99107305864462
+Virtual_Node_047,E18 V Kista (Uppsalavägen S till Kymlingelänken) - Virtual Sensor,59.306705329130736,18.137130970014034
+Virtual_Node_048,E18 V Rinkeby (158) - Tensta (157) - Virtual Sensor,59.33170816254134,18.05710946373077
+Virtual_Node_049,E18 V Rinkeby (Kymlingelänken till Hjulstavägen) - Virtual Sensor,59.3349052335212,18.143264771046987
+Virtual_Node_050,E18 V Tensta (157) - Hjulsta (156) - Virtual Sensor,59.29148253466307,18.14277919633428
+Virtual_Node_051,E20 O Avfart Roslagsvägen till påfart Roslagstull (Gärdestunneln) - Virtual Sensor,59.38565015533175,18.12508151287478
+Virtual_Node_052,E20 O Gärdestunneln (avfart E4 till påfart Uppsalavägen) - Virtual Sensor,59.362315938803334,18.035711822731134
+Virtual_Node_053,E20 O Hjorthagsavfarten till Värtan - Virtual Sensor,59.382039872987704,18.050215636576308
+Virtual_Node_054,E20 O Påfart Roslagstull till påfart Roslagsvägen (Gärdestunneln) - Virtual Sensor,59.37667928205132,18.124781867442696
+Virtual_Node_055,E20 O Påfart Roslagsvägen - Hjorthagsavfarten (Rymdtunneln) - Virtual Sensor,59.34104799745733,18.039307520825005
+Virtual_Node_056,E20 O Påfart Uppsalavägen till avfart Roslagsvägen (Gärdestunneln) - Virtual Sensor,59.379924908202774,18.015718839469773
+Virtual_Node_057,E20 O Trafikplats Värtan (mot Lidingö) - Virtual Sensor,59.27991910024623,18.077688201993336
+Virtual_Node_058,E20 Trafikplats Saltskog (Strängnäsvägen till Södertäljevägen) - Virtual Sensor,59.2928179434903,18.138384763865727
+Virtual_Node_059,E20 V Avfart Roslagstull till påfart Roslagsvägen (Norrtullstunneln) - Virtual Sensor,59.27472727466927,18.099964767467995
+Virtual_Node_060,E20 V Avfart Roslagsvägen till avfart Roslagstull (Norrtullstunneln) - Virtual Sensor,59.308339639691596,18.079809787214298
+Virtual_Node_061,E20 V Påfart Roslagsvägen till avfart Uppsalavägen (Norrtullstunneln) - Virtual Sensor,59.31594127476274,18.004148239003325
+Virtual_Node_062,E20 V Ropsten till Värtan - Virtual Sensor,59.30186188381287,18.087001156271867
+Virtual_Node_063,E20 V Värtan - Hjorthagspåfarten - Virtual Sensor,59.36874850109824,18.14700861601668
+Virtual_Node_064,E22 Trafikplats Kronetorp N(sydväst) -Trafikplats Lund S(sydväst) - Virtual Sensor,59.312110399203235,18.011013442437843
+Virtual_Node_065,E22 Trafikplats Lund S(sydväst) - Trafikplats Kronetorp N(nordöst) - Virtual Sensor,59.30301214116249,18.0715327443782
+Virtual_Node_066,E4 N Haga Norra (167) - Järva krog (169) - Virtual Sensor,59.33442352997899,18.128979691508473
+Virtual_Node_067,E4 N Haga Södra (165) - Haga Norra (167) - Virtual Sensor,59.28621090699698,18.10712297884067
+Virtual_Node_068,E4 N Haga Södra (165) - Linvävartorpet (166) - Virtual Sensor,59.365563637690485,18.100122518559242
+Virtual_Node_069,E4 N Järva krog (169) - Sörentorp (170) - Virtual Sensor,59.278246077241576,18.100997453437937
+Virtual_Node_070,E4 N Kista (171) - Tureberg (172) - Virtual Sensor,59.387726432392064,18.04611858419516
+Virtual_Node_071,E4 N Norrsunda - Virtual Sensor,59.3619693723156,18.035574695082317
+Virtual_Node_072,E4 N Norrtull (164) - Haga Södra (165) - Virtual Sensor,59.293145881784106,18.11809778487656
+Virtual_Node_073,E4 N Rotebro Norra - Virtual Sensor,59.26996265405484,18.11821814314867
+Virtual_Node_074,E4 N Rotebro Trafikplats - Virtual Sensor,59.36715537141458,18.127331570972817
+Virtual_Node_075,E4 N Stora Väsby - Virtual Sensor,59.354122881261716,18.134718488409035
+Virtual_Node_076,E4 N Sörentorp (170) - Kista (171) - Virtual Sensor,59.356780860164925,18.07041478381775
+Virtual_Node_077,E4 N Trafikplats Bredden - Virtual Sensor,59.361852441602316,18.068842607149953
+Virtual_Node_078,E4 N Trafikplats Glädjen - Virtual Sensor,59.27818535820809,18.116327228634685
+Virtual_Node_079,E4 N Trafikplats Kista - Virtual Sensor,59.312315887425314,18.092594228924444
+Virtual_Node_080,E4 N Trafikplats Märsta - Virtual Sensor,59.28320428714302,18.100914700361233
+Virtual_Node_081,E4 N Upplands Väsby - Virtual Sensor,59.37287241110508,18.115926827109774
+Virtual_Node_082,E4 N Viby - Virtual Sensor,59.34409577521931,18.13100085469081
+Virtual_Node_083,E4 S Eugeniatunneln – Karlberg (163) - Virtual Sensor,59.30900776298232,18.042679225096247
+Virtual_Node_084,E4 S Haga Norra (167) - Haga Södra (165) - Virtual Sensor,59.27692700203433,18.04869327242239
+Virtual_Node_085,E4 S Haga Södra (165) – Infart Karolinertunneln - Virtual Sensor,59.306617878605884,18.003637110374537
+Virtual_Node_086,E4 S Järva krog (169) - Haga Norra (167) - Virtual Sensor,59.308321998643216,18.08112482255939
+Virtual_Node_087,E4 S Kista (171) - Sörentorp (170) - Virtual Sensor,59.35685274140057,17.99435076380748
+Virtual_Node_088,E4 S Norrsunda - Virtual Sensor,59.34580689656263,18.063095682901192
+Virtual_Node_089,E4 S Rotebro Norra - Virtual Sensor,59.37576552910916,18.075423141553213
+Virtual_Node_090,E4 S Rotebro Trafikplats - Virtual Sensor,59.325965791019435,18.034446600340527
+Virtual_Node_091,E4 S Stora Väsby - Virtual Sensor,59.2836513095126,18.08313332169104
+Virtual_Node_092,E4 S Sörentorp (170) - Järva krog (169) - Virtual Sensor,59.354889374466765,17.99348003999025
+Virtual_Node_093,E4 S Trafikplats Glädjen - Virtual Sensor,59.36059420583403,17.994575710199875
+Virtual_Node_094,E4 S Trafikplats Märsta - Virtual Sensor,59.33665326370834,18.120216089705547
+Virtual_Node_095,E4 S Tureberg (172) - Kista (171) - Virtual Sensor,59.36181606159455,18.046230502625804
+Virtual_Node_096,E4 S Upplands Väsby - Virtual Sensor,59.32855547156373,18.008929682024302
+Virtual_Node_097,E4 S Viby - Virtual Sensor,59.332027939525844,18.072158921608768
+Virtual_Node_098,E4/E20 N Bornsjön - Sjön Aspen - Virtual Sensor,59.32060492220303,18.111798968495776
+Virtual_Node_099,E4/E20 N Fittja (147) - Vårby (148) - Virtual Sensor,59.27235029520929,18.023131364399497
+Virtual_Node_100,E4/E20 N Fredhäll (160) - Tomteboda (162) - Virtual Sensor,59.2822469712392,18.08826247613104
+Virtual_Node_101,E4/E20 N Gröndal (157) - Lilla Essingen - Virtual Sensor,59.27307150228241,18.002255594399003
+Virtual_Node_102,E4/E20 N Hallinge - Salem (145) - Virtual Sensor,59.34566924935166,17.99686907538698
+Virtual_Node_103,E4/E20 N Hallunda N (146a) - Fittja (147) - Virtual Sensor,59.30702271772916,18.073616741050905
+Virtual_Node_104,E4/E20 N Hallunda S (146b) - Hallunda N (146a) - Virtual Sensor,59.33032848293977,18.075101619457616
+Virtual_Node_105,E4/E20 N Karlberg (163) – Norrtull (164) - Virtual Sensor,59.37820797687113,18.090588784239714
+Virtual_Node_106,E4/E20 N Lilla Essingen (159) - Fredhäll (160) - Virtual Sensor,59.29921506749787,18.104774613395627
+Virtual_Node_107,E4/E20 N Moraberg (144) - Sjön Tullan - Virtual Sensor,59.31854595076428,18.144736332714004
+Virtual_Node_108,E4/E20 N Nyboda (155) - Nybohov (156) - Virtual Sensor,59.35996613662517,18.071208055728192
+Virtual_Node_109,E4/E20 N Nyboda (Södertäljevägen till Essingeleden) - Virtual Sensor,59.296755779859,18.040273035670598
+Virtual_Node_110,E4/E20 N Nybohov (156) - Gröndal (157) - Virtual Sensor,59.27853758917946,18.11582979116299
+Virtual_Node_111,E4/E20 N Salem (145) - Bornsjön - Virtual Sensor,59.304070174349654,18.03193316020193
+Virtual_Node_112,E4/E20 N Saltskog (143) - Moraberg (144) - Virtual Sensor,59.28864655447048,18.058835427312903
+Virtual_Node_113,E4/E20 N Sjön Aspen - Hallunda S (146) - Virtual Sensor,59.38086371828111,18.001153021014762
+Virtual_Node_114,E4/E20 N Sjön Tullan - Hallinge - Virtual Sensor,59.36627444554773,17.992656118946474
+Virtual_Node_115,E4/E20 N Tomteboda (162) - Karlberg (163) - Virtual Sensor,59.34530845078125,18.14262374634847
+Virtual_Node_116,E4/E20 N Trafikplats Karlberg Norra - Virtual Sensor,59.37387527082253,18.122356819281954
+Virtual_Node_117,E4/E20 N Trafikplats Karlberg Södra - Virtual Sensor,59.365740649227895,18.09995587297499
+Virtual_Node_118,E4/E20 N Västberga (154) - Nyboda (155) - Virtual Sensor,59.291688407066324,18.054032471106282
+Virtual_Node_119,E4/E20 N Västertorp (153) - Västberga (154) - Virtual Sensor,59.3764070798188,18.016327091211334
+Virtual_Node_120,E4/E20 S Bornsjön – Salem (145) - Virtual Sensor,59.33402106902988,18.013629926827374
+Virtual_Node_121,E4/E20 S Fittja (147) – Hallunda N (146a) - Virtual Sensor,59.36619281861969,18.028638863706334
+Virtual_Node_122,E4/E20 S Fredhäll (160) - Gröndal (157) - Virtual Sensor,59.376830955990826,18.07647626635298
+Virtual_Node_123,E4/E20 S Gröndal (157) - Nybohov (156) - Virtual Sensor,59.307460416996626,18.10293534763201
+Virtual_Node_124,E4/E20 S Hallinge - Sjön Tullan - Virtual Sensor,59.282506230943326,18.094231580274837
+Virtual_Node_125,E4/E20 S Hallunda N (146a) – Hallunda S (146b) - Virtual Sensor,59.296652219505035,18.033389423511352
+Virtual_Node_126,E4/E20 S Hallunda S (146b) – Sjön Aspen - Virtual Sensor,59.32055293463515,18.14137844490611
+Virtual_Node_127,E4/E20 S Karlberg (163) – Pampas (162) - Virtual Sensor,59.367461771910705,18.106663506671325
+Virtual_Node_128,E4/E20 S Moraberg (144) - Saltskog (143) - Virtual Sensor,59.372587669990764,18.077296648401823
+Virtual_Node_129,E4/E20 S Nyboda (155) - Västberga (154) - Virtual Sensor,59.27013425566375,18.086475319397497
+Virtual_Node_130,E4/E20 S Nyboda (Essingeleden till Södertäljevägen) - Virtual Sensor,59.33058967630931,18.055736009988447
+Virtual_Node_131,E4/E20 S Nybohov (156) - Nyboda (155) - Virtual Sensor,59.31938932037786,18.028236958320186
+Virtual_Node_132,E4/E20 S Salem (145) - Hallinge - Virtual Sensor,59.295952937256494,18.045555628584204
+Virtual_Node_133,E4/E20 S Sjön Aspen - Bornsjön - Virtual Sensor,59.283683844080045,18.1098553776743
+Virtual_Node_134,E4/E20 S Sjön Tullan - Moraberg (144) - Virtual Sensor,59.309813820568436,17.99090295818076
+Virtual_Node_135,E4/E20 S Trafikplats Karlberg (163) - Virtual Sensor,59.382449164469506,18.007171622481106
+Virtual_Node_136,E4/E20 S Västberga (154) - Västertorp (153) - Virtual Sensor,59.308084351842496,17.99596042272348
+Virtual_Node_137,E4/E20 S Vårby (148)-Fittja (147) - Virtual Sensor,59.33155487460921,17.995116608371035
+Virtual_Node_138,E4/E20 Trafikplats Pampas (162) - Virtual Sensor,59.35366227506743,18.125473693441762
+Virtual_Node_139,E45 Centrum - Järntorget - Virtual Sensor,59.312935552285516,18.101185257500802
+Virtual_Node_140,E45 Järntorget - Centrum - Virtual Sensor,59.38591384992652,18.064467812653973
+Virtual_Node_141,"E6, Norr Bäckebolsmotet - Tingstadstunneln - Virtual Sensor",59.384793675393055,18.00425346570416
+Virtual_Node_142,Ekhagenrondellen - Frescatimotet - Virtual Sensor,59.299513875499045,18.067258540018692
+Virtual_Node_143,Ekhagenrondellen – Bergshamra - Virtual Sensor,59.32896982070709,18.064355483324892
+Virtual_Node_144,Frescatimotet - Ekhagenrondellen - Virtual Sensor,59.30540539717801,18.016312299185604
+Virtual_Node_145,Galaxtunneln - Virtual Sensor,59.3034808593253,18.058016263878077
+Virtual_Node_146,Guldtunneln 01-03 - Virtual Sensor,59.27372643368255,18.05236075750358
+Virtual_Node_147,Hjulsta (156) mot Enköping - Virtual Sensor,59.342447720077594,18.087136015688355
+Virtual_Node_148,Kallebäck - Årbo - Virtual Sensor,59.329621482787466,18.09021498413882
+Virtual_Node_149,Karolinertunneln - Virtual Sensor,59.27547745015,17.995848641563526
+Virtual_Node_150,Kista (Kymlingelänken till Uppsalavägen N) - Virtual Sensor,59.3027375757084,18.048538018340235
+Virtual_Node_151,Komettunneln - Virtual Sensor,59.378291906316,18.088737586514277
+Virtual_Node_152,Koppartunneln - Virtual Sensor,59.29804742688004,18.069101801372813
+Virtual_Node_153,Kosmostunneln - Virtual Sensor,59.28668738465095,18.12563837459013
+Virtual_Node_154,Murartunneln - Virtual Sensor,59.32803433123331,18.093990981059033
+Virtual_Node_155,Målartunneln - Virtual Sensor,59.387578054493275,18.01466950833303
+Virtual_Node_156,Måntunneln - Virtual Sensor,59.298346632581385,17.999890999584068
+Virtual_Node_157,Nord-Sydaxeln N Infart Söderledstunneln - Påfart Götgatan - Virtual Sensor,59.34995626568871,18.09138708451301
+Virtual_Node_158,Nord-Sydaxeln N Johanneshovsbron - Virtual Sensor,59.36069435383945,17.99284180968666
+Virtual_Node_159,Nord-Sydaxeln N Påfart Götgatan - Ufart Söderledstunneln - Virtual Sensor,59.297816505279094,18.082324093003756
+Virtual_Node_160,Nord-Sydaxeln N Sofielundsplan - Gullmarsplan - Virtual Sensor,59.35668596183343,18.139036838627995
+Virtual_Node_161,Nord-Sydaxeln N Tegelbacken - Klarabergsviadukten - Virtual Sensor,59.313433975926316,18.08067586846014
+Virtual_Node_162,Nord-Sydaxeln N Utfart Söderledstunneln - Tegelbacken - Virtual Sensor,59.345176699671235,18.050707188193044
+Virtual_Node_163,Nord-Sydaxeln S Avfart Folkungatan - Avfart Skanstull - Virtual Sensor,59.34532356529131,18.091526114950778
+Virtual_Node_164,Nord-Sydaxeln S Barnhusbron - Blekholmstunneln - Virtual Sensor,59.33359296208897,18.061920462478643
+Virtual_Node_165,Nord-Sydaxeln S Blekholmstunneln - Virtual Sensor,59.280134772406534,18.07589868629055
+Virtual_Node_166,Nord-Sydaxeln S Gullmarsplan - Sofielundsplan - Virtual Sensor,59.36953629947071,18.139234369404242
+Virtual_Node_167,Nord-Sydaxeln S Infart Söderledstunneln - Avfart Folkungatan - Virtual Sensor,59.30779360779661,18.050376422048124
+Virtual_Node_168,Nord-Sydaxeln S Johanneshovsbron - Virtual Sensor,59.29168222124799,18.142390490211827
+Virtual_Node_169,Nord-Sydaxeln S Tegelbacken - Infart Söderledstunneln - Virtual Sensor,59.27419301698657,18.13345610271297
+Virtual_Node_170,Norrtullstunneln (avfart Uppsalavägen till påfart E4) - Virtual Sensor,59.34020715318259,18.01992658156629
+Virtual_Node_171,Nyboda (Essingeleden till Årstalänken) - Virtual Sensor,59.35060772342108,17.999697808140027
+Virtual_Node_172,Nyboda (Södertäljevägen till Årstalänken) - Virtual Sensor,59.271290539471345,18.00472448022039
+Virtual_Node_173,Nyboda (Årstalänken till Essingeleden) - Virtual Sensor,59.33075116699592,17.99151549210425
+Virtual_Node_174,Nyboda (Årstalänken till Södertäljevägen) - Virtual Sensor,59.29647949302375,18.003710873720948
+Virtual_Node_175,Pampas (162) - Fredhäll (160) - Virtual Sensor,59.346720734849136,18.097881083746618
+Virtual_Node_176,Planettunneln - Virtual Sensor,59.2902239714806,17.999990183753635
+Virtual_Node_177,Påfart från Sicklarondellen - Virtual Sensor,59.3522125285723,18.039636100847
+Virtual_Node_178,Rinkeby (Kymlingelänken till Ulvsundavägen) - Virtual Sensor,59.31570824155607,18.123780049755112
+Virtual_Node_179,Roslagstunneln - Virtual Sensor,59.38170759864841,17.992323509717732
+Virtual_Node_180,Silvertunneln 03-01 - Virtual Sensor,59.285802513297526,18.11891495721423
+Virtual_Node_181,Skeppartunneln mot Sofielundsplan - Virtual Sensor,59.310227962126035,18.033696763963743
+Virtual_Node_182,Skeppartunneln mot väg 73 - Virtual Sensor,59.28291682254888,18.007506372419464
+Virtual_Node_183,Soltunneln - Virtual Sensor,59.38026323419343,18.100077946458264
+Virtual_Node_184,Sotartunneln - Virtual Sensor,59.374580722405724,18.089230855484782
+Virtual_Node_185,Stallmästartunneln - Virtual Sensor,59.30025299532582,18.128995522164328
+Virtual_Node_186,Stjärntunneln - Virtual Sensor,59.348498085524106,18.106211367008623
+Virtual_Node_187,Sågtunneln - Virtual Sensor,59.367366664024146,18.117156948861577
+Virtual_Node_188,Talltunneln - Virtual Sensor,59.33592409739194,18.03372553161141
+Virtual_Node_189,Trafikplats Bergshamra (Bergshamravägen till Norrtäljevägen) - Virtual Sensor,59.332858069402725,18.016990327004756
+Virtual_Node_190,Trafikplats Bergshamra (Bergshamravägen till Norrtäljevägen) - Virtual Sensor,59.29832227490806,18.108698360262537
+Virtual_Node_191,Trafikplats Bergshamra (Bergshamravägen till Roslagsvägen) - Virtual Sensor,59.28047233213671,18.117693558282763
+Virtual_Node_192,Trafikplats Bergshamra (Norrtäljevägen till Bergshamravägen) - Virtual Sensor,59.3769658909544,18.147080822720106
+Virtual_Node_193,Trafikplats Bergshamra (Norrtäljevägen till Roslagsvägen) - Virtual Sensor,59.3773501668596,18.054618828305827
+Virtual_Node_194,Trafikplats Bergshamra (Roslagsvägen till Norrtäljevägen) - Virtual Sensor,59.3452721748728,18.048122893726845
+Virtual_Node_195,Tångtunneln - Virtual Sensor,59.309983574925845,18.11282607371872
+Virtual_Node_196,Vattugatan - Centralbron N - Virtual Sensor,59.311205148953526,18.043128566440483
+Virtual_Node_197,Vattugatan - Centralbron S - Virtual Sensor,59.35641468146443,18.13752117209657
+Virtual_Node_198,Yxtunneln - Virtual Sensor,59.376953231194314,18.12594604029488
+Virtual_Node_199,Åbro - Kallebäck - Virtual Sensor,59.37575037091182,18.057239044380005

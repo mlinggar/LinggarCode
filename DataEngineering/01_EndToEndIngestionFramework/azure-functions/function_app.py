@@ -4,13 +4,12 @@ import logging
 import azure.functions as func
 
 # --- FORCE AZURE LINUX TO FIND YOUR SRC FOLDER ---
-# This grabs the absolute directory where function_app.py lives
 script_dir = os.path.dirname(os.path.abspath(__file__))
 if script_dir not in sys.path:
     sys.path.insert(0, script_dir)
 # -------------------------------------------------
 
-# Now Azure can safely step inside your src/ folder without throwing a ModuleNotFoundError
+# Import your custom modules out of your src folder structure
 from src.TrafikverketIngestor import TrafikverketIngestor
 from src.OpenWeatherMapIngestor import OpenWeatherMapIngestor
 from src.OpenStreetMapIngestor import OpenStreetMapIngestor
@@ -30,19 +29,21 @@ def RunIngestor(req: func.HttpRequest) -> func.HttpResponse:
     if not ingestor_type:
         return func.HttpResponse("Execution Rejected: 'ingestor_type' parameter is missing.", status_code=400)
 
+    # Clean up the input string to match what ADF sends without case-sensitivity breaking it
+    target_ingestor = ingestor_type.strip().lower()
+
     try:
-        # Route logic
-        if ingestor_type.lower() == 'trafikverket':
+        if target_ingestor == 'trafikverket':
             logging.info("Routing execution pipeline to TrafikverketIngestor...")
             ingestor = TrafikverketIngestor()
             ingestor.execute_source_to_raw()
             
-        elif ingestor_type.lower() == 'openweathermap':
+        elif target_ingestor in ['openweathermap', 'weather']:
             logging.info("Routing execution pipeline to OpenWeatherMapIngestor...")
             ingestor = OpenWeatherMapIngestor()
             ingestor.execute_source_to_raw()
             
-        elif ingestor_type.lower() == 'openstreetmap':
+        elif target_ingestor in ['openstreetmap', 'osm']:
             logging.info("Routing execution pipeline to OpenStreetMapIngestor...")
             ingestor = OpenStreetMapIngestor()
             ingestor.execute_source_to_raw()

@@ -1,9 +1,9 @@
 {{ config(materialized='view') }}
 
--- Part 1: Extract all real cameras and assets from OpenStreetMap
+-- Part 1: Extract real camera assets from OpenStreetMap
 WITH osm_assets AS (
     SELECT 
-        node_id,
+        node_id::VARCHAR AS node_id,
         ST_Y(asset_geo) AS latitude,  
         ST_X(asset_geo) AS longitude, 
         asset_type,
@@ -13,10 +13,10 @@ WITH osm_assets AS (
     WHERE asset_geo IS NOT NULL
 ),
 
--- Part 2: Extract all the new virtual coordinates (Now using clean lowercase names!)
+-- Part 2: Extract our custom virtual coordinates from the seed file
 virtual_assets AS (
     SELECT 
-        node_id,       
+        node_id::VARCHAR AS node_id, 
         latitude,      
         longitude,     
         'Virtual Sensor' AS asset_type,
@@ -25,7 +25,6 @@ virtual_assets AS (
     FROM {{ ref('dim_map_assets_virtual_additions') }}
 )
 
--- Combine both datasets cleanly together
 SELECT * FROM osm_assets
 UNION ALL
 SELECT * FROM virtual_assets

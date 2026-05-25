@@ -2,7 +2,7 @@
 
 WITH ranked_traffic AS (
     SELECT 
-        route_id,
+        route_id, 
         measure_time,
         speed,
         travel_time,
@@ -13,7 +13,7 @@ WITH ranked_traffic AS (
 )
 
 SELECT 
-    route_id,       
+    route_id::VARCHAR AS route_id, -- Safely convert to a Text String here instead!      
     city_id,        
     measure_time AS last_updated,
     speed,

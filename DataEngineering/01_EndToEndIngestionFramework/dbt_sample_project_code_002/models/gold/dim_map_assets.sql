@@ -3,26 +3,35 @@
 -- Part 1: Extract real camera assets from OpenStreetMap
 WITH osm_assets AS (
     SELECT 
-        node_id::VARCHAR AS node_id,
-        ST_Y(asset_geo) AS latitude,  
-        ST_X(asset_geo) AS longitude, 
-        asset_type,
-        operator,
-        CONCAT(UPPER(SUBSTR(asset_type, 1, 1)), LOWER(SUBSTR(asset_type, 2)), ' (', COALESCE(operator, 'Unknown'), ')') AS asset_label
+        -- Bulletproof relationship key handling nulls and casing
+        UPPER(TRIM(COALESCE(node_id::VARCHAR, ''))) AS node_id,
+        COALESCE(ST_Y(asset_geo), 0.00) AS latitude,  
+        COALESCE(ST_X(asset_geo), 0.00) AS longitude, 
+        COALESCE(asset_type, 'Unknown') AS asset_type,
+        COALESCE(operator, 'Unknown') AS operator,
+        CONCAT(
+            UPPER(SUBSTR(COALESCE(asset_type, 'Unknown'), 1, 1)), 
+            LOWER(SUBSTR(COALESCE(asset_type, 'Unknown'), 2)), 
+            ' (', 
+            COALESCE(operator, 'Unknown'), 
+            ')'
+        ) AS asset_label
     FROM DEV_SILVER.OPENSTREETMAP.SILVER_OPENSTREETMAP
-    WHERE asset_geo IS NOT NULL
+    WHERE asset_geo IS NOT NULL 
+      AND node_id IS NOT NULL
 ),
 
 -- Part 2: Extract our custom virtual coordinates from the seed file
 virtual_assets AS (
     SELECT 
-        node_id::VARCHAR AS node_id, 
-        latitude,      
-        longitude,     
+        UPPER(TRIM(COALESCE(node_id::VARCHAR, ''))) AS node_id, 
+        COALESCE(latitude, 0.00) AS latitude,      
+        COALESCE(longitude, 0.00) AS longitude,     
         'Virtual Sensor' AS asset_type,
         'System' AS operator,
-        asset_label    
+        COALESCE(asset_label, 'Virtual Sensor (System)') AS asset_label    
     FROM {{ ref('dim_map_assets_virtual_additions') }}
+    WHERE node_id IS NOT NULL
 )
 
 SELECT * FROM osm_assets

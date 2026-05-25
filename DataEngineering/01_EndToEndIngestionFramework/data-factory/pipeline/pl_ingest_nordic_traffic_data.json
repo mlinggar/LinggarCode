@@ -1,0 +1,38 @@
+{
+	"name": "pl_ingest_nordic_traffic_data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Trigger Python Ingestor",
+				"type": "AzureFunctionActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"functionName": "RunIngestor",
+					"body": {
+						"value": "@json(concat('{\"ingestor_type\": \"', pipeline().parameters.ingestor_type, '\"}'))",
+						"type": "Expression"
+					},
+					"method": "POST"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_azure_function_ingestor",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"ingestor_type": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}

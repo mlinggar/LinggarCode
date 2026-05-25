@@ -1,0 +1,17 @@
+user:
+  outputs:
+    default:
+      account: ZRVRHJU-JE51205
+      auth_type: password
+      client_session_keep_alive: false
+      connect_retries: 3
+      connect_timeout: 30
+      database: DEV_GOLD
+      password: LingPangestu1994!
+      retry_on_database_errors: true
+      role: ACCOUNTADMIN
+      schema: dbt_lpangesti
+      type: snowflake
+      user: mlinggar
+      warehouse: COMPUTE_WH
+  target: default

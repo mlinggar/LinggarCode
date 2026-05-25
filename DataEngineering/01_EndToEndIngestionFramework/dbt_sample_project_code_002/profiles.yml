@@ -7,7 +7,7 @@ user:
       connect_retries: 3
       connect_timeout: 30
       database: DEV_GOLD
-      password: MuhLingPang1994!
+      password: LingPangestu1994!
       retry_on_database_errors: true
       role: ACCOUNTADMIN
       schema: dbt_lpangesti

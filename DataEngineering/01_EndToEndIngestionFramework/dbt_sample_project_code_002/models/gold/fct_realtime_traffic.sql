@@ -36,7 +36,7 @@ SELECT
     END AS status_color,
     
     -- 5. TIMESTAMPS
-    measure_time AS metrics_measured_at,
+    TO_VARCHAR(measure_time, 'YYYY-MM-DD HH24:MI:SS') AS metrics_measured_at,
     load_timestamp AS dbt_loaded_at
 
 FROM {{ source('trafikverket', 'silver_trafikverket') }}

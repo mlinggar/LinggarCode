@@ -5,7 +5,7 @@ models:
     description: "The main fact table for traffic operations. Tracks real-time vehicle speeds and travel times linked by route and city hubs."
     columns:
       - name: traffic_fact_key
-        description: "Primary Key: Unique MD5 hash of route_id and the measurement timestamp."
+        description: "Primary Key: Unique MD5 hash combining the route_id and metrics_measured_at timestamp."
         tests:
           - unique
           - not_null
@@ -15,16 +15,18 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_routes')
-              field: route_key
+              arguments:
+                to: ref('dim_routes')
+                field: route_key
 
       - name: city_key
         description: "Foreign Key: Connects directly to dim_weather."
         tests:
           - not_null
           - relationships:
-              to: ref('dim_weather')
-              field: city_key
+              arguments:
+                to: ref('dim_weather')
+                field: city_key
 
       - name: live_speed_kmh
         description: "The current recorded velocity of traffic on the route in km/h."
@@ -38,41 +40,8 @@ models:
       - name: status_color
         description: "Dynamic mapping classification used by Tableau for rapid visual mapping alerts (Green, Yellow, Red)."
 
-  - name: dim_routes
-    description: "Dimension table containing the spatial line geometries and static details for tracked highways."
-    columns:
-      - name: route_key
-        description: "Primary Key: Unique MD5 hash of the route_id."
-        tests:
-          - unique
-          - not_null
+      - name: metrics_measured_at
+        description: "The operational event timestamp from the Trafikverket API indicating when the traffic metrics were actually recorded."
 
-      - name: route_geo
-        description: "The WGS84 native LineString spatial polyline object used for visualization maps."
-
-      - name: regional_division
-        description: "Dynamically parsed operational territory classification (Stockholm, Gothenburg, or Skåne Region)."
-
-  - name: dim_weather
-    description: "Dimension table housing the latest localized atmospheric and meteorological conditions for regional hubs."
-    columns:
-      - name: city_key
-        description: "Primary Key: Unique MD5 hash of the uppercase city name."
-        tests:
-          - unique
-          - not_null
-
-      - name: temp_celsius
-        description: "Current temperature reading in Celsius degrees."
-
-      - name: weather_condition
-        description: "Primary category of current weather states (e.g., CLOUDS, RAIN, CLEAR)."
-
-  - name: realtime_viisualisation_map
-    description: "The final presentation layer view. Flattens the star schema by joining the main fact table out to the dimensions specifically for Tableau mapping consumption."
-    columns:
-      - name: traffic_fact_key
-        description: "Unique row identifier serving as the primary marks context layer in Tableau."
-        tests:
-          - unique
-          - not_null
+      - name: dbt_loaded_at
+        description: "The system timestamp indicating when the record was processed and loaded into the Snowflake Gold Layer by dbt."

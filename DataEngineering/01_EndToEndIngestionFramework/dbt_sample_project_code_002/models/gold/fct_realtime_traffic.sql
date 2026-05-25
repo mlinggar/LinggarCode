@@ -1,46 +1,42 @@
-{{ config(materialized='view') }}
-
-WITH ranked_traffic AS (
-    SELECT 
-        -- Bulletproof relationship key handling casing and spacing consistently
-        UPPER(TRIM(COALESCE(route_id::VARCHAR, ''))) AS route_id, 
-        measure_time,
-        
-        -- Defend against null metrics with safe numeric fallbacks
-        COALESCE(speed, 0) AS speed,
-        COALESCE(travel_time, 0) AS travel_time,
-        COALESCE(traffic_status, 'Unknown') AS traffic_status,
-        
-        -- FIXED: Dynamic reference grouping mapping back to our weather dimension labels
-        CASE 
-            WHEN LOWER(route_name) LIKE '%göteborg%' OR LOWER(route_name) LIKE '%bäckebol%' THEN 'GOTHENBURG'
-            WHEN LOWER(route_name) LIKE '%malmö%' OR LOWER(route_name) LIKE '%lund%' OR LOWER(route_name) LIKE '%kronetorp%' THEN 'MALMO'
-            ELSE 'STOCKHOLM'
-        END AS associated_city, 
-        
-        -- Use the exact same bulletproof key transformation inside the window partition
-        ROW_NUMBER() OVER (
-            PARTITION BY UPPER(TRIM(COALESCE(route_id::VARCHAR, ''))) 
-            ORDER BY measure_time DESC
-        ) AS rn
-    FROM {{ source('trafikverket', 'silver_trafikverket') }}
-    -- Filter out rows missing vital relationship keys or sorting timestamps
-    WHERE route_id IS NOT NULL 
-      AND measure_time IS NOT NULL
-)
+{{ config(materialized='table') }}
 
 SELECT 
-    route_id,      
-    associated_city AS city_name,        
-    measure_time AS last_updated,
-    speed,
-    travel_time,
-    traffic_status,
+    -- 1. PRIMARY KEY (Unique hash identifier for this fact record)
+    MD5(CONCAT(UPPER(TRIM(route_id)), '_', CAST(measure_time AS VARCHAR))) AS traffic_fact_key,
+
+    -- 2. FOREIGN KEYS (To link out to your dimension tables)
+    MD5(UPPER(TRIM(route_id))) AS route_key,
+    
+    MD5(UPPER(TRIM(
+        CASE 
+            WHEN LOWER(route_name) LIKE '%göteborg%' OR LOWER(route_name) LIKE '%gothenburg%' THEN 'GOTHENBURG'
+            WHEN LOWER(route_name) LIKE '%skåne%' OR LOWER(route_name) LIKE '%malmö%' THEN 'MALMO'
+            ELSE 'STOCKHOLM'
+        END
+    ))) AS city_key,
+    
+    -- 3. DEGENERATE DIMENSIONS (Natural text strings kept for easy reference)
+    route_id,
     CASE 
-        WHEN traffic_status = 'freeflow' THEN 'Green'
-        WHEN traffic_status = 'heavy' THEN 'Red'
-        WHEN traffic_status = 'sluggish' THEN 'Yellow'
+        WHEN LOWER(route_name) LIKE '%göteborg%' OR LOWER(route_name) LIKE '%gothenburg%' THEN 'GOTHENBURG'
+        WHEN LOWER(route_name) LIKE '%skåne%' OR LOWER(route_name) LIKE '%malmö%' THEN 'MALMO'
+        ELSE 'STOCKHOLM'
+    END AS city_name,
+    
+    -- 4. FACT METRICS
+    speed AS live_speed_kmh,
+    travel_time AS travel_time_seconds,
+    traffic_status,
+    
+    CASE 
+        WHEN LOWER(traffic_status) LIKE '%free%' OR LOWER(traffic_status) LIKE '%normal%' THEN 'Green'
+        WHEN LOWER(traffic_status) LIKE '%heavy%' OR LOWER(traffic_status) LIKE '%slow%' THEN 'Yellow'
+        WHEN LOWER(traffic_status) LIKE '%congested%' OR LOWER(traffic_status) LIKE '%blocked%' THEN 'Red'
         ELSE 'Gray'
-    END AS status_color
-FROM ranked_traffic
-WHERE rn = 1
+    END AS status_color,
+    
+    -- 5. TIMESTAMPS
+    measure_time AS metrics_measured_at,
+    load_timestamp AS dbt_loaded_at
+
+FROM {{ source('trafikverket', 'silver_trafikverket') }}

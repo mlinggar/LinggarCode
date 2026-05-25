@@ -9,11 +9,21 @@ dim_routes AS (
 dim_weather AS (
     SELECT * FROM {{ ref('dim_weather') }}
 ),
-latest_traffic AS (
-    -- Filters for only the absolute newest records loaded into the warehouse
-    SELECT *
+deduplicated_traffic AS (
+    SELECT 
+        *,
+        -- Row number assigns '1' to the absolute newest record for each unique route
+        ROW_NUMBER() OVER (
+            PARTITION BY route_id 
+            ORDER BY metrics_measured_at DESC, dbt_loaded_at DESC
+        ) AS row_num
     FROM fact_traffic
-    WHERE dbt_loaded_at = (SELECT MAX(dbt_loaded_at) FROM fact_traffic)
+),
+latest_traffic AS (
+    -- Strictly filter out everything except the single most recent record per route
+    SELECT *
+    FROM deduplicated_traffic
+    WHERE row_num = 1
 )
 
 SELECT 
@@ -27,7 +37,8 @@ SELECT
     lt.travel_time_seconds,
     lt.traffic_status,
     lt.status_color,
-    lt.metrics_measured_at, 
+    lt.metrics_measured_at,
+    
     w.weather_condition,
     w.temp_celsius,
     w.wind_speed,

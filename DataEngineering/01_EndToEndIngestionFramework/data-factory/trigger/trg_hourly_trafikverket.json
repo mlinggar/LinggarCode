@@ -18,7 +18,7 @@
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Minute",
-				"interval": 5,
+				"interval": 30,
 				"startTime": "2026-05-21T15:58:00",
 				"timeZone": "W. Europe Standard Time"
 			}

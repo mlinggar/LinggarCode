@@ -118,8 +118,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 30,
 						"startTime": "2026-05-21T15:58:00",
 						"timeZone": "W. Europe Standard Time"
 					}
@@ -150,8 +150,8 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
+						"frequency": "Minute",
+						"interval": 30,
 						"startTime": "2026-05-21T15:56:00",
 						"timeZone": "W. Europe Standard Time"
 					}

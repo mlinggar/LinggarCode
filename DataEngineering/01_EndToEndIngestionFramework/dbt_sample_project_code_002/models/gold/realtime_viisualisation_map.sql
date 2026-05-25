@@ -8,36 +8,33 @@ dim_routes AS (
 ),
 dim_weather AS (
     SELECT * FROM {{ ref('dim_weather') }}
+),
+latest_traffic AS (
+    -- Filters for only the absolute newest records loaded into the warehouse
+    SELECT *
+    FROM fact_traffic
+    WHERE dbt_loaded_at = (SELECT MAX(dbt_loaded_at) FROM fact_traffic)
 )
 
 SELECT 
-    -- Unique Identifier for Tableau rows
-    f.traffic_fact_key,
-
-    -- Spatial Object from Route Dimension
+    lt.traffic_fact_key,
     r.route_geo AS geography_object,
-    
-    -- Route details from Route Dimension
-    f.route_id,
+    lt.route_id,
     r.route_name,
     r.regional_division,
     r.country_code,
-    
-    -- Metrics directly out of the Main Fact Table
-    f.live_speed_kmh,
-    f.travel_time_seconds,
-    f.traffic_status,
-    f.status_color,
-    f.metrics_measured_at,
-    
-    -- Atmospheric context from Weather Dimension
+    lt.live_speed_kmh,
+    lt.travel_time_seconds,
+    lt.traffic_status,
+    lt.status_color,
+    lt.metrics_measured_at, 
     w.weather_condition,
     w.temp_celsius,
     w.wind_speed,
-    f.city_name AS associated_city
+    lt.city_name AS associated_city
 
-FROM fact_traffic f
+FROM latest_traffic lt  
 INNER JOIN dim_routes r 
-    ON f.route_key = r.route_key
+    ON lt.route_key = r.route_key
 LEFT JOIN dim_weather w 
-    ON f.city_key = w.city_key
+    ON lt.city_key = w.city_key

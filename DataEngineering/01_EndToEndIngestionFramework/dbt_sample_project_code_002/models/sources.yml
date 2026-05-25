@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: openstreetmap
+    database: DEV_SILVER
+    schema: OPENSTREETMAP
+    tables:
+      - name: silver_openstreetmap
+
+  - name: trafikverket
+    database: DEV_SILVER
+    schema: TRAFIKVERKET
+    tables:
+      - name: silver_trafikverket
+
+  - name: openweather
+    database: DEV_SILVER
+    schema: OPENWEATHER
+    tables:
+      - name: silver_openweather

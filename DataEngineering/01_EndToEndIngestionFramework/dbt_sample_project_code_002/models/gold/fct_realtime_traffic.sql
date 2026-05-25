@@ -11,14 +11,19 @@ WITH ranked_traffic AS (
         COALESCE(travel_time, 0) AS travel_time,
         COALESCE(traffic_status, 'Unknown') AS traffic_status,
         
-        2673730 AS city_id, 
+        -- FIXED: Dynamic reference grouping mapping back to our weather dimension labels
+        CASE 
+            WHEN LOWER(route_name) LIKE '%göteborg%' OR LOWER(route_name) LIKE '%bäckebol%' THEN 'GOTHENBURG'
+            WHEN LOWER(route_name) LIKE '%malmö%' OR LOWER(route_name) LIKE '%lund%' OR LOWER(route_name) LIKE '%kronetorp%' THEN 'MALMO'
+            ELSE 'STOCKHOLM'
+        END AS associated_city, 
         
         -- Use the exact same bulletproof key transformation inside the window partition
         ROW_NUMBER() OVER (
             PARTITION BY UPPER(TRIM(COALESCE(route_id::VARCHAR, ''))) 
             ORDER BY measure_time DESC
         ) AS rn
-    FROM DEV_SILVER.TRAFIKVERKET.SILVER_TRAFIKVERKET
+    FROM {{ source('trafikverket', 'silver_trafikverket') }}
     -- Filter out rows missing vital relationship keys or sorting timestamps
     WHERE route_id IS NOT NULL 
       AND measure_time IS NOT NULL
@@ -26,7 +31,7 @@ WITH ranked_traffic AS (
 
 SELECT 
     route_id,      
-    city_id,        
+    associated_city AS city_name,        
     measure_time AS last_updated,
     speed,
     travel_time,

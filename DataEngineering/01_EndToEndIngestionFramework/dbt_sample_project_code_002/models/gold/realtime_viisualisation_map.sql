@@ -1,53 +1,39 @@
 {{ config(materialized='view') }}
 
 WITH fact_traffic AS (
-    SELECT * FROM {{ ref('fct_realtime_traffic') }} -- Replace with the actual name of your traffic fact model
+    SELECT * FROM {{ ref('fct_realtime_traffic') }}
 ),
 dim_routes AS (
-    SELECT * FROM {{ ref('dim_routes') }} -- Replace with the actual name of your routes model
+    SELECT * FROM {{ ref('dim_routes') }}
 ),
 dim_weather AS (
-    SELECT * FROM {{ ref('dim_weather') }} -- Replace with the actual name of your weather model
-),
-bridge_assets AS (
-    SELECT * FROM {{ ref('bridge_route_assets') }} -- Replace with the actual name of your bridge model
-),
-dim_assets AS (
-    SELECT * FROM {{ ref('dim_map_assets') }} -- Replace with the actual name of your map assets model
+    SELECT * FROM {{ ref('dim_weather') }}
 )
 
 SELECT 
-    -- 1. Spatial Data (For mapping)
-    a.latitude,
-    a.longitude,
+    -- 1. Spatial Data (The native highway line geometry)
+    r.route_geo AS geography_object,
     
-    -- 2. Route Information
+    -- 2. Descriptive Identifiers
     t.route_id,
     r.route_name,
-    a.asset_label,
+    r.regional_division,
     
-    -- 3. Live Traffic Metrics
+    -- 3. Core Traffic Performance Metrics (No more nulls!)
     t.speed AS live_speed_kmh,
     t.travel_time AS travel_time_seconds,
     t.traffic_status,
     t.status_color,
-    t.last_updated AS traffic_updated_at,
+    t.last_updated AS metrics_updated_at,
     
-    -- 4. Live Weather Metrics
+    -- 4. Contextual Weather Info
     w.weather_condition,
     w.temp_celsius,
-    w.wind_speed
-    
+    w.wind_speed,
+    t.city_name AS associated_city
+
 FROM fact_traffic t
--- INNER JOIN ensures ONLY routes with live fact data make it to the map
 INNER JOIN dim_routes r 
     ON t.route_id = r.route_id
--- Get the hardware/nodes associated with the active routes
-INNER JOIN bridge_assets b 
-    ON t.route_id = b.route_id
--- Get the exact coordinates for those nodes
-INNER JOIN dim_assets a 
-    ON b.node_id = a.node_id
--- Attach the live weather for the city
 INNER JOIN dim_weather w 
-    ON t.city_id = w.city_id
+    ON t.city_name = w.city_name

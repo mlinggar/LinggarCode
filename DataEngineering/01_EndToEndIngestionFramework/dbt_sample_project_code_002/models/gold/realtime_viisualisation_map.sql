@@ -43,9 +43,9 @@ select
     o.asset_type as nearby_infrastructure,
     o.operator as infrastructure_operator,
 
-    -- GEOMETRIES (Converted to map-friendly GeoJSON for your visualization tool)
-    st_asgeojson(r.route_geo) as geography_object,
-    st_asgeojson(o.asset_geo) as infrastructure_object
+    -- GEOMETRIES (Kept as raw GEOGRAPHY objects so Tableau natively maps them)
+    r.route_geo as geography_object,
+    o.asset_geo as infrastructure_object
 
 from latest_traffic lt  
 inner join dim_routes r 

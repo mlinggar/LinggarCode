@@ -1,3 +1,4 @@
+{{ config(tags=['osm']) }}
 {{ config(materialized='view') }}
 
 SELECT 

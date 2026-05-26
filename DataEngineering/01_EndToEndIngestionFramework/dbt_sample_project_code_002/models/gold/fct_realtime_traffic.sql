@@ -1,3 +1,4 @@
+{{ config(tags=['road']) }}
 {{ config(materialized='view') }}
 
 SELECT 

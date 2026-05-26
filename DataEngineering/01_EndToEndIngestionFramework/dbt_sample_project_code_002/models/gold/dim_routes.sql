@@ -1,3 +1,4 @@
+{{ config(tags=['weather']) }}
 {{ config(materialized='view') }}
 
 SELECT 

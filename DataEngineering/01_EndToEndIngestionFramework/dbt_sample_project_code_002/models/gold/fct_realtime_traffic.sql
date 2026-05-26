@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 SELECT 
     -- 1. PRIMARY KEY (Unique hash identifier for this fact record)

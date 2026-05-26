@@ -3,9 +3,17 @@
     tags=['road']
 ) }}
 
+with converted_traffic as (
+    select 
+        *,
+        -- Convert the API measurement time directly to Swedish Time zone upfront
+        convert_timezone('Europe/Stockholm', measure_time)::timestamp_ntz as measure_time_se
+    from {{ source('trafikverket', 'silver_trafikverket') }}
+)
+
 select 
-    -- 1. PRIMARY KEY
-    md5(concat(upper(trim(route_id)), '_', to_varchar(measure_time, 'YYYYMMDDHH24MISS'))) as traffic_fact_key,
+    -- 1. PRIMARY KEY (Using the Swedish timestamp string to build a deterministic key)
+    md5(concat(upper(trim(route_id)), '_', to_varchar(measure_time_se, 'YYYYMMDDHH24MISS'))) as traffic_fact_key,
 
     -- 2. FOREIGN KEYS
     md5(upper(trim(route_id))) as route_key,
@@ -38,9 +46,9 @@ select
         else 'Gray'
     end as status_color,
     
-    -- 5. TIMESTAMPS
-    measure_time,
-    to_varchar(measure_time, 'YYYY-MM-DD HH24:MI:SS') as metrics_measured_at,
+    -- 5. TIMESTAMPS (Reflecting the true Swedish clock time)
+    measure_time_se as measure_time,
+    to_varchar(measure_time_se, 'YYYY-MM-DD HH24:MI:SS') as metrics_measured_at,
     load_timestamp as dbt_loaded_at
 
-from {{ source('trafikverket', 'silver_trafikverket') }}
+from converted_traffic

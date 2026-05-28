@@ -48,26 +48,46 @@ models:
           - not_null
 
   - name: vw_live_traffic_map
-    description: "A live, dual-axis view combining traffic telemetry and OSM map assets, connected by route_key for cross-filtering in Tableau."
+    description: "A live, unified reporting view that uses a horizontal LEFT JOIN to enrich real-time road segment speeds directly with nearby OpenStreetMap assets."
     columns:
+      # Core Route Identifiers
       - name: route_key
-        description: "Common key allowing Tableau to filter both lines and pins when a specific route is selected."
+        description: "The primary hashed key identifying the physical road segment. Note: This can duplicate if a route contains multiple assets."
+        tests:
+          - not_null  # Removed the 'unique' test from here
       - name: display_name
-      - name: map_layer_type
-        description: "Identifies if the row is a 'Road Segment' or an 'OSM Asset' to isolate map layers in BI."
+        description: "The human-readable name of the highway or street segment (e.g., E4 Highway)."
         tests:
           - not_null
+
+      # Live Traffic & Telemetry Data
       - name: traffic_status
-        description: "Traffic flow status (only populated for Road Segments)."
+        description: "Real-time traffic flow status calculated from travel times."
       - name: live_speed_kmh
-        description: "Real-time telemetry speed (only populated for Road Segments)."
+        description: "The current average driving speed captured on the segment in kilometers per hour."
       - name: current_weather
-      - name: asset_type
-        description: "Specific OSM classification like speed_camera or toll_gantry (only populated for OSM Assets)."
-      - name: asset_maxspeed
-        description: "Speed limit of the camera zone (only populated for OSM Assets)."
-      - name: geometry_wkt
-        description: "Spatial representation (LINESTRING for roads, POINT for assets) for Tableau spatial rendering."
+        description: "The active weather condition surrounding the route segment."
+      - name: last_updated_at
+        description: "The exact timestamp of the latest traffic telemetry payload window."
         tests:
           - not_null
-      - name: last_updated_at
+
+      # Enriched OpenStreetMap Asset Attributes (Joined Horizontally)
+      - name: asset_id
+        description: "The native OpenStreetMap internal ID for the matching point structure. Returns NULL if no asset is on the road."
+      - name: asset_name
+        description: "The localized label or name of the physical asset."
+      - name: asset_type
+        description: "The classified type of the matched spatial asset (e.g., speed_camera, toll_gantry)."
+      - name: asset_maxspeed
+        description: "The legal posted speed limit enforced at the exact physical spot of the asset."
+
+      # Unified Spatial Mapping Fields (WGS 84 / GPS Decimal Degrees)
+      - name: asset_longitude
+        description: "The standalone, raw GPS longitude coordinate of the physical asset marker."
+      - name: asset_latitude
+        description: "The standalone, raw GPS latitude coordinate of the physical asset marker."
+      - name: route_geometry_wkt
+        description: "The complete polyline representing the road segment, fully transformed from SWEREF99 TM meters back into standard WGS84 GPS WKT format."
+        tests:
+          - not_null

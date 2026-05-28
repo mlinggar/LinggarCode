@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: azure_bronze
+    database: traffic_db
+    schema: bronze
+    tables:
+      - name: raw_trafikverket
+      - name: raw_weather
+      - name: raw_osm

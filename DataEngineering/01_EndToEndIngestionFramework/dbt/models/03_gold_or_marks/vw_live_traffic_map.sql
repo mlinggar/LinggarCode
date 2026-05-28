@@ -1,58 +1,67 @@
 {{ config(
     materialized='view',
     schema='gold',
-    description='A live, flattened view of the most recent traffic telemetry for Tableau map rendering.'
+    description='A live, dual-axis view combining traffic telemetry and OSM map assets, connected by route_key.'
 ) }}
 
 with fact_traffic as (
     select * from {{ ref('fact_travel_times') }}
 ),
-
 dim_routes as (
     select * from {{ ref('dim_routes') }}
 ),
-
 dim_weather as (
     select * from {{ ref('dim_weather_conditions') }}
 ),
-
 dim_osm as (
-    select * from {{ ref('dim_osm_regions') }}
+    select * from {{ ref('dim_osm_assets') }}
 ),
 
-joined_latest_state as (
+-- LAYER 1: Traffic Lines (Roads)
+traffic_layer as (
     select 
-        -- 1. Route Identity & Geospatial Data (For Tableau Map Plotting)
-        r.route_id,
-        r.route_name,
-        r.route_geometry_wkt,
+        f.route_key,
+        r.route_name as display_name,
+        'Road Segment' as map_layer_type,
         
-        -- 2. Live Telemetry Metrics (For Map Colors and Labels)
-        f.observation_timestamp as last_updated_at,
-        f.current_speed_kmh,
-        f.delay_seconds,
-        f.traffic_status,
+        -- Traffic-specific metrics
+        f.traffic_status as traffic_status,
+        f.current_speed_kmh as live_speed_kmh,
+        w.weather_condition as current_weather,
         
-        -- 3. Live Environmental Context (For Tooltips)
-        w.weather_condition,
-        w.road_surface_implication,
-        f.temperature_celsius,
+        -- OSM-specific attributes (Null for roads)
+        null::string as asset_type,
+        null::string as asset_maxspeed,
         
-        -- 4. OSM Map Health (To ensure data reliability)
-        o.targeted_region,
-        o.provider_health_status
-        
+        r.route_geometry_wkt as geometry_wkt,
+        f.observation_timestamp as last_updated_at
     from fact_traffic f
-    left join dim_routes r 
-        on f.route_key = r.route_key
-    left join dim_weather w 
-        on f.weather_condition_key = w.weather_condition_key
-    left join dim_osm o 
-        on f.region_key = o.region_key
+    left join dim_routes r on f.route_key = r.route_key
+    left join dim_weather w on f.weather_condition_key = w.weather_condition_key
+    qualify row_number() over (partition by r.route_id order by f.observation_timestamp desc) = 1
+),
+
+-- LAYER 2: OpenStreetMap Points (Cameras & Tolls)
+osm_layer as (
+    select 
+        route_key,
+        asset_name as display_name,
+        'OSM Asset' as map_layer_type,
+        
+        -- Traffic-specific metrics (Null for assets)
+        null::string as traffic_status,
+        null::numeric as live_speed_kmh,
+        null::string as current_weather,
+        
+        -- OSM-specific attributes
+        asset_type as asset_type,
+        asset_maxspeed as asset_maxspeed,
+        
+        asset_geometry_wkt as geometry_wkt,
+        current_timestamp() as last_updated_at
+    from dim_osm
 )
 
-select *
-from joined_latest_state
--- CRITICAL MAP LOGIC: 
--- Partition by the route and sort by time so we only output the absolute newest record per road.
-qualify row_number() over (partition by route_id order by last_updated_at desc) = 1
+select * from traffic_layer
+union all
+select * from osm_layer

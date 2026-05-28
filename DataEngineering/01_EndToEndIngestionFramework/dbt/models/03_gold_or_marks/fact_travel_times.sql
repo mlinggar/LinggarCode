@@ -2,26 +2,20 @@
 
 with traffic as ( 
     select * from {{ ref('int_route_status') }} 
-    -- 1. Deduplicate identical API responses from Trafikverket
     qualify row_number() over (partition by route_id, measure_time order by current_travel_time_sec desc) = 1
 ),
-
 weather as ( 
     select * from {{ ref('int_weather_cleansed') }} 
-    -- 2. Prevent Join Explosion: Only take the single latest weather reading per hour
     qualify row_number() over (partition by date_trunc('hour', ingested_at_cet) order by ingested_at_cet desc) = 1
 )
 
 select
-    -- Primary Key
     md5(concat(t.route_id, t.measure_time::string)) as telemetry_event_key,
-    
-    -- Foreign Keys
     md5(t.route_id) as route_key,
-    md5(w.weather_condition) as weather_condition_key,
-    md5('Stockholms län') as region_key,
     
-    -- Telemetry Metrics
+    -- THE FIX: If weather data is delayed, default to 'Unknown' so the key is never null
+    md5(coalesce(w.weather_condition, 'Unknown')) as weather_condition_key,
+    
     t.measure_time as observation_timestamp,
     t.current_speed_kmh,
     t.delay_seconds,

@@ -2,36 +2,72 @@ version: 2
 
 models:
   - name: dim_routes
+    description: "Dimension mapping physical road routes."
     columns:
       - name: route_key
         tests:
           - unique
           - not_null
+
   - name: dim_weather_conditions
+    description: "Dimension containing distinct weather states."
     columns:
       - name: weather_condition_key
         tests:
           - unique
           - not_null
-  - name: dim_osm_regions
-    description: "Operational dimension tracking OSM map data health per region."
+
+  - name: dim_osm_assets
+    description: "Dimension containing physical point assets (speed cameras, toll gantries) from OpenStreetMap, spatially matched to road segments."
     columns:
-      - name: region_key
+      - name: asset_key
         tests:
           - unique
           - not_null
+      - name: route_key
+        description: "Foreign key connecting this camera or toll gantry to its parent road segment in dim_routes and fact_travel_times."
+        tests:
+          - not_null
+      - name: osm_id
+        tests:
+          - unique
+          - not_null
+
   - name: fact_travel_times
+    description: "Fact table recording real-time traffic speeds matched with weather conditions."
     columns:
       - name: telemetry_event_key
         tests:
           - unique
           - not_null
-  - name: vw_live_traffic_map
-    description: "Flattened real-time map view. Only surfaces the single most recent ping for each route."
-    columns:
-      - name: route_id
+      - name: route_key
         tests:
-          - unique
           - not_null
-      - name: route_geometry_wkt
-        description: "LINESTRING spatial data for Tableau rendering."
+      - name: weather_condition_key
+        tests:
+          - not_null
+
+  - name: vw_live_traffic_map
+    description: "A live, dual-axis view combining traffic telemetry and OSM map assets, connected by route_key for cross-filtering in Tableau."
+    columns:
+      - name: route_key
+        description: "Common key allowing Tableau to filter both lines and pins when a specific route is selected."
+      - name: display_name
+      - name: map_layer_type
+        description: "Identifies if the row is a 'Road Segment' or an 'OSM Asset' to isolate map layers in BI."
+        tests:
+          - not_null
+      - name: traffic_status
+        description: "Traffic flow status (only populated for Road Segments)."
+      - name: live_speed_kmh
+        description: "Real-time telemetry speed (only populated for Road Segments)."
+      - name: current_weather
+      - name: asset_type
+        description: "Specific OSM classification like speed_camera or toll_gantry (only populated for OSM Assets)."
+      - name: asset_maxspeed
+        description: "Speed limit of the camera zone (only populated for OSM Assets)."
+      - name: geometry_wkt
+        description: "Spatial representation (LINESTRING for roads, POINT for assets) for Tableau spatial rendering."
+        tests:
+          - not_null
+      - name: last_updated_at

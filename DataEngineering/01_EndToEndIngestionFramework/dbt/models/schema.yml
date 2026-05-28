@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_routes
+    columns:
+      - name: route_key
+        tests:
+          - unique
+          - not_null
+  - name: dim_weather_conditions
+    columns:
+      - name: weather_condition_key
+        tests:
+          - unique
+          - not_null
+  - name: dim_osm_regions
+    description: "Operational dimension tracking OSM map data health per region."
+    columns:
+      - name: region_key
+        tests:
+          - unique
+          - not_null
+  - name: fact_travel_times
+    columns:
+      - name: telemetry_event_key
+        tests:
+          - unique
+          - not_null
+  - name: vw_live_traffic_map
+    description: "Flattened real-time map view. Only surfaces the single most recent ping for each route."
+    columns:
+      - name: route_id
+        tests:
+          - unique
+          - not_null
+      - name: route_geometry_wkt
+        description: "LINESTRING spatial data for Tableau rendering."

@@ -8,7 +8,7 @@ routes_data as (
     select * from {{ ref('dim_routes') }}
 ),
 
--- Spatial proximity match using atomic Snowflake WKT constructors with explicit SRIDs
+-- Spatial proximity match combining Swedish Grid roads and GPS points transformed to Grid
 spatial_match as (
     select
         o.osm_id,
@@ -20,7 +20,7 @@ spatial_match as (
         o.longitude,
         r.route_key,
         
-        -- Atomic declaration ensures Snowflake never drops the SRID back to 0
+        -- Measure distance in flat Swedish projection meters (3006)
         st_distance(
             st_geomfromwkt(r.route_geometry_wkt, 3006),
             st_transform(st_geomfromwkt('POINT(' || o.longitude || ' ' || o.latitude || ')', 4326), 3006)
@@ -31,7 +31,7 @@ spatial_match as (
         on st_distance(
             st_geomfromwkt(r.route_geometry_wkt, 3006),
             st_transform(st_geomfromwkt('POINT(' || o.longitude || ' ' || o.latitude || ')', 4326), 3006)
-        ) <= 100 -- Match if within 100 meters
+        ) <= 200 -- Match if within 200 meters
         
     -- Keep only the absolute closest road segment for each camera
     qualify row_number() over (partition by o.osm_id order by distance_meters asc nulls last) = 1

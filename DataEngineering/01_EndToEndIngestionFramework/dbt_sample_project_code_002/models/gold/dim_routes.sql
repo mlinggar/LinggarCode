@@ -1,20 +1,15 @@
-{{ config(materialized='view') }}
+{{ config(materialized='view', tags=['road']) }}
 
-SELECT 
-    -- PRIMARY KEY
-    MD5(UPPER(TRIM(route_id))) AS route_key,
+select 
+    md5(upper(trim(route_id))) as route_key,
     route_id,
-    
-    -- SPATIAL & DESCRIPTIVE ATTRIBUTES
     route_geo,
     route_name,
     country_code,
-    
-    CASE 
-        WHEN LOWER(route_name) LIKE '%göteborg%' OR LOWER(route_name) LIKE '%gothenburg%' THEN 'Gothenburg Region'
-        WHEN LOWER(route_name) LIKE '%skåne%' OR LOWER(route_name) LIKE '%malmö%' THEN 'Skåne Region'
-        ELSE 'Stockholm Region'
-    END AS regional_division
-
-FROM {{ source('trafikverket', 'silver_trafikverket') }}
-QUALIFY ROW_NUMBER() OVER (PARTITION BY route_id ORDER BY measure_time DESC) = 1
+    case 
+        when lower(route_name) like '%göteborg%' or lower(route_name) like '%gothenburg%' then 'Gothenburg Region'
+        when lower(route_name) like '%skåne%' or lower(route_name) like '%malmö%' then 'Skåne Region'
+        else 'Stockholm Region'
+    end as regional_division
+from {{ source('trafikverket', 'silver_trafikverket') }}
+qualify row_number() over (partition by route_id order by measure_time desc) = 1

@@ -5,7 +5,7 @@ models:
     description: "The main fact table for traffic operations. Tracks real-time vehicle speeds and travel times linked by route and city hubs."
     columns:
       - name: traffic_fact_key
-        description: "Primary Key: Unique MD5 hash combining the route_id and metrics_measured_at timestamp."
+        description: "Primary Key: Unique MD5 hash combining the route_id and measure_time timestamp."
         tests:
           - unique
           - not_null
@@ -28,6 +28,12 @@ models:
                 to: ref('dim_weather')
                 field: city_key
 
+      - name: route_id
+        description: "Degenerate Dimension: The natural operational ID of the traffic route."
+
+      - name: city_name
+        description: "Degenerate Dimension: Cleaned, standardized city name associated with the route segment."
+
       - name: live_speed_kmh
         description: "The current recorded velocity of traffic on the route in km/h."
 
@@ -38,10 +44,52 @@ models:
         description: "Raw traffic flow status categorized by Trafikverket (e.g., free flow, heavy)."
 
       - name: status_color
-        description: "Dynamic mapping classification used by Tableau for rapid visual mapping alerts (Green, Yellow, Red)."
+        description: "Dynamic mapping classification used for rapid visual mapping alerts (Green, Yellow, Red, Gray)."
+
+      - name: measure_time
+        description: "The raw operational event timestamp from the Trafikverket API."
 
       - name: metrics_measured_at
-        description: "The operational event timestamp from the Trafikverket API indicating when the traffic metrics were actually recorded."
+        description: "Formatted string version of the event timestamp (YYYY-MM-DD HH:24:MI:SS)."
 
       - name: dbt_loaded_at
-        description: "The system timestamp indicating when the record was processed and loaded into the Snowflake Gold Layer by dbt."
+        description: "The system timestamp indicating when the record was processed into the Snowflake Gold Layer."
+
+  - name: dim_routes
+    description: "Dimension table containing spatial and descriptive data for monitored Swedish transport routes."
+    columns:
+      - name: route_key
+        description: "Primary Key: MD5 hash of the route_id."
+        tests:
+          - unique
+          - not_null
+
+      - name: route_geo
+        description: "Snowflake GEOMETRY data object representing the physical path of the road."
+
+  - name: dim_weather
+    description: "Dimension table storing the latest environmental conditions for major regional hubs."
+    columns:
+      - name: city_key
+        description: "Primary Key: MD5 hash of the city name."
+        tests:
+          - unique
+          - not_null
+
+      - name: temp_celsius
+        description: "Current temperature reading in Celsius."
+
+  - name: dim_openstreet
+    description: "Dimension table for openstreetmap cameras, sensors, and infrastructural speed traps."
+    columns:
+      - name: osm_asset_key
+        description: "Primary Key: MD5 hash of the OpenStreetMap node ID."
+        tests:
+          - unique
+          - not_null
+          
+      - name: asset_geo
+        description: "Snowflake GEOMETRY point data object for the infrastructure asset location."
+
+  - name: realtime_viisualisation_map
+    description: "The final, analytical BI layer view that marries live traffic data, weather states, and spatial camera geometry for mapping applications."

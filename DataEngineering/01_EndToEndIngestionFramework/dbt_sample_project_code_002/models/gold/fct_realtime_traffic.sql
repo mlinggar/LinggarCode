@@ -1,42 +1,54 @@
-{{ config(materialized='view') }}
+{{ config(
+    materialized='view',
+    tags=['road']
+) }}
 
-SELECT 
-    -- 1. PRIMARY KEY (Unique hash identifier for this fact record)
-    MD5(CONCAT(UPPER(TRIM(route_id)), '_', CAST(measure_time AS VARCHAR))) AS traffic_fact_key,
+with converted_traffic as (
+    select 
+        *,
+        -- Convert the API measurement time directly to Swedish Time zone upfront
+        convert_timezone('Europe/Stockholm', measure_time)::timestamp_ntz as measure_time_se
+    from {{ source('trafikverket', 'silver_trafikverket') }}
+)
 
-    -- 2. FOREIGN KEYS (To link out to your dimension tables)
-    MD5(UPPER(TRIM(route_id))) AS route_key,
+select 
+    -- 1. PRIMARY KEY (Using the Swedish timestamp string to build a deterministic key)
+    md5(concat(upper(trim(route_id)), '_', to_varchar(measure_time_se, 'YYYYMMDDHH24MISS'))) as traffic_fact_key,
+
+    -- 2. FOREIGN KEYS
+    md5(upper(trim(route_id))) as route_key,
     
-    MD5(UPPER(TRIM(
-        CASE 
-            WHEN LOWER(route_name) LIKE '%göteborg%' OR LOWER(route_name) LIKE '%gothenburg%' THEN 'GOTHENBURG'
-            WHEN LOWER(route_name) LIKE '%skåne%' OR LOWER(route_name) LIKE '%malmö%' THEN 'MALMO'
-            ELSE 'STOCKHOLM'
-        END
-    ))) AS city_key,
+    md5(upper(trim(
+        case 
+            when lower(route_name) like '%göteborg%' or lower(route_name) like '%gothenburg%' then 'GOTHENBURG'
+            when lower(route_name) like '%skåne%' or lower(route_name) like '%malmö%' then 'MALMO'
+            else 'STOCKHOLM'
+        end
+    ))) as city_key,
     
-    -- 3. DEGENERATE DIMENSIONS (Natural text strings kept for easy reference)
+    -- 3. DEGENERATE DIMENSIONS
     route_id,
-    CASE 
-        WHEN LOWER(route_name) LIKE '%göteborg%' OR LOWER(route_name) LIKE '%gothenburg%' THEN 'GOTHENBURG'
-        WHEN LOWER(route_name) LIKE '%skåne%' OR LOWER(route_name) LIKE '%malmö%' THEN 'MALMO'
-        ELSE 'STOCKHOLM'
-    END AS city_name,
+    case 
+        when lower(route_name) like '%göteborg%' or lower(route_name) like '%gothenburg%' then 'GOTHENBURG'
+        when lower(route_name) like '%skåne%' or lower(route_name) like '%malmö%' then 'MALMO'
+        else 'STOCKHOLM'
+    end as city_name,
     
     -- 4. FACT METRICS
-    speed AS live_speed_kmh,
-    travel_time AS travel_time_seconds,
+    speed as live_speed_kmh,
+    travel_time as travel_time_seconds,
     traffic_status,
     
-    CASE 
-        WHEN LOWER(traffic_status) LIKE '%free%' OR LOWER(traffic_status) LIKE '%normal%' THEN 'Green'
-        WHEN LOWER(traffic_status) LIKE '%heavy%' OR LOWER(traffic_status) LIKE '%slow%' THEN 'Yellow'
-        WHEN LOWER(traffic_status) LIKE '%congested%' OR LOWER(traffic_status) LIKE '%blocked%' THEN 'Red'
-        ELSE 'Gray'
-    END AS status_color,
+    case 
+        when lower(traffic_status) like '%free%' or lower(traffic_status) like '%normal%' then 'Green'
+        when lower(traffic_status) like '%heavy%' or lower(traffic_status) like '%slow%' then 'Yellow'
+        when lower(traffic_status) like '%congested%' or lower(traffic_status) like '%blocked%' then 'Red'
+        else 'Gray'
+    end as status_color,
     
-    -- 5. TIMESTAMPS
-    TO_VARCHAR(measure_time, 'YYYY-MM-DD HH24:MI:SS') AS metrics_measured_at,
-    load_timestamp AS dbt_loaded_at
+    -- 5. TIMESTAMPS (Reflecting the true Swedish clock time)
+    measure_time_se as measure_time,
+    to_varchar(measure_time_se, 'YYYY-MM-DD HH24:MI:SS') as metrics_measured_at,
+    load_timestamp as dbt_loaded_at
 
-FROM {{ source('trafikverket', 'silver_trafikverket') }}
+from converted_traffic

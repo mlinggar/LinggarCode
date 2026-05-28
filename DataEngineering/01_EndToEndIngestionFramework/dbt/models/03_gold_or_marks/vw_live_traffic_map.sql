@@ -1,7 +1,7 @@
 {{ config(
     materialized='view',
     schema='gold',
-    description='A live, dual-axis view combining traffic telemetry and OSM map assets, connected by route_key.'
+    description='A unified traffic view enriched with nearby OpenStreetMap asset attributes via a horizontal left join.'
 ) }}
 
 with fact_traffic as (
@@ -17,51 +17,44 @@ dim_osm as (
     select * from {{ ref('dim_osm_assets') }}
 ),
 
--- LAYER 1: Traffic Lines (Roads)
-traffic_layer as (
+-- Get the latest live traffic status for each route segment
+latest_traffic as (
     select 
         f.route_key,
-        r.route_name as display_name,
-        'Road Segment' as map_layer_type,
-        
-        -- Traffic-specific metrics
-        f.traffic_status as traffic_status,
-        f.current_speed_kmh as live_speed_kmh,
-        w.weather_condition as current_weather,
-        
-        -- OSM-specific attributes (Null for roads)
-        null::string as asset_type,
-        null::string as asset_maxspeed,
-        
-        r.route_geometry_wkt as geometry_wkt,
-        f.observation_timestamp as last_updated_at
+        f.traffic_status,
+        f.current_speed_kmh,
+        f.observation_timestamp,
+        f.weather_condition_key
     from fact_traffic f
-    left join dim_routes r on f.route_key = r.route_key
-    left join dim_weather w on f.weather_condition_key = w.weather_condition_key
-    qualify row_number() over (partition by r.route_id order by f.observation_timestamp desc) = 1
-),
-
--- LAYER 2: OpenStreetMap Points (Cameras & Tolls)
-osm_layer as (
-    select 
-        route_key,
-        asset_name as display_name,
-        'OSM Asset' as map_layer_type,
-        
-        -- Traffic-specific metrics (Null for assets)
-        null::string as traffic_status,
-        null::numeric as live_speed_kmh,
-        null::string as current_weather,
-        
-        -- OSM-specific attributes
-        asset_type as asset_type,
-        asset_maxspeed as asset_maxspeed,
-        
-        asset_geometry_wkt as geometry_wkt,
-        current_timestamp() as last_updated_at
-    from dim_osm
+    qualify row_number() over (partition by f.route_key order by f.observation_timestamp desc) = 1
 )
 
-select * from traffic_layer
-union all
-select * from osm_layer
+select 
+    -- Core Route Identifiers
+    r.route_key,
+    r.route_name             as display_name,
+    
+    -- Live Traffic & Weather Metrics
+    t.traffic_status,
+    t.current_speed_kmh      as live_speed_kmh,
+    w.weather_condition      as current_weather,
+    t.observation_timestamp  as last_updated_at,
+    
+    -- Enriched OSM Asset Data (Connected horizontally!)
+    o.osm_id                 as asset_id,
+    o.asset_name             as asset_name,
+    o.asset_type             as asset_type,         -- No longer null! Contains 'speed_camera', etc.
+    o.asset_maxspeed         as asset_maxspeed,
+    
+    -- Geographic Shapes
+    o.longitude              as asset_longitude,
+    o.latitude               as asset_latitude,
+    st_aswkt(st_transform(st_geomfromwkt(r.route_geometry_wkt, 3006), 4326)) as route_geometry_wkt
+
+from dim_routes r
+left join latest_traffic t 
+    on r.route_key = t.route_key
+left join dim_weather w 
+    on t.weather_condition_key = w.weather_condition_key
+left join dim_osm o 
+    on r.route_key = o.route_key  -- Bridges the asset directly to the road it belongs to

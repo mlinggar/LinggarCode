@@ -1,3 +1,4 @@
+{{ config(materialized='table', schema='gold') }}
 select distinct
     md5(route_id) as route_key,
     route_id,

@@ -1,3 +1,5 @@
+{{ config(materialized='table', schema='gold') }}
+
 select distinct
     md5(weather_condition) as weather_condition_key,
     weather_condition,

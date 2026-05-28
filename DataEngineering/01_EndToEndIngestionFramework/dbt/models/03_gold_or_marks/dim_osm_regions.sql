@@ -1,3 +1,5 @@
+{{ config(materialized='table', schema='gold') }}
+
 select distinct
     md5(targeted_region) as region_key,
     targeted_region,

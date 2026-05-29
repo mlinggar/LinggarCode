@@ -77,7 +77,11 @@ models:
       - name: route_key
         description: "The primary hashed key identifying the physical road segment. Note: This can duplicate if a route contains multiple assets."
         tests:
+<<<<<<< HEAD
           - not_null
+=======
+          - not_null  # Removed the 'unique' test from here
+>>>>>>> 00d6d9697c8ebf4b04346beb6715be9fd76bcc87
       - name: display_name
         description: "The human-readable name of the highway or street segment (e.g., E4 Highway)."
         tests:

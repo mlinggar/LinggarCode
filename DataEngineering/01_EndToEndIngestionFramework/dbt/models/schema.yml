@@ -2,17 +2,23 @@ version: 2
 
 models:
   - name: dim_routes
-    description: "Dimension mapping physical road routes."
+    description: "Dimension mapping physical road routes and their base geometries."
     columns:
       - name: route_key
+        description: "Primary key hash of the unique route identifier."
         tests:
           - unique
           - not_null
+      - name: route_id
+        description: "The native alphanumeric ID assigned to the route segment."
+      - name: route_name
+        description: "The street or highway display name."
 
   - name: dim_weather_conditions
-    description: "Dimension containing distinct weather states."
+    description: "Dimension containing distinct weather states and safe fallbacks."
     columns:
       - name: weather_condition_key
+        description: "Primary key hash of the weather condition string."
         tests:
           - unique
           - not_null
@@ -21,29 +27,46 @@ models:
     description: "Dimension containing physical point assets (speed cameras, toll gantries) from OpenStreetMap, spatially matched to road segments."
     columns:
       - name: asset_key
+        description: "Primary key hash of the unique OpenStreetMap element."
         tests:
           - unique
           - not_null
       - name: route_key
-        description: "Foreign key connecting this camera or toll gantry to its parent road segment in dim_routes and fact_travel_times."
+        description: "Foreign key connecting this camera or toll gantry to its parent road segment. Defaults to an unmapped hash if unmatched."
         tests:
           - not_null
       - name: osm_id
+        description: "The native OpenStreetMap internal numeric identifier."
         tests:
           - unique
           - not_null
 
   - name: fact_travel_times
-    description: "Fact table recording real-time traffic speeds matched with weather conditions."
+    description: "Incremental fact table recording real-time traffic speeds matched with hourly weather conditions."
     columns:
       - name: telemetry_event_key
+        description: "Primary key hash combining route identity and exact observation timestamp."
         tests:
           - unique
           - not_null
       - name: route_key
+        description: "Foreign key linking the telemetry event to dim_routes."
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_routes')
+                field: route_key
       - name: weather_condition_key
+        description: "Foreign key linking the telemetry event to dim_weather_conditions. Defaults to an Unknown hash if weather logs are delayed."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_weather_conditions')
+                field: weather_condition_key
+      - name: observation_timestamp
+        description: "The raw date and time when the traffic snapshot was logged."
         tests:
           - not_null
 
@@ -54,7 +77,7 @@ models:
       - name: route_key
         description: "The primary hashed key identifying the physical road segment. Note: This can duplicate if a route contains multiple assets."
         tests:
-          - not_null  # Removed the 'unique' test from here
+          - not_null
       - name: display_name
         description: "The human-readable name of the highway or street segment (e.g., E4 Highway)."
         tests:

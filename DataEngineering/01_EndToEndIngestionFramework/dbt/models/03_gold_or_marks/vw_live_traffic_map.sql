@@ -13,11 +13,11 @@ dim_routes as (
 dim_weather as (
     select * from {{ ref('dim_weather_conditions') }}
 ),
+-- 1. WE PULL IN THE OSM DIMENSION HERE
 dim_osm as (
     select * from {{ ref('dim_osm_assets') }}
 ),
 
--- Get the latest live traffic status for each route segment
 latest_traffic as (
     select 
         f.route_key,
@@ -40,10 +40,10 @@ select
     w.weather_condition      as current_weather,
     t.observation_timestamp  as last_updated_at,
     
-    -- Enriched OSM Asset Data (Connected horizontally!)
+    -- 2. HERE IS YOUR OSM DATA APPEARING IN THE FINAL VIEW!
     o.osm_id                 as asset_id,
     o.asset_name             as asset_name,
-    o.asset_type             as asset_type,         -- No longer null! Contains 'speed_camera', etc.
+    o.asset_type             as asset_type,         -- Returns 'speed_camera', 'toll_gantry', etc.
     o.asset_maxspeed         as asset_maxspeed,
     
     -- Geographic Shapes
@@ -56,5 +56,6 @@ left join latest_traffic t
     on r.route_key = t.route_key
 left join dim_weather w 
     on t.weather_condition_key = w.weather_condition_key
+-- 3. WE JOIN THE OSM ASSETS TO THE ROUTES HERE
 left join dim_osm o 
-    on r.route_key = o.route_key  -- Bridges the asset directly to the road it belongs to
+    on r.route_key = o.route_key

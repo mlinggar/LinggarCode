@@ -1,7 +1,7 @@
 {{ config(materialized='table', schema='gold') }}
 
 with osm_data as (
-    select * from {{ ref('int_osm_cleansed') }}
+    select * from {{ ref('stg_osm') }}
 ),
 
 routes_data as (

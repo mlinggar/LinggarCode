@@ -69,6 +69,8 @@ models:
         description: "The raw date and time when the traffic snapshot was logged."
         tests:
           - not_null
+      - name: temperature_celsius
+        description: "The ambient atmospheric temperature in degrees Celsius captured at the observation snapshot window."
 
   - name: vw_live_traffic_map
     description: "A live, unified reporting view that uses a horizontal LEFT JOIN to enrich real-time road segment speeds directly with nearby OpenStreetMap assets."
@@ -83,13 +85,15 @@ models:
         tests:
           - not_null
 
-      # Live Traffic & Telemetry Data
+      # Live Traffic & Weather Metrics
       - name: traffic_status
         description: "Real-time traffic flow status calculated from travel times."
       - name: live_speed_kmh
         description: "The current average driving speed captured on the segment in kilometers per hour."
       - name: current_weather
         description: "The active weather condition surrounding the route segment."
+      - name: temperature_celsius
+        description: "The current real-time temperature string in Celsius mapped down from the live telemetry snapshot."
       - name: last_updated_at
         description: "The exact timestamp of the latest traffic telemetry payload window."
         tests:

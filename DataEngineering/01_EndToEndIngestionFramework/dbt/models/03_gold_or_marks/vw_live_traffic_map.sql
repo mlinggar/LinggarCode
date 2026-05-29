@@ -13,20 +13,21 @@ dim_routes as (
 dim_weather as (
     select * from {{ ref('dim_weather_conditions') }}
 ),
--- 1. WE PULL IN THE OSM DIMENSION HERE
 dim_osm as (
     select * from {{ ref('dim_osm_assets') }}
 ),
 
+-- Get the latest live traffic status for each route segment
 latest_traffic as (
     select 
         f.route_key,
         f.traffic_status,
         f.current_speed_kmh,
         f.observation_timestamp,
-        f.weather_condition_key
+        f.weather_condition_key,
+        f.temperature_celsius -- Safely pulling the temperature metric from the Fact table
     from fact_traffic f
-    qualify row_number() over (partition by f.route_key order by f.observation_timestamp desc) = 1
+    qualify row_number() over (partition by f.route_key order f.observation_timestamp desc) = 1
 )
 
 select 
@@ -38,24 +39,24 @@ select
     t.traffic_status,
     t.current_speed_kmh      as live_speed_kmh,
     w.weather_condition      as current_weather,
+    t.temperature_celsius    as temperature_celsius, -- Exposed here cleanly for your Tableau map
     t.observation_timestamp  as last_updated_at,
     
-    -- 2. HERE IS YOUR OSM DATA APPEARING IN THE FINAL VIEW!
+    -- Enriched OSM Asset Data
     o.osm_id                 as asset_id,
     o.asset_name             as asset_name,
-    o.asset_type             as asset_type,         -- Returns 'speed_camera', 'toll_gantry', etc.
+    o.asset_type             as asset_type,
     o.asset_maxspeed         as asset_maxspeed,
     
     -- Geographic Shapes
     o.longitude              as asset_longitude,
     o.latitude               as asset_latitude,
-    st_aswkt(st_transform(st_geomfromwkt(r.route_geometry_wkt, 3006), 4326)) as route_geometry_wkt
+    to_geography(st_aswkt(st_transform(st_geomfromwkt(r.route_geometry_wkt, 3006), 4326))) as route_geometry
 
 from dim_routes r
 left join latest_traffic t 
     on r.route_key = t.route_key
 left join dim_weather w 
     on t.weather_condition_key = w.weather_condition_key
--- 3. WE JOIN THE OSM ASSETS TO THE ROUTES HERE
 left join dim_osm o 
     on r.route_key = o.route_key

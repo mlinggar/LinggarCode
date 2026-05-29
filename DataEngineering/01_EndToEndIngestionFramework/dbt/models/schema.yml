@@ -77,11 +77,7 @@ models:
       - name: route_key
         description: "The primary hashed key identifying the physical road segment. Note: This can duplicate if a route contains multiple assets."
         tests:
-<<<<<<< HEAD
           - not_null
-=======
-          - not_null  # Removed the 'unique' test from here
->>>>>>> 00d6d9697c8ebf4b04346beb6715be9fd76bcc87
       - name: display_name
         description: "The human-readable name of the highway or street segment (e.g., E4 Highway)."
         tests:
@@ -114,7 +110,7 @@ models:
         description: "The standalone, raw GPS longitude coordinate of the physical asset marker."
       - name: asset_latitude
         description: "The standalone, raw GPS latitude coordinate of the physical asset marker."
-      - name: route_geometry_wkt
-        description: "The complete polyline representing the road segment, fully transformed from SWEREF99 TM meters back into standard WGS84 GPS WKT format."
+      - name: route_geometry
+        description: "The complete native geography spatial object representing the road segment, fully transformed from SWEREF99 TM meters."
         tests:
           - not_null

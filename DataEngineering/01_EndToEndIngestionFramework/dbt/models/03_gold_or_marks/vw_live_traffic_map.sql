@@ -25,9 +25,10 @@ latest_traffic as (
         f.current_speed_kmh,
         f.observation_timestamp,
         f.weather_condition_key,
-        f.temperature_celsius -- Safely pulling the temperature metric from the Fact table
+        f.temperature_celsius
     from fact_traffic f
-    qualify row_number() over (partition by f.route_key order f.observation_timestamp desc) = 1
+    -- FIXED: Added the missing "by" right here
+    qualify row_number() over (partition by f.route_key order by f.observation_timestamp desc) = 1
 )
 
 select 
@@ -39,7 +40,7 @@ select
     t.traffic_status,
     t.current_speed_kmh      as live_speed_kmh,
     w.weather_condition      as current_weather,
-    t.temperature_celsius    as temperature_celsius, -- Exposed here cleanly for your Tableau map
+    t.temperature_celsius    as temperature_celsius,
     t.observation_timestamp  as last_updated_at,
     
     -- Enriched OSM Asset Data

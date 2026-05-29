@@ -69,6 +69,8 @@ models:
         description: "The raw date and time when the traffic snapshot was logged."
         tests:
           - not_null
+      - name: temperature_celsius
+        description: "The ambient atmospheric temperature in degrees Celsius captured at the observation snapshot window."
 
   - name: vw_live_traffic_map
     description: "A live, unified reporting view that uses a horizontal LEFT JOIN to enrich real-time road segment speeds directly with nearby OpenStreetMap assets."
@@ -77,23 +79,21 @@ models:
       - name: route_key
         description: "The primary hashed key identifying the physical road segment. Note: This can duplicate if a route contains multiple assets."
         tests:
-<<<<<<< HEAD
           - not_null
-=======
-          - not_null  # Removed the 'unique' test from here
->>>>>>> 00d6d9697c8ebf4b04346beb6715be9fd76bcc87
       - name: display_name
         description: "The human-readable name of the highway or street segment (e.g., E4 Highway)."
         tests:
           - not_null
 
-      # Live Traffic & Telemetry Data
+      # Live Traffic & Weather Metrics
       - name: traffic_status
         description: "Real-time traffic flow status calculated from travel times."
       - name: live_speed_kmh
         description: "The current average driving speed captured on the segment in kilometers per hour."
       - name: current_weather
         description: "The active weather condition surrounding the route segment."
+      - name: temperature_celsius
+        description: "The current real-time temperature string in Celsius mapped down from the live telemetry snapshot."
       - name: last_updated_at
         description: "The exact timestamp of the latest traffic telemetry payload window."
         tests:
@@ -114,7 +114,7 @@ models:
         description: "The standalone, raw GPS longitude coordinate of the physical asset marker."
       - name: asset_latitude
         description: "The standalone, raw GPS latitude coordinate of the physical asset marker."
-      - name: route_geometry_wkt
-        description: "The complete polyline representing the road segment, fully transformed from SWEREF99 TM meters back into standard WGS84 GPS WKT format."
+      - name: route_geometry
+        description: "The complete native geography spatial object representing the road segment, fully transformed from SWEREF99 TM meters."
         tests:
           - not_null

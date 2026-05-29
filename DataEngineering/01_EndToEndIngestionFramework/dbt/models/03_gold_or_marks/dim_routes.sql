@@ -5,5 +5,4 @@ select distinct
     route_id,
     route_name,
     linestring_sweref99tm as route_geometry_wkt
-from {{ ref('int_route_status') }}
-
+from {{ ref('stg_trafikverket') }}

@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: dim_routes
+    columns:
+      - name: route_key
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_weather_conditions
+    columns:
+      - name: weather_condition_key
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_osm_assets
+    columns:
+      - name: asset_key
+        tests:
+          - unique
+          - not_null
+      - name: osm_id
+        tests:
+          - not_null
+
+  - name: fact_travel_times
+    columns:
+      - name: telemetry_event_key
+        tests:
+          - unique
+          - not_null
+      - name: route_key
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_routes')
+                field: route_key
+      - name: weather_condition_key
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_weather_conditions')
+                field: weather_condition_key

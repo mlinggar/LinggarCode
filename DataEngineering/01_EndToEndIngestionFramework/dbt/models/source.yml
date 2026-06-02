@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: traffic_raw
+    database: traffic_db
+    schema: raw
+    description: "Raw JSON data ingested continuously via Azure Snowpipes."
+    tables:
+      - name: raw_trafikverket
+        description: "Raw Traffic API JSON payloads."
+      - name: raw_weather
+        description: "Raw OpenWeatherMap API JSON payloads."
+      - name: raw_osm
+        description: "Raw OpenStreetMap Overpass API JSON payloads."

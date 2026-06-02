@@ -55,7 +55,8 @@ select
     to_geography(st_aswkt(st_transform(st_geomfromwkt(r.route_geometry_wkt, 3006), 4326))) as route_geometry
 
 from dim_routes r
-inner join latest_traffic t 
+-- CHANGED TO LEFT JOIN: Ensures the physical road is always drawn, even if traffic data is delayed/offline
+left join latest_traffic t 
     on r.route_key = t.route_key
 left join dim_weather w 
     on t.weather_condition_key = w.weather_condition_key

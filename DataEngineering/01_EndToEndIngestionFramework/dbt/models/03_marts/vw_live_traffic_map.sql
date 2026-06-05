@@ -1,7 +1,7 @@
 {{ config(
     materialized='view',
     schema='gold',
-    description='A highly optimized, flattened view specifically tailored for Tableau map layers. Updated to enforce WKT spatial formats and full map coverage.'
+    description='A highly optimized, flattened view specifically tailored for Tableau map layers. Outputs native GEOGRAPHY types for instant map recognition.'
 ) }}
 
 with fact_traffic as (
@@ -31,34 +31,39 @@ latest_traffic as (
 )
 
 select 
-    -- Route details (Safeguarded with COALESCE to capture both Trafikverket AND OpenStreetMap routes)
-    coalesce(r.route_key, o.route_key) as route_key,
-    coalesce(r.route_name, o.asset_name) as display_name,
+    -- Route details
+    r.route_key,
+    r.route_name as display_name,
     
-    -- Live Metrics
-    t.traffic_status,
+    -- Live Metrics (Cleaned for Tableau Legends)
+    coalesce(t.traffic_status, 'Unknown') as traffic_status,
     t.current_speed_kmh as live_speed_kmh,
-    w.weather_condition as current_weather,
+    coalesce(w.weather_condition, 'Unknown') as current_weather, 
     t.temperature_celsius,
     t.observation_timestamp as last_updated_at,
     
-    -- Asset details
-    o.asset_name,
-    o.asset_type,
-    o.asset_maxspeed,
+    -- Asset details (Cleaned for Tableau Legends)
+    coalesce(o.asset_name, 'No Asset Name') as asset_name,
+    coalesce(o.asset_type, 'No Asset') as asset_type,
+    coalesce(o.asset_maxspeed, 0) as asset_maxspeed,
     
-    -- PRE-CALCULATED SPATIAL OBJECTS FOR TABLEAU (Converted to WKT to fix the CSV JSON error)
-    -- 1. The point locations for cameras and tolls
-    st_aswkt(to_geography(st_point(o.longitude, o.latitude))) as asset_map_point,
+    -- NATIVE SPATIAL OBJECTS FOR TABLEAU (Removed ST_ASWKT)
+    -- Layer 1: Native Geography Point for OSM assets
+    to_geography(st_point(o.longitude, o.latitude)) as asset_map_point,
     
-    -- 2. The line shapes for the actual highways
-    st_aswkt(st_transform(st_geomfromwkt(r.route_geometry_wkt, 3006), 4326)) as route_geometry
+    -- Layer 2: Native Geography Line for the physical roads
+    to_geography(st_transform(st_geomfromwkt(r.route_geometry_wkt, 3006), 4326)) as route_geometry
 
 from dim_routes r
--- FIX 1: Changed from LEFT JOIN to FULL OUTER JOIN. This forces the map to draw ALL OSM streets and assets, even if Trafikverket isn't monitoring them.
-full outer join dim_osm o 
+
+-- LEFT JOIN: Only keeps Trafikverket routes.
+left join dim_osm o 
     on r.route_key = o.route_key
+
+-- Link the live traffic metrics
 left join latest_traffic t 
-    on coalesce(r.route_key, o.route_key) = t.route_key
+    on r.route_key = t.route_key
+
+-- Link the weather conditions
 left join dim_weather w 
     on t.weather_condition_key = w.weather_condition_key

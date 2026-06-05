@@ -44,10 +44,7 @@ select
     
     -- Asset details
     o.asset_name,
-    
-    -- THIS IS THE ONLY CHANGE: Replaces NULL with 'no asset'
     coalesce(o.asset_type, 'no asset') as asset_type,
-    
     o.asset_maxspeed,
     
     -- PRE-CALCULATED SPATIAL OBJECTS FOR TABLEAU

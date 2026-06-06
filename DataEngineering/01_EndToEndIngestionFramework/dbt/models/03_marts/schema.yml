@@ -2,36 +2,78 @@ version: 2
 
 models:
   - name: dim_routes
+    config:
+      contract: { enforced: true }
     columns:
       - name: route_key
+        data_type: string
         tests:
           - unique
           - not_null
+      - name: route_id
+        data_type: string
+        tests:
+          - not_null
+      - name: route_name
+        data_type: string
+      - name: route_geometry_wkt
+        data_type: string
 
   - name: dim_weather_conditions
+    config:
+      contract: { enforced: true }
     columns:
       - name: weather_condition_key
+        data_type: string
         tests:
           - unique
           - not_null
+      - name: weather_condition
+        data_type: string
+        tests:
+          - not_null
+      - name: road_surface_implication
+        data_type: string
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Normal', 'Slippery', 'Hazardous']
 
   - name: dim_osm_assets
+    config:
+      contract: { enforced: true }
     columns:
       - name: asset_key
+        data_type: string
         tests:
           - unique
           - not_null
       - name: osm_id
-        tests:
-          - not_null
+        data_type: integer
+      - name: asset_name
+        data_type: string
+      - name: asset_type
+        data_type: string
+      - name: asset_maxspeed
+        data_type: integer
+      - name: latitude
+        data_type: float
+      - name: longitude
+        data_type: float
+      - name: route_key
+        data_type: string
 
   - name: fact_travel_times
+    config:
+      contract: { enforced: true }
     columns:
       - name: telemetry_event_key
+        data_type: string
         tests:
           - unique
           - not_null
       - name: route_key
+        data_type: string
         tests:
           - not_null
           - relationships:
@@ -39,9 +81,26 @@ models:
                 to: ref('dim_routes')
                 field: route_key
       - name: weather_condition_key
+        data_type: string
         tests:
           - not_null
           - relationships:
               arguments:
                 to: ref('dim_weather_conditions')
                 field: weather_condition_key
+      - name: asset_key
+        data_type: string
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_osm_assets')
+                field: asset_key
+      - name: observation_timestamp
+        data_type: timestamp_ntz
+      - name: current_speed_kmh
+        data_type: float
+      - name: traffic_status
+        data_type: string
+      - name: temperature_celsius
+        data_type: float

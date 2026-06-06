@@ -2,7 +2,6 @@
 
 with prepared_events as (
     select
-        -- Create the unique event key using clean string casting
         md5(coalesce(route_id, '') || '-' || coalesce(to_varchar(measure_time), '')) as telemetry_event_key,
         md5(route_id) as route_key,
         measure_time as observation_timestamp,
@@ -21,5 +20,4 @@ select
     traffic_status,
     observation_hour
 from prepared_events
--- GUARANTEE: Exactly 1 row per unique telemetry_event_key, keeping the freshest upload
 qualify row_number() over (partition by telemetry_event_key order by ingested_at desc) = 1

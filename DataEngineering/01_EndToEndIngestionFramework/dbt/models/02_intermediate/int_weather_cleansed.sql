@@ -12,5 +12,4 @@ select
         else 'Normal'
     end as road_surface_implication
 from {{ ref('stg_weather') }}
--- Get latest weather per hour to avoid duplicates
 qualify row_number() over (partition by date_trunc('hour', observation_timestamp) order by observation_timestamp desc) = 1

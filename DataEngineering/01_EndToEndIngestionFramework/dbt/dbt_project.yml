@@ -28,13 +28,13 @@ models:
   live_traffic_platform:
     
     # Bronze Layer: Flattened variant views with initial explicit casting
-    staging:
+    01_staging:
       +materialized: view
       
     # Silver Layer: Cleansed, deduplicated, and parsed intermediate datasets
-    intermediate:
+    02_intermediate:
       +materialized: view
       
     # Gold Layer: Enforced contracts, star schemas, and dimensional models for BI
-    marts:
+    03_marts:
       +materialized: table

@@ -1,4 +1,4 @@
-# Live Traffic & Weather Telemetry Data Platform
+# Live Traffic & Weather Data Platform
 ### This Project is for Final Assessment of Data Engineering Course, Data Analyst Program (DA27)
 
 ## Executive Summary

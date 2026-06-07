@@ -54,10 +54,7 @@ The platform implements a strict governance "firewall" at the Gold layer to auto
 
 Centralized inside Medallion-specific `schema.yml` files, the pipeline utilizes dbt model contracts (`contract: { enforced: true }`). If upstream API schemas change or data types mismatch (e.g., an integer becomes a string), the pipeline fails safely before compilation. Furthermore, automated tests (uniqueness, completeness, and referential integrity) are executed on every run.
 
-### 4. Native Data Catalog & Governance
-Instead of relying on third-party cataloging tools, metadata is pushed directly from the dbt repository into Snowflake's native Data Catalog using the `+persist_docs` configuration. All table descriptions, column definitions, and metadata tags defined in the code are synced directly to Snowflake Horizon, providing business analysts with a fully searchable, integrated data dictionary.
-
-### 5. Role-Based Access Control (RBAC) Architecture
+### 4. Role-Based Access Control (RBAC) Architecture
 Security and data access are managed via a strict functional RBAC hierarchy in Snowflake:
 * `DATA_LOADER_ROLE`: Write-only access to the RAW schema (used by Azure Snowpipe).
 * `DBT_TRANSFORMER_ROLE`: Read access to RAW, with full DDL/DML privileges across Bronze, Silver, and Gold schemas.
@@ -86,4 +83,5 @@ Security and data access are managed via a strict functional RBAC hierarchy in S
 │   │   ├── dim_osm_assets.sql
 │   │   ├── fact_travel_times.sql
 │   │   ├── vw_live_traffic_map.sql
+│   │   └── schema.yml         # Gold contracts and tests
 │   │   └── schema.yml         # Gold contracts, tests, and catalog descriptions

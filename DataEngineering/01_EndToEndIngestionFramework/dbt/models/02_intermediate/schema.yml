@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: int_osm_cleansed
+    description: "Cleansed OSM points of interest."
+    config: 
+      tags: ["static_geo"]
+      
+  - name: int_routes_cleansed
+    description: "Cleansed highway route geometries."
+    config: 
+      tags: ["static_geo"]
+      
+  - name: int_weather_cleansed
+    description: "Cleansed and deduplicated weather forecasts."
+    config: 
+      tags: ["weather"]
+      
+  - name: int_traffic_events_cleansed
+    description: "Cleansed and standardized traffic events and speeds."
+    config: 
+      tags: ["live_traffic"]

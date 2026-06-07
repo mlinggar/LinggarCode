@@ -1,0 +1,15 @@
+models:
+  - name: stg_osm
+    description: "Flattens raw OpenStreetMap JSON payload."
+    config: 
+      tags: ["static_geo"]
+      
+  - name: stg_weather
+    description: "Flattens raw OpenWeatherMap JSON payload."
+    config: 
+      tags: ["weather"]
+      
+  - name: stg_trafikverket
+    description: "Flattens raw Trafikverket telemetry JSON payload."
+    config: 
+      tags: ["live_traffic"]

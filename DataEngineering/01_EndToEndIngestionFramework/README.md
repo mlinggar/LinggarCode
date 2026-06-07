@@ -83,5 +83,5 @@ Security and data access are managed via a strict functional RBAC hierarchy in S
 │   │   ├── dim_osm_assets.sql
 │   │   ├── fact_travel_times.sql
 │   │   ├── vw_live_traffic_map.sql
-│   │   └── schema.yml         # Gold contracts and tests
 │   │   └── schema.yml         # Gold contracts, tests, and catalog descriptions
+

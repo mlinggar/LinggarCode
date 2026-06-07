@@ -28,25 +28,26 @@ A core focus of this project is highly optimized cloud architecture. By implemen
 ## Key Engineering Achievements
 
 ### 1. Smart Orchestration & Zero-Cost Pipeline Tiering
-To maintain near-real-time updates without exceeding the dbt Cloud Developer tier limits (3,000 monthly builds), the orchestration schedule is strictly decoupled using dbt tagging and bi-modal peak-hour cron schedules. 
+To maintain near-real-time updates without exceeding the dbt Cloud Developer tier limits (3,000 monthly builds), the orchestration schedule is strictly decoupled using explicit dbt tagging and bi-modal peak-hour cron schedules. 
 
 Instead of processing all data continuously, the pipeline executes based on data volatility and user demand:
 * **Static Geography (`tag:static_geo`):** Built weekly (20 builds/month).
-* **Weather Conditions (`tag:weather`):** Built every 6 hours (360 builds/month).
+* **Weather Conditions (`tag:weather`):** Built every 1 hour exclusively during morning and evening rush hours (450 builds/month).
 * **Live Traffic (`tag:live_traffic`):** Built every 15 minutes exclusively during morning (07:00-09:00) and evening (15:00-18:00) rush hours (2,400 builds/month).
-* **Result:** 2,780 total monthly builds. This delivers real-time commuter data while preserving a 220-build buffer for CI/CD development, keeping orchestration costs at $0.
+* **Result:** 2,870 total monthly builds. This delivers real-time commuter data and synchronized hourly weather changes while preserving a 130-build buffer for CI/CD development, keeping orchestration costs at $0.
 
 ### 2. Extreme Cloud Compute Optimization
-By optimizing the Snowflake virtual warehouse settings, the Total Cost of Ownership (TCO) for the data stack was reduced by over 73%. 
+By optimizing the Snowflake virtual warehouse settings and explicitly tagging dbt jobs to avoid unnecessary full-DAG rebuilds, the Total Cost of Ownership (TCO) for the data stack was reduced by **nearly 80%**. 
 
-Adjusting the compute cluster to `AUTO_SUSPEND = 60` seconds ensured that the warehouse sleeps immediately after the 15-minute dbt micro-batches complete, dropping daily uptime from 24 hours down to approximately 5 hours.
+Adjusting the compute cluster to `AUTO_SUSPEND = 60` seconds ensured that the warehouse sleeps immediately after the dbt micro-batches complete, successfully dropping daily compute uptime from a constant 24 hours down to approximately 5 hours.
 
-| Financial Metric | Before (Unoptimized Stack) | After (Optimized Stack) | Net Savings |
+| Financial Metric | Before (Unoptimized Stack) | After (Optimized Stack) | Your Net Savings |
 | :--- | :--- | :--- | :--- |
-| **Compute Uptime** | 24 Hours / Day | ~5 Hours / Day | -19 Hours / Day |
-| **Total Daily Spend** | $53.92 | $14.40 | $39.52 saved / day |
-| **Total Monthly Spend** | $1,617.60 | $432.00 | $1,185.60 saved / month |
-| **Total Yearly Spend** | $19,680.80 | $5,256.00 | $14,424.80 saved / year |
+| **dbt Cloud Cost** | $100.00/month <br> *jobs run all day: 34,560 builds* | $0.00/month <br> *explicit tagging during peak hours: 2,870 builds* | $100.00 saved monthly |
+| **Snowflake Compute** | $1,497.60/month <br> *warehouse working 24/7* | $312.00/month <br> *warehouse auto-suspend every 1 min* | $1,185.60 saved monthly |
+| **Azure Ingestion & Storage** | $20.00/month | $20.00/month | $0.00 (Fixed Infrastructure) |
+| **Total Monthly Spend** | **$1,617.60** | **$332.00** | **$1,285.60 saved / month** |
+| **Total Yearly Spend** | **$19,411.20** | **$3,984.00** | **$15,427.20 saved / year** |
 
 ### 3. Strict Data Contracts & Quality Control
 The platform implements a strict governance "firewall" at the Gold layer to automatically block schema drift and invalid records from reaching production dashboards.

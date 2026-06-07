@@ -1,6 +1,6 @@
 import requests
 
-# Paste your Trafiklab key here
+
 api_key = "b6c5ec01133945088f6f5c171325e535"
 url = "https://api.trafikinfo.trafikverket.se/v2/data.json"
 

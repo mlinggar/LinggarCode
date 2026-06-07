@@ -33,7 +33,7 @@ To maintain near-real-time updates without exceeding the dbt Cloud Developer tie
 Instead of processing all data continuously, the pipeline executes based on data volatility and user demand:
 * **Static Geography (`tag:static_geo`):** Built weekly (20 builds/month).
 * **Weather Conditions (`tag:weather`):** Built every 1 hour exclusively during morning and evening rush hours (450 builds/month).
-* **Live Traffic (`tag:live_traffic`):** Built every 15 minutes exclusively during morning (07:00-09:00) and evening (15:00-18:00) rush hours (2,400 builds/month).
+* **Live Traffic (`tag:live_traffic`):** Built every 15 minutes exclusively during morning (06:00-09:00) and evening (15:00-18:00) rush hours (2,400 builds/month).
 * **Result:** 2,870 total monthly builds. This delivers real-time commuter data and synchronized hourly weather changes while preserving a 130-build buffer for CI/CD development, keeping orchestration costs at $0.
 
 ### 2. Extreme Cloud Compute Optimization

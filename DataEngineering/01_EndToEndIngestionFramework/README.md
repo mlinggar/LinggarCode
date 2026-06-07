@@ -43,7 +43,7 @@ Adjusting the compute cluster to `AUTO_SUSPEND = 60` seconds ensured that the wa
 
 | Financial Metric | Before (Unoptimized Stack) | After (Optimized Stack) | Your Net Savings |
 | :--- | :--- | :--- | :--- |
-| **dbt Cloud Cost** | $100.00/month <br> *jobs run all day: 34,560 builds* | $0.00/month <br> *explicit tagging during peak hours: 2,870 builds* | $100.00 saved monthly |
+| **dbt Cloud Cost** | $100.00/month <br> *jobs run all day: 34,560 builds* | $0.00/month <br> *explicit tagging during peak hours: 2,384 builds* | $100.00 saved monthly |
 | **Snowflake Compute** | $1,497.60/month <br> *warehouse working 24/7* | $312.00/month <br> *warehouse auto-suspend every 1 min* | $1,185.60 saved monthly |
 | **Azure Ingestion & Storage** | $20.00/month | $20.00/month | $0.00 (Fixed Infrastructure) |
 | **Total Monthly Spend** | **$1,617.60** | **$332.00** | **$1,285.60 saved / month** |

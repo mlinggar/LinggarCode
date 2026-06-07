@@ -31,10 +31,10 @@ A core focus of this project is highly optimized cloud architecture. By implemen
 To maintain near-real-time updates without exceeding the dbt Cloud Developer tier limits (3,000 monthly builds), the orchestration schedule is strictly decoupled using explicit dbt tagging and bi-modal peak-hour cron schedules. 
 
 Instead of processing all data continuously, the pipeline executes based on data volatility and user demand:
-* **Static Geography (`tag:static_geo`):** Built weekly (20 builds/month).
-* **Weather Conditions (`tag:weather`):** Built every 1 hour exclusively during morning and evening rush hours (450 builds/month).
-* **Live Traffic (`tag:live_traffic`):** Built every 15 minutes exclusively during morning (06:00-09:00) and evening (15:00-18:00) rush hours (2,400 builds/month).
-* **Result:** 2,870 total monthly builds. This delivers real-time commuter data and synchronized hourly weather changes while preserving a 130-build buffer for CI/CD development, keeping orchestration costs at $0.
+* **Static Geography (`tag:static_geo`):** Built weekly, at 6 Am on Monday (20 builds/month).
+* **Weather Conditions (`tag:weather`):** Built every 1 hour exclusively during morning and evening rush hours (396 builds/month), only weekday.
+* **Live Traffic (`tag:live_traffic`):** Built every 15 minutes exclusively during morning (06:00-09:00) and evening (15:00-18:00) rush hours, only weekday (2,112 builds/month).
+* **Result:** 2,528 total monthly builds. This delivers real-time commuter data and synchronized hourly weather changes while preserving a 130-build buffer for CI/CD development, keeping orchestration costs at $0.
 
 ### 2. Extreme Cloud Compute Optimization
 By optimizing the Snowflake virtual warehouse settings and explicitly tagging dbt jobs to avoid unnecessary full-DAG rebuilds, the Total Cost of Ownership (TCO) for the data stack was reduced by **nearly 80%**. 
@@ -43,7 +43,7 @@ Adjusting the compute cluster to `AUTO_SUSPEND = 60` seconds ensured that the wa
 
 | Financial Metric | Before (Unoptimized Stack) | After (Optimized Stack) | Your Net Savings |
 | :--- | :--- | :--- | :--- |
-| **dbt Cloud Cost** | $100.00/month <br> *jobs run all day: 34,560 builds* | $0.00/month <br> *explicit tagging during peak hours: 2,384 builds* | $100.00 saved monthly |
+| **dbt Cloud Cost** | $100.00/month <br> *jobs run all day: 34,560 builds* | $0.00/month <br> *explicit tagging during peak hours: 2,528 builds* | $100.00 saved monthly |
 | **Snowflake Compute** | $1,497.60/month <br> *warehouse working 24/7* | $312.00/month <br> *warehouse auto-suspend every 1 min* | $1,185.60 saved monthly |
 | **Azure Ingestion & Storage** | $20.00/month | $20.00/month | $0.00 (Fixed Infrastructure) |
 | **Total Monthly Spend** | **$1,617.60** | **$332.00** | **$1,285.60 saved / month** |

@@ -1,11 +1,17 @@
 version: 2
 
 models:
+
   - name: dim_routes
+    description: "Master dimension containing physical highway routes and geometries."
     config:
+      tags: ["static_geo"]
       contract: { enforced: true }
+      meta:
+        owner: "data_engineering_team"
     columns:
       - name: route_key
+        description: "Primary Key. MD5 hash of the route ID."
         data_type: string
         tests:
           - unique
@@ -19,9 +25,45 @@ models:
       - name: route_geometry_wkt
         data_type: string
 
-  - name: dim_weather_conditions
+  - name: dim_osm_assets
+    description: "Master dimension containing all physical OpenStreetMap assets."
     config:
+      tags: ["static_geo"]
       contract: { enforced: true }
+      meta:
+        owner: "data_engineering_team"
+        contains_pii: false
+    columns:
+      - name: asset_key
+        description: "Primary Key. MD5 hash of the OSM ID."
+        data_type: string
+        tests:
+          - unique
+          - not_null
+      - name: osm_id
+        data_type: integer
+      - name: asset_name
+        data_type: string
+      - name: asset_type
+        data_type: string
+      - name: asset_maxspeed
+        data_type: integer
+      - name: latitude
+        description: "GPS Latitude of the physical asset."
+        data_type: float
+      - name: longitude
+        description: "GPS Longitude of the physical asset."
+        data_type: float
+      - name: route_key
+        data_type: string
+
+  - name: dim_weather_conditions
+    description: "Dimension containing unique weather statuses and road implications."
+    config:
+      tags: ["weather"]
+      contract: { enforced: true }
+      meta:
+        owner: "data_engineering_team"
     columns:
       - name: weather_condition_key
         data_type: string
@@ -39,33 +81,13 @@ models:
               arguments:
                 values: ['Normal', 'Slippery', 'Hazardous']
 
-  - name: dim_osm_assets
-    config:
-      contract: { enforced: true }
-    columns:
-      - name: asset_key
-        data_type: string
-        tests:
-          - unique
-          - not_null
-      - name: osm_id
-        data_type: integer
-      - name: asset_name
-        data_type: string
-      - name: asset_type
-        data_type: string
-      - name: asset_maxspeed
-        data_type: integer
-      - name: latitude
-        data_type: float
-      - name: longitude
-        data_type: float
-      - name: route_key
-        data_type: string
-
   - name: fact_travel_times
+    description: "Core incremental fact table tracking live telemetry and speeds across the network."
     config:
+      tags: ["live_traffic"]
       contract: { enforced: true }
+      meta:
+        owner: "data_engineering_team"
     columns:
       - name: telemetry_event_key
         data_type: string
@@ -104,3 +126,8 @@ models:
         data_type: string
       - name: temperature_celsius
         data_type: float
+
+  - name: vw_live_traffic_map
+    description: "Final Gold View serving the Tableau BI Dashboard."
+    config: 
+      tags: ["live_traffic"]

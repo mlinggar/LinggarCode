@@ -25,7 +25,7 @@ clean-targets:
 # performance physical tables in Snowflake.
 
 models:
-  live_traffic_platform:
+  traffic_data_pipeline:
     
     # Bronze Layer: Flattened variant views with initial explicit casting
     01_staging:

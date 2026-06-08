@@ -56,10 +56,9 @@ Centralized inside Medallion-specific `schema.yml` files, the pipeline utilizes 
 
 ### 4. Role-Based Access Control (RBAC) Architecture
 Security and data access are managed via a strict functional RBAC hierarchy in Snowflake:
-* `DATA_LOADER_ROLE`: Write-only access to the RAW schema (used by Azure Snowpipe).
-* `DBT_TRANSFORMER_ROLE`: Read access to RAW, with full DDL/DML privileges across Bronze, Silver, and Gold schemas.
-* `BI_ANALYST_ROLE`: Read-only access restricted entirely to the Gold schema (used by Tableau and business stakeholders).
-* `DATA_ENGINEER_ROLE`: Administrator role inheriting all lower-level functional roles.
+* `ANALYTICS_ENGINEER`: Use dbt labs. It needs to read from RAW, and have full power to create, update, and drop tables in BRONZE, SILVER, and GOLD
+* `BI_ANALYST`: Use Tableau/ business users. It only needs read-only access, and only to the GOLD schema (shouldn't see raw or silver data).
+* `DATA_ENGINEER`: Inherits all the roles above so can build, troubleshoot, and see everything including managing the Azure-Snowpipe.
 
 ## Repository Structure
 
@@ -85,3 +84,9 @@ Security and data access are managed via a strict functional RBAC hierarchy in S
 │   │   ├── vw_live_traffic_map.sql
 │   │   └── schema.yml         # Gold contracts, tests, and catalog descriptions
 
+### **5. GitHub Folder Explanation**
+GitHub is used for version control, tracking every change and detail across this project. The repository is structured as follows:
+* `azure-function`: Dedicated to Azure Functions. All ingestion Python code is housed within the `src` folder.
+* `data-factory`: Dedicated to Azure Data Factory pipelines, orchestration, and the Azure-Git connection.
+* `dbt`: Dedicated to the dbt Git connection for data transformation layers.
+* `snowflake-snowpipe-integration`: Dedicated to the Snowflake-Azure integration setup, Snowpipe auto-ingestion configurations, and RBAC (Role-Based Access Control) queries.

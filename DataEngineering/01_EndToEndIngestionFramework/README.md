@@ -44,10 +44,10 @@ Adjusting the compute cluster to `AUTO_SUSPEND = 60` seconds ensured that the wa
 | Financial Metric | Before (Unoptimized Stack) | After (Optimized Stack) | Your Net Savings |
 | :--- | :--- | :--- | :--- |
 | **dbt Cloud Cost** | $100.00/month <br> *jobs run all day: 34,560 builds* | $0.00/month <br> *explicit tagging during peak hours: 2,528 builds* | $100.00 saved monthly |
-| **Snowflake Compute** | $1,497.60/month <br> *warehouse working 24/7* | $34.65/month <br> *Auto-suspend 60s + stacked jobs* | $1,462.95 saved monthly |
+| **Snowflake Compute** | $1,497.60/month <br> *warehouse working 24/7* | $40.15/month <br> *Auto-suspend 60s + stacked jobs + Tableau live queries* | $1,457.45 saved monthly |
 | **Azure Ingestion & Storage** | $20.00/month | $20.00/month | $0.00 (Fixed Infrastructure) |
-| **Total Monthly Spend** | **$1,617.60** | **$54.65** | **$1,562.95 saved / month** |
-| **Total Yearly Spend** | **$19,411.20** | **$655.80** | **$18,755.40 saved / year** |
+| **Total Monthly Spend** | **$1,617.60** | **$60.15** | **$1,557.45 saved / month** |
+| **Total Yearly Spend** | **$19,411.20** | **$721.80** | **$18,689.40 saved / year** |
 
 ### 3. Strict Data Contracts & Quality Control
 The platform implements a strict governance "firewall" at the Gold layer to automatically block schema drift and invalid records from reaching production dashboards.

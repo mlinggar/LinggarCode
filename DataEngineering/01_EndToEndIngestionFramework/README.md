@@ -59,6 +59,13 @@ Security and data access are managed via a strict functional RBAC hierarchy in S
 * `ANALYTICS_ENGINEER`: Use dbt labs. It needs to read from RAW, and have full power to create, update, and drop tables in BRONZE, SILVER, and GOLD
 * `BI_ANALYST`: Use Tableau/ business users. It only needs read-only access, and only to the GOLD schema (shouldn't see raw or silver data).
 * `DATA_ENGINEER`: Inherits all the roles above so can build, troubleshoot, and see everything including managing the Azure-Snowpipe.
+  
+### 5. GitHub Folder Explanation
+GitHub is used for version control, tracking every change and detail across this project. The repository is structured as follows:
+* `azure-function`: Dedicated to Azure Functions. All ingestion Python code is housed within the `src` folder.
+* `data-factory`: Dedicated to Azure Data Factory pipelines, orchestration, and the Azure-Git connection.
+* `dbt`: Dedicated to the dbt Git connection for data transformation layers.
+* `snowflake-snowpipe-integration`: Dedicated to the Snowflake-Azure integration setup, Snowpipe auto-ingestion configurations, and RBAC (Role-Based Access Control) queries.
 
 ## Repository Structure
 
@@ -83,10 +90,3 @@ Security and data access are managed via a strict functional RBAC hierarchy in S
 │   │   ├── fact_travel_times.sql
 │   │   ├── vw_live_traffic_map.sql
 │   │   └── schema.yml         # Gold contracts, tests, and catalog descriptions
-
-### **5. GitHub Folder Explanation**
-GitHub is used for version control, tracking every change and detail across this project. The repository is structured as follows:
-* `azure-function`: Dedicated to Azure Functions. All ingestion Python code is housed within the `src` folder.
-* `data-factory`: Dedicated to Azure Data Factory pipelines, orchestration, and the Azure-Git connection.
-* `dbt`: Dedicated to the dbt Git connection for data transformation layers.
-* `snowflake-snowpipe-integration`: Dedicated to the Snowflake-Azure integration setup, Snowpipe auto-ingestion configurations, and RBAC (Role-Based Access Control) queries.

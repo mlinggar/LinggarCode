@@ -44,10 +44,10 @@ Adjusting the compute cluster to `AUTO_SUSPEND = 60` seconds ensured that the wa
 | Financial Metric | Before (Unoptimized Stack) | After (Optimized Stack) | Your Net Savings |
 | :--- | :--- | :--- | :--- |
 | **dbt Cloud Cost** | $100.00/month <br> *jobs run all day: 34,560 builds* | $0.00/month <br> *explicit tagging during peak hours: 2,528 builds* | $100.00 saved monthly |
-| **Snowflake Compute** | $1,497.60/month <br> *warehouse working 24/7* | $312.00/month <br> *warehouse auto-suspend every 1 min* | $1,185.60 saved monthly |
+| **Snowflake Compute** | $1,497.60/month <br> *warehouse working 24/7* | $40.15/month <br> *Auto-suspend 60s + stacked jobs + Tableau live queries* | $1,457.45 saved monthly |
 | **Azure Ingestion & Storage** | $20.00/month | $20.00/month | $0.00 (Fixed Infrastructure) |
-| **Total Monthly Spend** | **$1,617.60** | **$332.00** | **$1,285.60 saved / month** |
-| **Total Yearly Spend** | **$19,411.20** | **$3,984.00** | **$15,427.20 saved / year** |
+| **Total Monthly Spend** | **$1,617.60** | **$60.15** | **$1,557.45 saved / month** |
+| **Total Yearly Spend** | **$19,411.20** | **$721.80** | **$18,689.40 saved / year** |
 
 ### 3. Strict Data Contracts & Quality Control
 The platform implements a strict governance "firewall" at the Gold layer to automatically block schema drift and invalid records from reaching production dashboards.
@@ -56,10 +56,16 @@ Centralized inside Medallion-specific `schema.yml` files, the pipeline utilizes 
 
 ### 4. Role-Based Access Control (RBAC) Architecture
 Security and data access are managed via a strict functional RBAC hierarchy in Snowflake:
-* `DATA_LOADER_ROLE`: Write-only access to the RAW schema (used by Azure Snowpipe).
-* `DBT_TRANSFORMER_ROLE`: Read access to RAW, with full DDL/DML privileges across Bronze, Silver, and Gold schemas.
-* `BI_ANALYST_ROLE`: Read-only access restricted entirely to the Gold schema (used by Tableau and business stakeholders).
-* `DATA_ENGINEER_ROLE`: Administrator role inheriting all lower-level functional roles.
+* `ANALYTICS_ENGINEER`: Use dbt labs. It needs to read from RAW, and have full power to create, update, and drop tables in BRONZE, SILVER, and GOLD
+* `BI_ANALYST`: Use Tableau/ business users. It only needs read-only access, and only to the GOLD schema (shouldn't see raw or silver data).
+* `DATA_ENGINEER`: Inherits all the roles above so can build, troubleshoot, and see everything including managing the Azure-Snowpipe.
+  
+### 5. GitHub Folder Explanation
+GitHub is used for version control, tracking every change and detail across this project. The repository is structured as follows:
+* `azure-function`: Dedicated to Azure Functions. All ingestion Python code is housed within the `src` folder.
+* `data-factory`: Dedicated to Azure Data Factory pipelines, orchestration, and the Azure-Git connection.
+* `dbt`: Dedicated to the dbt Git connection for data transformation layers.
+* `snowflake-snowpipe-integration`: Dedicated to the Snowflake-Azure integration setup, Snowpipe auto-ingestion configurations, and RBAC (Role-Based Access Control) queries.
 
 ## Repository Structure
 
@@ -84,4 +90,3 @@ Security and data access are managed via a strict functional RBAC hierarchy in S
 │   │   ├── fact_travel_times.sql
 │   │   ├── vw_live_traffic_map.sql
 │   │   └── schema.yml         # Gold contracts, tests, and catalog descriptions
-
